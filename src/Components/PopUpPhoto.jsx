@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import image from "../assets/7.jpg";
+import image from "../assets/popUp.JPG";
 import { Link } from "react-router-dom";
 
 function PopUpPhoto() {
