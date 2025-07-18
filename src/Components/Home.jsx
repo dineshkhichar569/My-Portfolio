@@ -4,6 +4,7 @@ import PopUpPhoto from "./PopUpPhoto";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import DesktopSetup from "./DesktopSetup";
+import BackgroundImage from "../assets/background.webp"
 
 function Home() {
   return (
@@ -12,7 +13,7 @@ function Home() {
 
         {/* for Home Background */}
         <img
-          src="/src/assets/background2.webp"
+          src={BackgroundImage}
           alt="Background"
           loading="lazy"
           className="absolute top-0 left-0 w-full h-screen object-cover -z-50"
