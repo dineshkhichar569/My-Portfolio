@@ -8,7 +8,17 @@ import DesktopSetup from "./DesktopSetup";
 function Home() {
   return (
     <div className="relative z-0 w-full">
-      <div className="BACKIMAGE flex flex-col gap-20 h-full sticky -top-0">
+      <div className="h-screen flex flex-col gap-20 sticky -top-0">
+
+        {/* for Home Background */}
+        <img
+          src="/src/assets/background2.webp"
+          alt="Background"
+          loading="lazy"
+          className="absolute top-0 left-0 w-full h-screen object-cover -z-50"
+        />
+
+        
 
         <Navbar />
 
@@ -34,7 +44,6 @@ function Home() {
               </div>
             </div>
 
-
             {/* Hire Me Button */}
             <div className="rounded-xl absolute bottom-[150px] sm:bottom-[40px] md:bottom-[60px] lg:bottom-[70px] left-6 sm:left-[100px] md:left-[150px] lg:left-[200px]">
               <Link
@@ -52,13 +61,13 @@ function Home() {
                     stroke="currentColor"
                     strokeWidth="2"
                     viewBox="0 0 24 24"
+                    loading="lazy"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </span>
               </Link>
             </div>
-
           </div>
         </main>
       </div>
@@ -66,7 +75,7 @@ function Home() {
       <PopUpPhoto />
 
       <div className="text-white relative h-screen">
-        <DesktopSetup/>
+        <DesktopSetup />
 
         <div className="w-full absolute -bottom-[300px]">
           <Footer />

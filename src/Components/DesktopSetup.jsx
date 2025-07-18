@@ -1,6 +1,6 @@
 // CinematicDesk.jsx
 import React from "react";
-import setupImage from "../assets/Setup.jpg";
+import setupImage from "../assets/Setup.webp";
 import { motion } from "framer-motion";
 import Tilt from 'react-parallax-tilt';
 
@@ -11,6 +11,7 @@ export default function DesktopSetup() {
       <img
         src={setupImage}
         alt="Desk Setup"
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover brightness-[0.25] blur-[2px] scale-105 z-0"
       />
 
@@ -49,7 +50,7 @@ export default function DesktopSetup() {
               <li>Samsung Galaxy Book 2</li>
               <li>27" M5 Samsung Monitor</li>
               <li>RGB Mechanical Keyboard</li>
-              <li>Samsung Tab S10 for Notes</li>
+              <li>Samsung Tab S10 Ultra for Notes</li>
               <li>Ambient Clock & Minimal Light</li>
             </ul>
           </motion.div>

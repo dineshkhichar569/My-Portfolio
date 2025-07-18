@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Dit from "../assets/dit.webp";
+import matrixSchool from "../assets/Matrix.webp";
+
 import Navbar from "./Navbar";
-import matrixSchool from "../assets/Matrix.jpeg";
-import Dit from "../assets/dit.jpeg";
 import Footer from "./Footer";
 
 const fadeInUp = {
@@ -21,6 +22,7 @@ const GlassCard = ({ img, title, subtitle, extra, score }) => (
     <img
       src={img}
       alt={title}
+      loading="lazy"
       className="md:w-[100px] w-[60px] md:h-[100px] h-[60px] object-cover rounded-xl"
     />
     <div className="space-y-2">
@@ -82,6 +84,55 @@ function About() {
           backend precision. Minimalism, performance, emotion. Every line of
           code matters.
         </motion.p>
+
+        {/* Coding Profiles */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="flex flex-col md:flex-row gap-6 justify-center items-center mt-12"
+        >
+          <a
+            href="https://leetcode.com/u/DineshSunny/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+              alt="LeetCode"
+              loading="lazy"
+              className="w-8 h-8"
+            />
+            <span className="text-white text-lg font-medium group-hover:text-yellow-600 transition duration-500">
+              LeetCode Profile
+            </span>
+            <p class="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-500">
+              Visit Profile
+            </p>
+          </a>
+
+          <a
+            href="https://www.geeksforgeeks.org/user/wollver962d/?_gl=1*aslot6*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw4efDBhATEiwAaDBpblgSo40PW4ABXWC1GQenuqBjEfzZul5heedj-p0xZt_e6v2_9rfgwBoClJsQAvD_BwE&gbraid=0AAAAAC9yBkDcSo3LmM-RejRscFLXbafzf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
+              alt="GFG"
+              loading="lazy"
+              className="w-8 h-8 bg-white rounded-full p-1"
+            />
+            <span className="text-white text-lg font-medium group-hover:text-green-600 transition duration-500">
+              GeeksforGeeks Profile
+            </span>
+            <p class="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-500">
+              Visit Profile
+            </p>
+          </a>
+        </motion.div>
       </div>
 
       {/* Experience Section */}
@@ -149,22 +200,7 @@ function About() {
         >
           Licenses & Certifications
         </motion.h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Example certs — replace or map from array */}
-          {/* <GlassCard
-            img="https://static.vecteezy.com/system/resources/previews/029/345/981/non_2x/database-icon-data-analytics-icon-monitoring-big-data-analysis-containing-database-free-png.png"
-            title="Database Management Essentials - Coursera"
-            subtitle="Issued: Mar 2025"
-            extra="Credential ID: 8R35GNGVE447"
-          /> */}
-          {/* <GlassCard
-            img="https://icon.icepanel.io/Technology/png-shadow-512/Linux.png"
-            title="Linux Fundamentals - Coursera"
-            subtitle="Issued: Mar 2025"
-            extra="Credential ID: 05EDPXOXDGH5"
-          /> */}
-
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -175,14 +211,28 @@ function About() {
             <img
               src="https://static.vecteezy.com/system/resources/previews/029/345/981/non_2x/database-icon-data-analytics-icon-monitoring-big-data-analysis-containing-database-free-png.png"
               alt="img"
+              loading="lazy"
               className="md:w-[100px] w-[60px] md:h-[100px] h-[60px] object-cover rounded-xl"
             />
             <div className="space-y-2">
-              <p className="md:text-3xl text-lg font-semibold">Database Management Essentials - Coursera</p>
-              <p className="md:text-lg text-sm text-gray-300">Issued: Mar 2025</p>
-              <p className="md:text-lg text-sm text-gray-400">Credential ID: 8R35GNGVE447</p>
+              <p className="md:text-3xl text-lg font-semibold">
+                Database Management Essentials - Coursera
+              </p>
+              <p className="md:text-lg text-sm text-gray-300">
+                Issued: Mar 2025
+              </p>
+              <p className="md:text-lg text-sm text-gray-400">
+                Credential ID: 8R35GNGVE447
+              </p>
             </div>
-            <a className="absolute bottom-5 right-5" href="/DOCs/DBMS.pdf"><img className="w-8" src="/icons_image/Download.svg" alt="image" /></a>
+            <a className="absolute bottom-5 right-5" href="/DOCs/DBMS.pdf">
+              <img
+                className="w-8"
+                src="/icons/Download.svg"
+                alt="download"
+                loading="lazy"
+              />
+            </a>
           </motion.div>
 
           <motion.div
@@ -195,16 +245,29 @@ function About() {
             <img
               src="https://icon.icepanel.io/Technology/png-shadow-512/Linux.png"
               alt="img"
+              loading="lazy"
               className="md:w-[100px] w-[60px] md:h-[100px] h-[60px] object-cover rounded-xl"
             />
             <div className="space-y-2">
-              <p className="md:text-3xl text-lg font-semibold">Linux Fundamentals - Coursera</p>
-              <p className="md:text-lg text-sm text-gray-300">Issued: Mar 2025</p>
-              <p className="md:text-lg text-sm text-gray-400">Credential ID: 05EDPXOXDGH5</p>
+              <p className="md:text-3xl text-lg font-semibold">
+                Linux Fundamentals - Coursera
+              </p>
+              <p className="md:text-lg text-sm text-gray-300">
+                Issued: Mar 2025
+              </p>
+              <p className="md:text-lg text-sm text-gray-400">
+                Credential ID: 05EDPXOXDGH5
+              </p>
             </div>
-            <a className="absolute bottom-5 right-5" href="/DOCs/LINUX.pdf"><img className="w-8" src="/icons_image/Download.svg" alt="image" /></a>
+            <a className="absolute bottom-5 right-5" href="/DOCs/LINUX.pdf">
+              <img
+                className="w-8"
+                src="/icons/Download.svg"
+                alt="download"
+                loading="lazy"
+              />
+            </a>
           </motion.div>
-
         </div>
       </div>
 

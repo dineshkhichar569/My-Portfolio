@@ -9,7 +9,7 @@ const projects = [
     title: "Laundry App",
     description:
       "Designed for efficiency, reliability, and user convenience in every step of the laundry process.",
-    image: "/projects/projects_image/Laundry.png",
+    image: "/projects/projects_image/Laundry.webp",
     video: "/projects/projects_videos/Laundry.mp4",
     techStack: ["HTML", "CSS", "JavaScript", "Responsive"],
     liveLink:
@@ -20,7 +20,7 @@ const projects = [
     title: "MentorShip Website",
     description:
       "Personal portfolio built with React, Tailwind, and Framer Motion.",
-    image: "/projects/projects_image/MentorShip.png",
+    image: "/projects/projects_image/MentorShip.webp",
     video: "/projects/projects_videos/Mentor.mp4",
     techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
     liveLink: "https://lively-mooncake-cd83f4.netlify.app/",
@@ -30,7 +30,7 @@ const projects = [
     title: "NFT Selling Website",
     description:
       "Personal portfolio built with React, Tailwind, and Framer Motion.",
-    image: "/projects/projects_image/NFT.png",
+    image: "/projects/projects_image/NFT.webp",
     video: "/projects/projects_videos/NFT.mp4",
     techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
     liveLink: "https://nft-sellingmarket.netlify.app/",
@@ -40,7 +40,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "Personal portfolio built with React, Tailwind, and Framer Motion.",
-    image: "/projects/projects_image/Portfolio.png",
+    image: "/projects/projects_image/Portfolio.webp",
     video: "",
     techStack: ["React", "Tailwind CSS", "Framer Motion", "CSS"],
     liveLink: "https://dineshkhichar.dev",
@@ -61,11 +61,13 @@ const ProjectCard = ({ project, index }) => (
       <img
         src={project.image}
         alt={project.title}
+        loading="lazy"
         className="w-full h-full object-cover"
       />
       {project.video && (
         <video
           src={project.video}
+          loading="lazy"
           className="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           muted
           loop

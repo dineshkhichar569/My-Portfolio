@@ -137,6 +137,16 @@ function Contact() {
                     icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
                     color: "#000000",
                   },
+                  {
+                    href: "https://leetcode.com/u/DineshSunny/",
+                    icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
+                    color: "#000000",
+                  },
+                  {
+                    href: "https://www.geeksforgeeks.org/user/wollver962d/?_gl=1*aslot6*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw4efDBhATEiwAaDBpblgSo40PW4ABXWC1GQenuqBjEfzZul5heedj-p0xZt_e6v2_9rfgwBoClJsQAvD_BwE&gbraid=0AAAAAC9yBkDcSo3LmM-RejRscFLXbafzf",
+                    icon: "https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg",
+                    color: "#000000",
+                  },
                 ].map(({ href, icon, color }, i) => (
                   <a
                     key={i}
@@ -166,6 +176,7 @@ function Contact() {
                     <img
                       src={icon}
                       alt="icon"
+                      loading="lazy"
                       className="w-8 md:w-10 h-8 md:h-10 sm:w-12 sm:h-12 z-10 drop-shadow-md group-hover:scale-110 transition-transform duration-500"
                     />
                   </a>

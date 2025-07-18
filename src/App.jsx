@@ -8,7 +8,6 @@ import About from "./Components/About";
 import Gallary from "./Components/Gallary";
 import Contact from "./Components/Contact";
 import Skills from "./Components/Skills";
-import Services from "./Components/Services";
 import Projects from "./Components/Projects";
 import HireMeForm from "./Components/HireMe";
 
@@ -21,7 +20,6 @@ function App() {
         <Route path="/gallary" element={<Gallary />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/skills" element={<Skills />} />
-        <Route path="/service" element={<Services />} />
         <Route path="/project" element={<Projects />} />
         <Route path="/hire" element={<HireMeForm />} />
       </Routes>

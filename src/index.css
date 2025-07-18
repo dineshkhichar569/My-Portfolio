@@ -15,15 +15,15 @@ html {
 
 
 
-.BACKIMAGE {
-    background-image: url(../src/assets/background2.png);
+/* .BACKIMAGE {
+    background-image: url(../src/assets/background2.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     backdrop-filter: blur(8px); 
     height: 100vh;
-}
+} */
 
 
 

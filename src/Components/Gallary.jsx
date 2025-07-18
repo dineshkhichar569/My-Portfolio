@@ -4,79 +4,78 @@ import { motion, useInView } from "framer-motion";
 import Navbar from "./Navbar";
 
 const images = [
-  "/gallary/60.jpg",
-  "/gallary/6.jpg",
-  "/gallary/8.jpg",
-  "/gallary/5.jpg",
-  "/gallary/20.jpg",
-  "/gallary/40.jpg",
-  "/gallary/34.jpg",
-  "/gallary/32.jpg",
-  "/gallary/45.jpg",
-  "/gallary/47.jpg",
-  "/gallary/22.jpg",
-  "/gallary/16.jpg",
-  "/gallary/24.jpg",
-  "/gallary/1.jpg",
-  "/gallary/44.jpg",
-  "/gallary/19.jpg",
-  "/gallary/9.jpg",
-  "/gallary/50.jpg",
-  "/gallary/21.jpg",
-  "/gallary/37.jpg",
-  "/gallary/43.jpg",
-  "/gallary/30.jpg",
-  "/gallary/27.jpg",
-  "/gallary/26.jpg",
-  "/gallary/29.jpg",
-  "/gallary/23.jpg",
-  "/gallary/28.jpg",
-  "/gallary/25.jpg",
-  "/gallary/2.jpg",
-  "/gallary/11.jpg",
-  "/gallary/89.jpg",
-  "/gallary/36.jpg",
-  "/gallary/15.jpg",
-  "/gallary/33.jpg",
-  "/gallary/72.JPG",
-  "/gallary/59.jpg",
-  "/gallary/42.jpg",
-  "/gallary/46.jpg",
-  "/gallary/64.JPG",
-  "/gallary/39.jpg",
-  "/gallary/49.jpg",
-  "/gallary/53.jpg",
-  "/gallary/35.jpg",
-  "/gallary/62.JPG",
-  "/gallary/48.jpg",
-  "/gallary/55.jpg",
-  "/gallary/57.jpg",
-  "/gallary/54.jpg",
-  "/gallary/63.JPG",
-  "/gallary/58.jpg",
-  "/gallary/67.JPG",
-  "/gallary/61.JPG",
-  "/gallary/73.jpg",
-  "/gallary/9578.jpg",
-  "/gallary/345.jpg",
-  "/gallary/70.JPG",
-  "/gallary/67.JPG",
-  "/gallary/68.JPG",
-  "/gallary/69.JPG",
-  "/gallary/90.jpg",
-  "/gallary/8476.jpg",
-  "/gallary/76.jpg",
-  "/gallary/7889.jpg",
-  "/gallary/8456.jpg",
-  "/gallary/65.JPG",
-  "/gallary/71.JPG",
-  "/gallary/678.jpg",
-  "/gallary/83.jpg",
-  "/gallary/789.jpg",
-  "/gallary/645.jpg",
-  "/gallary/7653.jpg",
-  "/gallary/57890.jpg",
-  "/gallary/84765.jpg",
+  "/gallary/11.webp",
+  "/gallary/6.webp",
+  "/gallary/28.webp",
+  "/gallary/5.webp",
+  "/gallary/20.webp",
+  "/gallary/40.webp",
+  "/gallary/34.webp",
+  "/gallary/32.webp",
+  "/gallary/45.webp",
+  "/gallary/47.webp",
+  "/gallary/22.webp",
+  "/gallary/16.webp",
+  "/gallary/24.webp",
+  "/gallary/1.webp",
+  "/gallary/44.webp",
+  "/gallary/19.webp",
+  "/gallary/9.webp",
+  "/gallary/50.webp",
+  "/gallary/21.webp",
+  "/gallary/37.webp",
+  "/gallary/43.webp",
+  "/gallary/8.webp",
+  "/gallary/30.webp",
+  "/gallary/27.webp",
+  "/gallary/26.webp",
+  "/gallary/25.webp",
+  "/gallary/2.webp",
+  "/gallary/89.webp",
+  "/gallary/36.webp",
+  "/gallary/15.webp",
+  "/gallary/33.webp",
+  "/gallary/72.webp",
+  "/gallary/59.webp",
+  "/gallary/42.webp",
+  "/gallary/46.webp",
+  "/gallary/64.webp",
+  "/gallary/39.webp",
+  "/gallary/49.webp",
+  "/gallary/53.webp",
+  "/gallary/35.webp",
+  "/gallary/62.webp",
+  "/gallary/48.webp",
+  "/gallary/60.webp",
+  "/gallary/55.webp",
+  "/gallary/57.webp",
+  "/gallary/54.webp",
+  "/gallary/29.webp",
+  "/gallary/63.webp",
+  "/gallary/58.webp",
+  "/gallary/67.webp",
+  "/gallary/61.webp",
+  "/gallary/73.webp",
+  "/gallary/9578.webp",
+  "/gallary/345.webp",
+  "/gallary/67.webp",
+  "/gallary/68.webp",
+  "/gallary/69.webp",
+  "/gallary/90.webp",
+  "/gallary/8476.webp",
+  "/gallary/76.webp",
+  "/gallary/7889.webp",
+  "/gallary/8456.webp",
+  "/gallary/65.webp",
+  "/gallary/71.webp",
+  "/gallary/678.webp",
+  "/gallary/83.webp",
+  "/gallary/789.webp",
+  "/gallary/645.webp",
+  "/gallary/7653.webp",
+  "/gallary/57890.webp",
+  "/gallary/23.webp",
+  "/gallary/84765.webp",
 ];
 
 const Gallery = () => {
@@ -128,7 +127,8 @@ const Gallery = () => {
       <div className="mx-4 md:mx-[50px] mt-[40px] mb-[40px] flex flex-col md:flex-row gap-6 md:gap-[50px] items-center rounded-3xl p-4 md:p-6 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden group transition-all duration-1000">
         <img
           className="w-32 h-32 md:w-[200px] md:h-[200px] rounded-full object-cover border-4 border-black"
-          src="/gallary/profile.JPG"
+          loading="lazy"
+          src="/gallary/profile.webp"
           alt="img"
         />
         <div className="text-center md:text-left">
@@ -172,6 +172,7 @@ const Gallery = () => {
               <img
                 src={src}
                 alt={`Image ${index}`}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500"
               />
             </motion.div>
@@ -186,6 +187,7 @@ const Gallery = () => {
             <img
               src={selectedImage}
               alt="Enlarged"
+              loading="lazy"
               className="max-w-[90vw] max-h-[80vh] rounded-xl shadow-2xl"
             />
             <button
@@ -199,7 +201,7 @@ const Gallery = () => {
               download
               className="absolute bottom-8 right-8 bg-black/30 backdrop-blur-md border border-white/20 rounded-lg shadow-md hover:bg-gray-800"
             >
-              <img src="/icons_image/Download.svg" alt="download" />
+              <img src="/icons/Download.svg" className="w-8 h-8" loading="lazy" alt="download" />
             </a>
           </div>
         </div>

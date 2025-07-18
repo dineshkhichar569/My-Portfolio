@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import image from "../assets/popUp.JPG";
+import image from "../assets/popUp.webp";
 import { Link } from "react-router-dom";
 
 function PopUpPhoto() {
@@ -61,6 +61,7 @@ function PopUpPhoto() {
                     <img
                       src={image}
                       alt="Static Image"
+                      loading="lazy"
                       className="w-full h-full object-cover rounded-2xl"
                     />
                   </div>
@@ -103,6 +104,7 @@ function PopUpPhoto() {
               <img
                 src={image}
                 alt="Your Image"
+                loading="lazy"
                 className="relative z-20 object-cover w-full h-full rounded-xl transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
               />
             </div>

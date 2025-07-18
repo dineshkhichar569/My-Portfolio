@@ -22,7 +22,7 @@ const SkillCard = ({ skill, index }) => (
     whileInView="show"
     viewport={{ once: true }}
   >
-    <img className="w-[100px] mx-auto" src={skill.icon} alt="" />
+    <img className="w-[100px] mx-auto" loading="lazy" src={skill.icon} alt="" />
     <p className="text-center mt-6">{skill.name}</p>
     <div className="absolute inset-0 z-[-1] bg-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
   </motion.div>
@@ -76,27 +76,27 @@ function Skills() {
           skills={[
             {
               name: "HTML",
-              icon: "/icons_image/HTML.svg",
+              icon: "/icons/HTML.SVG",
             },
             {
               name: "CSS",
-              icon: "/icons_image/CSS.svg",
+              icon: "/icons/CSS.SVG",
             },
             {
               name: "JavaScript",
-              icon: "/icons_image/JS.svg",
+              icon: "/icons/JS.SVG",
             },
             {
               name: "Tailwind CSS",
-              icon: "/icons_image/TAILWIND.svg",
+              icon: "/icons/TAILWIND.svg",
             },
             {
               name: "Bootstrap",
-              icon: "/icons_image/Bootstrap.svg",
+              icon: "/icons/Bootstrap.svg",
             },
             {
               name: "React.js",
-              icon: "/icons_image/REACT.svg",
+              icon: "/icons/REACT.svg",
             },
           ]}
         />
@@ -108,31 +108,31 @@ function Skills() {
           skills={[
             {
               name: "Node.js",
-              icon: "/icons_image/NODE.svg",
+              icon: "/icons/NODE.svg",
             },
             {
               name: "Express.js",
-              icon: "/icons_image/EXPRESS.svg",
+              icon: "/icons/EXPRESS.svg",
             },
             {
               name: "MongoDB & Mongoose",
-              icon: "/icons_image/Mongodb.svg",
+              icon: "/icons/Mongodb.svg",
             },
             {
               name: "Postman",
-              icon: "/icons_image/Postman.svg",
+              icon: "/icons/Postman.svg",
             },
             {
               name: "MongoDB Compass",
-              icon: "/icons_image/MongodbCompass.svg",
+              icon: "/icons/MongodbCompass.svg",
             },
             {
               name: "Git",
-              icon: "/icons_image/Git.svg",
+              icon: "/icons/Git.svg",
             },
             {
               name: "GitHub",
-              icon: "/icons_image/Github.svg",
+              icon: "/icons/Github.svg",
             },
           ]}
           startIndex={6}
@@ -145,19 +145,19 @@ function Skills() {
           skills={[
             {
               name: "Java",
-              icon: "/icons_image/Java.svg",
+              icon: "/icons/Java.svg",
             },
             {
               name: "Data Structures & Algorithms",
-              icon: "/icons_image/DSA.svg",
+              icon: "/icons/DSA.svg",
             },
             {
               name: "LeetCode",
-              icon: "/icons_image/Leetcode.svg",
+              icon: "/icons/Leetcode.svg",
             },
             {
               name: "GeeksforGeeks",
-              icon: "/icons_image/GFG.svg",
+              icon: "/icons/GFG.svg",
             },
           ]}
           startIndex={14}
