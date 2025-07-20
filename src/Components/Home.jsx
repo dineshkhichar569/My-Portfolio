@@ -4,7 +4,7 @@ import PopUpPhoto from "./PopUpPhoto";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import DesktopSetup from "./DesktopSetup";
-import BackgroundImage from "../assets/background.webp"
+import BackgroundImage from "../assets/background2.webp"
 
 function Home() {
   return (
@@ -18,14 +18,13 @@ function Home() {
           loading="lazy"
           className="absolute top-0 left-0 w-full h-screen object-cover -z-50"
         />
-
-        
+       
 
         <Navbar />
 
         <main className="flex justify-start h-full">
-          <div className="left w-full p-3 flex flex-col items-start gap-[100px] md:gap-[150px] lg:gap-[200px] relative">
-            <div className="flex flex-col gap-0 px-4 sm:px-10 md:pl-20 w-full text-white">
+          <div className="left p-3 flex flex-col items-start gap-[100px] md:gap-[150px] lg:gap-[200px] relative">
+            <div className="flex flex-col gap-0 px-4 sm:px-10 md:pl-20 text-white">
               <h1 className="my-name text-4xl sm:text-5xl md:text-xl lg:text-7xl">
                 <span>H</span>
                 <span>E</span>

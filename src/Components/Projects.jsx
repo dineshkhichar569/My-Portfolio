@@ -19,7 +19,7 @@ const projects = [
   {
     title: "MentorShip Website",
     description:
-      "Personal portfolio built with React, Tailwind, and Framer Motion.",
+      "Built for growth, guidance, and simplicity at every step of your learning journey.",
     image: "/projects/projects_image/MentorShip.webp",
     video: "/projects/projects_videos/Mentor.mp4",
     techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
@@ -29,7 +29,7 @@ const projects = [
   {
     title: "NFT Selling Website",
     description:
-      "Personal portfolio built with React, Tailwind, and Framer Motion.",
+      "Designed for creators, crypto enthusiasts to explore, trade, and showcase NFTs with ease and security.",
     image: "/projects/projects_image/NFT.webp",
     video: "/projects/projects_videos/NFT.mp4",
     techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
@@ -42,7 +42,7 @@ const projects = [
       "Personal portfolio built with React, Tailwind, and Framer Motion.",
     image: "/projects/projects_image/Portfolio.webp",
     video: "",
-    techStack: ["React", "Tailwind CSS", "Framer Motion", "CSS"],
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "CSS", "Responsive"],
     liveLink: "https://dineshkhichar.dev",
     githubLink: "https://github.com/dineshkhichar/portfolio",
   },
