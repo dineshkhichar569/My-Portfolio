@@ -1,16 +1,40 @@
-<<<<<<< HEAD
-# React + Vite
+# 🌌 My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Preview](./preview.png)
 
-Currently, two official plugins are available:
+A **modern, responsive, and animated portfolio website** built using **React + Vite + Tailwind CSS**.  
+Designed to showcase my skills, projects, and journey in web development.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Live Demo** → [Click Here](https://my-portfolio-rouge-beta-46.vercel.app)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# My-Portfolio
->>>>>>> 12857c5fa1fa3995056eeff47906b5904e9eb50f
+## ✨ Features
+
+- ⚡ **Blazing fast** builds with Vite  
+- 🎨 **Tailwind-powered design** with animations  
+- 📱 **Responsive** across all devices  
+- 🖼️ Dedicated **Projects showcase** with images/videos  
+- 📬 **Hire Me / Contact section** with EmailJS integration  
+- 🌙 **Dark + Neon premium theme** for a cinematic feel  
+
+---
+
+## 🛠️ Tech Stack
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/dineshkhichar569/My-Portfolio.git
+cd My-Portfolio
+npm install
