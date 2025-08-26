@@ -38,7 +38,7 @@ Clone the repository and install dependencies:
 git clone https://github.com/dineshkhichar569/My-Portfolio.git
 cd My-Portfolio
 npm install
-
+```
 
 ## 🙋‍♂️ Author
 
