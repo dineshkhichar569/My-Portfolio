@@ -38,3 +38,12 @@ Clone the repository and install dependencies:
 git clone https://github.com/dineshkhichar569/My-Portfolio.git
 cd My-Portfolio
 npm install
+
+
+## 🙋‍♂️ Author
+
+**Dinesh Khichar**  
+
+💼 [LinkedIn](https://linkedin.com/in/dineshkhichar)  
+🐙 [GitHub](https://github.com/dineshkhichar569)  
+🌐 [Portfolio](https://my-portfolio-rouge-beta-46.vercel.app)  
