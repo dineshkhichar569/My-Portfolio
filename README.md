@@ -5,7 +5,7 @@
 A **modern, responsive, and animated portfolio website** built using **React + Vite + Tailwind CSS**.  
 Designed to showcase my skills, projects, and journey in web development.  
 
-🔗 **Live Demo** → [Click Here](https://my-portfolio-rouge-beta-46.vercel.app)
+🔗 **Live Demo** → [Click Here](https://dineshportfolios.site/)
 
 ---
 
@@ -26,7 +26,6 @@ Designed to showcase my skills, projects, and journey in web development.
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)
 
 ---
 
@@ -46,4 +45,4 @@ npm install
 
 💼 [LinkedIn](https://linkedin.com/in/dineshkhichar)  
 🐙 [GitHub](https://github.com/dineshkhichar569)  
-🌐 [Portfolio](https://my-portfolio-rouge-beta-46.vercel.app)  
+🌐 [Portfolio](https://dineshportfolios.site/)  
