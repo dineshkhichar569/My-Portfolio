@@ -1,6 +1,6 @@
 # 🌌 My Portfolio
 
-![Portfolio Preview](./preview.png)
+![Portfolio Preview](./public/projects/projects_image/Portfolio.webp)
 
 A **modern, responsive, and animated portfolio website** built using **React + Vite + Tailwind CSS**.  
 Designed to showcase my skills, projects, and journey in web development.  
