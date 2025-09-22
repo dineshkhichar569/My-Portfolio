@@ -3,6 +3,8 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import image from "../assets/popUp.webp";
+import ClickSpark from "../React-Bits/ClickSpark";
+import TargetCursor from "../React-Bits/TargetCursor";
 
 function PopUpPhoto() {
   const [progress, setProgress] = useState(0);
@@ -33,6 +35,7 @@ function PopUpPhoto() {
 
   return (
     <div className="relative bg-black text-white rounded-t-[50px]">
+      <TargetCursor/>
       <section ref={sectionRef} className="relative h-[150vh]">
         {/* Sticky Container */}
         <div className="sticky top-0 h-screen w-full flex flex-wrap items-center justify-center overflow-hidden rounded-t-[50px]">
@@ -41,6 +44,8 @@ function PopUpPhoto() {
             <div className="w-full h-full bg-[radial-gradient(circle,#94a3b8_1px,transparent_1px)] [background-size:30px_30px] opacity-10 animate-pulse" />
             <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black opacity-40" />
           </div>
+
+          <ClickSpark/>
 
           {/* Animated Pop-Up Image for Large Screens */}
           <Tilt
@@ -106,7 +111,7 @@ function PopUpPhoto() {
                 href="/DOCs/DineshResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-900 font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:scale-110 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                className="cursor-target inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-900 font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:scale-110 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
               >
                 READ THE PATH I FORGED ⚔️
                 <p className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-white text-sm text-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-500">

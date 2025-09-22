@@ -7,6 +7,7 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import ClickSpark from "../React-Bits/ClickSpark";
 
 const Footer = () => {
   return (

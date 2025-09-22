@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 
 import { motion } from "framer-motion";
 import Footer from "./Footer";
+import ClickSpark from "../React-Bits/ClickSpark";
+import TargetCursor from "../React-Bits/TargetCursor";
 
 const skillVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -15,7 +17,7 @@ const skillVariants = {
 
 const SkillCard = ({ skill, index }) => (
   <motion.div
-    className="relative group p-6 rounded-xl text-white text-center font-semibold text-lg bg-white/5 border border-white/10 backdrop-blur-lg hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden"
+    className="cursor-target relative group p-6 rounded-xl text-white text-center font-semibold text-lg bg-white/5 border border-white/10 backdrop-blur-lg hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden"
     custom={index}
     variants={skillVariants}
     initial="hidden"
@@ -60,6 +62,8 @@ function Skills() {
   return (
     <div className="">
       <Navbar />
+      <TargetCursor/>
+      <ClickSpark/>
 
       <div className="relative overflow-hidden text-white">
         {/* Fixed animated gradient background */}

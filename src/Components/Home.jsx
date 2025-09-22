@@ -5,10 +5,14 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import DesktopSetup from "./DesktopSetup";
 import BackgroundImage from "../assets/background2.webp"
+import ClickSpark from "../React-Bits/ClickSpark";
+import TargetCursor from "../React-Bits/TargetCursor";
 
 function Home() {
   return (
     <div className="relative z-0 w-full">
+        <ClickSpark/>
+        <TargetCursor/>
       <div className="h-screen flex flex-col gap-20 sticky -top-0">
 
         {/* for Home Background */}
@@ -45,7 +49,7 @@ function Home() {
             </div>
 
             {/* Hire Me Button */}
-            <div className="rounded-xl absolute bottom-[150px] sm:bottom-[40px] md:bottom-[60px] lg:bottom-[70px] left-6 sm:left-[100px] md:left-[150px] lg:left-[200px]">
+            <div className="cursor-target rounded-xl absolute bottom-[150px] sm:bottom-[40px] md:bottom-[60px] lg:bottom-[70px] left-6 sm:left-[100px] md:left-[150px] lg:left-[200px]">
               <Link
                 to="/hire"
                 className="group relative inline-flex items-center justify-center px-6 sm:px-10 md:px-12 py-3 sm:py-4 font-semibold text-lime-300 text-sm sm:text-base md:text-lg lg:text-xl uppercase tracking-[0.15em] sm:tracking-[0.25em] rounded-xl bg-black border border-lime-500/30 overflow-hidden shadow-[0_0_30px_rgba(132,204,22,0.15)] transition-all duration-700 hover:scale-[1.03] hover:text-black hover:bg-lime-300/10 backdrop-blur-md"

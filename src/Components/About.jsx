@@ -5,6 +5,8 @@ import matrixSchool from "../assets/Matrix.webp";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ClickSpark from "../React-Bits/ClickSpark";
+import TargetCursor from "../React-Bits/TargetCursor";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -37,7 +39,9 @@ const GlassCard = ({ img, title, subtitle, extra, score }) => (
 function About() {
   return (
     <div className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik">
+      <TargetCursor/>
       <Navbar />
+      <ClickSpark/>
 
       {/* Background blobs */}
       <div className="abstract-blobs z-0">
@@ -97,7 +101,7 @@ function About() {
             href="https://leetcode.com/u/DineshSunny/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="cursor-target flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
@@ -117,7 +121,7 @@ function About() {
             href="https://www.geeksforgeeks.org/user/wollver962d/?_gl=1*aslot6*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw4efDBhATEiwAaDBpblgSo40PW4ABXWC1GQenuqBjEfzZul5heedj-p0xZt_e6v2_9rfgwBoClJsQAvD_BwE&gbraid=0AAAAAC9yBkDcSo3LmM-RejRscFLXbafzf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="cursor-target flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
@@ -225,7 +229,7 @@ function About() {
                 Credential ID: 8R35GNGVE447
               </p>
             </div>
-            <a className="absolute bottom-5 right-5" href="/DOCs/DBMS.pdf">
+            <a className="cursor-target absolute bottom-5 right-5" href="/DOCs/DBMS.pdf">
               <img
                 className="w-8"
                 src="/icons/Download.svg"
@@ -259,7 +263,7 @@ function About() {
                 Credential ID: 05EDPXOXDGH5
               </p>
             </div>
-            <a className="absolute bottom-5 right-5" href="/DOCs/LINUX.pdf">
+            <a className="cursor-target absolute bottom-5 right-5" href="/DOCs/LINUX.pdf">
               <img
                 className="w-8"
                 src="/icons/Download.svg"

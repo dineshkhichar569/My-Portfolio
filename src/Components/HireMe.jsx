@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
+import ClickSpark from "../React-Bits/ClickSpark";
+import TargetCursor from "../React-Bits/TargetCursor";
 
 const HireMe = () => {
   const form = useRef();
@@ -36,6 +38,8 @@ const HireMe = () => {
   return (
     <div className="relative min-h-screen w-full px-6 py-20 bg-gradient-to-br from-[#0f0c29] via-[#000000] to-[#24243e] text-white overflow-hidden">
 
+      <ClickSpark/>
+      <TargetCursor/>
 
       {/* Blurred Glass Layer */}
       <div className="absolute inset-0 backdrop-blur-md bg-black/5 z-0" />
@@ -188,7 +192,7 @@ const HireMe = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`px-10 py-3 text-white font-medium text-lg rounded-full transition-all duration-300 shadow-lg ${
+            className={`cursor-target px-10 py-3 text-white font-medium text-lg rounded-full transition-all duration-300 shadow-lg ${
               loading
                 ? "bg-gray-500 cursor-not-allowed"
                 : "bg-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105 shadow-cyan-500/30"

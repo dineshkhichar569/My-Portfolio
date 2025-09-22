@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 import Navbar from "./Navbar";
+import ClickSpark from "../React-Bits/ClickSpark";
 
 const images = [
   "/gallary/11.webp",
@@ -120,6 +121,7 @@ const Gallery = () => {
       </div>
 
       <Navbar />
+      <ClickSpark/>
 
 
 
