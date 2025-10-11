@@ -78,6 +78,7 @@ npm install
 # Start the development server
 npm run dev
 
+---
 
 ## 🙋‍♂️ Author
 
@@ -92,14 +93,3 @@ Fullstack & DevOps Enthusiast | B.Tech CSE @ DIT University
 
 Thanks for checking out my portfolio!
 If you like it, please ⭐ star this repository and feel free to fork or use it as inspiration.
-
-
-
----
-
-Would you like me to:
-- Add **animated or gradient badges** (for a neon-glow look)?  
-- Or keep this **clean GitHub markdown style**?  
-
-I can generate either instantly.
-
