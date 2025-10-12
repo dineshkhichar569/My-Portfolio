@@ -68,7 +68,6 @@ To run this project locally:
 ```bash
 # Clone the repository
 git clone https://github.com/dineshkhichar569/My-Portfolio.git
-
 # Navigate to project directory
 cd My-Portfolio
 
@@ -77,6 +76,8 @@ npm install
 
 # Start the development server
 npm run dev
+```
+---
 
 ## 🙋‍♂️ Author
 
