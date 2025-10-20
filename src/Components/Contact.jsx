@@ -74,10 +74,10 @@ function Contact() {
                       Email (Primary)
                     </label>
                     <a
-                      href="mailto:wollverinel97@gmail.com"
+                      href="mailto:dinesh.khichar.work@gmail.com"
                       className="block text-lg tracking-wide font-medium group-hover:underline underline-offset-4 decoration-white/50 transition-all"
                     >
-                      wollverinel97@gmail.com
+                      dinesh.khichar.work@gmail.com
                     </a>
                   </div>
 
@@ -110,7 +110,7 @@ function Contact() {
 
               {/* Contact Button */}
               <a
-                href="mailto:wollverinel97@gmail.com?subject=Let's Connect&body=Hi Dinesh,"
+                href="mailto:dinesh.khichar.work@gmail.com?subject=Let's Connect&body=Hi Dinesh,"
                 className="cursor-target inline-block mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 text-white font-semibold tracking-wider border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-white/20 relative overflow-hidden"
               >
                 <span className="relative z-10">📨 Reach Out</span>
