@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import image from "../assets/popUp.webp";
 import ClickSpark from "../React-Bits/ClickSpark";
 import TargetCursor from "../React-Bits/TargetCursor";
+import { Link } from "react-router-dom";
 
 function PopUpPhoto() {
   const [progress, setProgress] = useState(0);
@@ -107,17 +108,29 @@ function PopUpPhoto() {
                 Endure the Cost. Become the Standard.
               </p>
 
-              <a
-                href="/DOCs/Dinesh_Khichar_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-target inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-900 font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:scale-110 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
-              >
-                READ THE PATH I FORGED ⚔️
-                <p className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-white text-sm text-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-500">
-                  Dinesh's Resume
-                </p>
-              </a>
+              <div className="pt-6 flex flex-wrap items-center justify-center gap-6">
+                <a
+                  href="/DOCs/Dinesh_Khichar_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-[0_0_20px_rgba(34,211,238,0.4)] text-slate-900 font-extrabold hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                >
+                  📑 View Resume
+                </a>
+
+                <Link
+                  to="/about"
+                  className="cursor-target inline-block px-6 py-3 rounded-full bg-white/5 border border-cyan-400/40 text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                >
+                  🏅 Certifications
+                </Link>
+                <Link
+                  to="/project"
+                  className="cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-violet-400 to-indigo-600 text-white font-bold shadow-[0_0_18px_rgba(168,85,247,0.35)] hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                >
+                  💡 Projects
+                </Link>
+              </div>
             </div>
           </div>
         </div>
