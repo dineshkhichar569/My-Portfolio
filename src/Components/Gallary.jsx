@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 import Navbar from "./Navbar";
 
+import image from "../assets/profile2.JPG"
+
 const images = [
   "/gallary/11.webp",
   "/gallary/6.webp",
@@ -176,7 +178,7 @@ const Gallery = () => {
         <img
           className="w-32 h-32 md:w-[200px] md:h-[200px] rounded-full object-cover border-4 border-black"
           loading="lazy"
-          src="/gallary/profile.webp"
+          src={image}
           alt="img"
         />
         <div className="text-center md:text-left">

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
-import image from "../assets/popUp.webp";
+import image from "../assets/profile.PNG";
 
 // import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 
@@ -74,7 +74,7 @@ function PopUpPhoto() {
                   src={image}
                   loading="lazy"
                   alt="Pop-up Visual"
-                  className="w-full h-[650px] object-cover rounded-3xl group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 ease-out"
+                  className="w-full h-[550px] object-cover rounded-3xl group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 ease-out"
                 />
               </div>
             </div>
