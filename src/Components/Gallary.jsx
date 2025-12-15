@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Navbar from "./Navbar";
 
-import image from "../assets/profile2.JPG"
+import image from "../assets/profile2.jpg"
 
 const images = [
   "/gallary/11.webp",
