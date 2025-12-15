@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const projects = [
@@ -187,7 +187,9 @@ const Projects = () => {
       </div>
 
       <Navbar />
-      <ClickSpark/>
+
+      {/* <ClickSpark/> */}
+      
       <TargetCursor/>
 
       <motion.div

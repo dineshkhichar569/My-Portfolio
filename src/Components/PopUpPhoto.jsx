@@ -3,7 +3,9 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import image from "../assets/popUp.webp";
-import ClickSpark from "../React-Bits/ClickSpark";
+
+// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
+
 import TargetCursor from "../React-Bits/TargetCursor";
 import { Link } from "react-router-dom";
 
@@ -46,7 +48,7 @@ function PopUpPhoto() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black opacity-40" />
           </div>
 
-          <ClickSpark />
+          {/* <ClickSpark /> */}
 
           {/* Animated Pop-Up Image for Large Screens */}
           <Tilt

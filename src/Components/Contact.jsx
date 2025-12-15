@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 
 import { motion } from "framer-motion";
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 function Contact() {
@@ -21,7 +21,7 @@ function Contact() {
 
       <Navbar />
       <TargetCursor/>
-      <ClickSpark/>
+      {/* <ClickSpark/> */}
 
       <section className="md:mx-[50px] mt-[60px]">
 

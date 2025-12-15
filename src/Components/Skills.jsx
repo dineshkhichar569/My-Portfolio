@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 import { motion } from "framer-motion";
 import Footer from "./Footer";
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const skillVariants = {
@@ -63,7 +63,9 @@ function Skills() {
     <div className="">
       <Navbar />
       <TargetCursor/>
-      <ClickSpark/>
+
+      
+      {/* <ClickSpark/> */}
 
       <div className="relative overflow-hidden text-white">
         {/* Fixed animated gradient background */}

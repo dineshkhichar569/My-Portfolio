@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import Navbar from "./Navbar";
-import ClickSpark from "../React-Bits/ClickSpark";
 
 const images = [
   "/gallary/11.webp",
@@ -79,10 +78,60 @@ const images = [
   "/gallary/84765.webp",
 ];
 
+const GallaryItem = ({
+  src,
+  alt,
+  index,
+  onClick,
+  onHover,
+  forAnimation,
+  isDesktop,
+  fetchpriority,
+}) => {
+
+  return (
+    <motion.div
+      onClick={onClick}
+      className="overflow-hidden rounded-xl shadow-lg cursor-pointer"
+      onMouseEnter={() => isDesktop && onHover(index)}
+      onMouseLeave={() => isDesktop && onHover(null)}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0, ...forAnimation(index) }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      }}
+    >
+      <img
+        src={src}
+        loading="lazy"
+        decoding="async"
+        fetchpriority={fetchpriority}
+        className={`w-full ${
+          index === -1 ? "object-contain max-h-[80vh]" : "object-cover"
+        }`}
+        alt={alt}
+      />
+    </motion.div>
+  );
+};
+
 const Gallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  ////////   so that getMotionProps() animations should not work in mobile
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setIsDesktop(mq.matches);
+    console.log("Hover supported:", isDesktop);
+  }, []);
+
   const getMotionProps = (index) => {
+    if (!isDesktop) return {};
     if (hoveredIndex === null) return {};
 
     if (index === hoveredIndex) {
@@ -121,9 +170,6 @@ const Gallery = () => {
       </div>
 
       <Navbar />
-      <ClickSpark/>
-
-
 
       {/* Profile display */}
       <div className="mx-4 md:mx-[50px] mt-[40px] mb-[40px] flex flex-col md:flex-row gap-6 md:gap-[50px] items-center rounded-3xl p-4 md:p-6 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden group transition-all duration-1000">
@@ -143,55 +189,42 @@ const Gallery = () => {
         </div>
       </div>
 
-
-
-
       {/* All Images */}
-      <div className="p-6 columns-2 sm:columns-3 md:columns-4 gap-5 space-y-5 md:mx-[50px] mx-0">
-        {images.map((src, index) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, { once: true });
-
-          return (
-            <motion.div
-              onClick={() => setSelectedImage(src)}
-              ref={ref}
-              key={index}
-              className="overflow-hidden rounded-xl shadow-lg cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              initial={{ opacity: 0, y: 30 }}
-              animate={
-                isInView ? { opacity: 1, y: 0, ...getMotionProps(index) } : {}
-              }
-              transition={{
-                duration: 0.5,
-                type: "spring",
-                stiffness: 200,
-                damping: 20,
-              }}
-            >
-              <img
-                src={src}
-                alt={`Image ${index}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500"
-              />
-            </motion.div>
-          );
-        })}
+      <div
+        className={`p-6 gap-5 md:mx-[50px] mx-0 ${
+          isDesktop
+            ? "columns-2 sm:columns-3 md:columns-4 space-y-5"
+            : "grid grid-cols-2 gap-4"
+        }`}
+      >
+        {images.map((src, index) => (
+          <GallaryItem
+            key={index}
+            src={src}
+            index={index}
+            fetchPriority={index < 6 ? "high" : "low"}
+            onClick={() => setSelectedImage(src)}
+            onHover={setHoveredIndex}
+            forAnimation={getMotionProps}
+            isDesktop={isDesktop}
+          />
+        ))}
       </div>
 
       {/* Image popup when it will clicked */}
       {selectedImage && (
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
           <div className="relative p-4">
-            <img
+            <GallaryItem
               src={selectedImage}
               alt="Enlarged"
-              loading="lazy"
-              className="max-w-[90vw] max-h-[80vh] rounded-xl shadow-2xl"
+              index={-1}
+              onClick={() => {}}
+              onHover={() => {}}
+              forAnimation={() => ({})}
+              className="max-w-[90vw] rounded-xl shadow-2xl"
             />
+
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-6 right-6 text-white bg-black/30 backdrop-blur-md border border-white/20 px-2 rounded-lg shadow-md text-4xl font-rubrik font-medium hover:bg-gray-800"
@@ -203,7 +236,12 @@ const Gallery = () => {
               download
               className="absolute bottom-8 right-8 bg-black/30 backdrop-blur-md border border-white/20 rounded-lg shadow-md hover:bg-gray-800"
             >
-              <img src="/icons/Download.svg" className="w-8 h-8" loading="lazy" alt="download" />
+              <img
+                src="/icons/Download.svg"
+                className="w-8 h-8"
+                loading="lazy"
+                alt="download"
+              />
             </a>
           </div>
         </div>

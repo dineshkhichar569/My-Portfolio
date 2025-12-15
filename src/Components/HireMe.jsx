@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";    //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const HireMe = () => {
@@ -38,7 +38,7 @@ const HireMe = () => {
   return (
     <div className="relative min-h-screen w-full px-6 py-20 bg-gradient-to-br from-[#0f0c29] via-[#000000] to-[#24243e] text-white overflow-hidden">
 
-      <ClickSpark/>
+      {/* <ClickSpark/> */}
       <TargetCursor/>
 
       {/* Blurred Glass Layer */}

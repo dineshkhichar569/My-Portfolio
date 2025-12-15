@@ -5,7 +5,7 @@ import matrixSchool from "../assets/Matrix.webp";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const fadeInUp = {
@@ -41,7 +41,7 @@ function About() {
     <div className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik">
       <TargetCursor/>
       <Navbar />
-      <ClickSpark/>
+      {/* <ClickSpark/> */}
 
       {/* Background blobs */}
       <div className="abstract-blobs z-0">

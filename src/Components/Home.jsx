@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import DesktopSetup from "./DesktopSetup";
 import BackgroundImage from "../assets/background2.webp";
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
-      <ClickSpark />
+      {/* <ClickSpark /> */}
 
       <div className="relative z-0 w-full">
         <div className="h-screen flex flex-col gap-10 sticky -top-36">

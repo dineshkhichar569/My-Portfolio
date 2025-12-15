@@ -3,12 +3,14 @@ import React from "react";
 import setupImage from "../assets/Setup.webp";
 import { motion } from "framer-motion";
 import Tilt from 'react-parallax-tilt';
-import ClickSpark from "../React-Bits/ClickSpark";
+// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 
 export default function DesktopSetup() {
   return (
     <section className="relative w-full h-screen overflow-hidden text-white font-sans">
-      <ClickSpark/>
+      
+      {/* <ClickSpark/> */}
+      
       {/* Fullscreen Background Image */}
       <img
         src={setupImage}
