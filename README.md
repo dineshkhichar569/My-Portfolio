@@ -91,4 +91,4 @@ Fullstack & DevOps Enthusiast | B.Tech CSE @ DIT University
 ## 💖 Acknowledgement
 
 Thanks for checking out my portfolio!
-If you like it, please ⭐ star this repository and feel free to fork or use it as inspiration.
+If you like it, please ⭐⭐ star this repository and feel free to fork or use it as inspiration.
