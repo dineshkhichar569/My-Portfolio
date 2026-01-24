@@ -77,6 +77,15 @@ html {
   font-weight: 900;
   cursor: url('/pick.svg'), auto;
 }
+
+.cursor-normal {
+  cursor: url('/hammer-normal.png'), auto;
+}
+.cursor-normal:active {
+  cursor: url('/hammer-hit.png'), auto;
+}
+
+
 .my-name span {
   position: relative;
   color: #fff;
