@@ -2,12 +2,12 @@ import React from "react";
 import Navbar from "./Navbar";
 
 import { motion } from "framer-motion";
-// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 function Contact() {
   return (
-    <div className="bg-black">
+    <div className="bg-black cursor-normal">
       {/* For Background */}
       <div className="abstract-blobs z-0">
         <span className="blob blob1"></span>
@@ -21,7 +21,7 @@ function Contact() {
 
       <Navbar />
       <TargetCursor/>
-      {/* <ClickSpark/> */}
+      <ClickSpark/>
 
       <section className="md:mx-[50px] mt-[60px]">
 

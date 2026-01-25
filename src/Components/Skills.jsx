@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 import { motion } from "framer-motion";
 import Footer from "./Footer";
-// import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const skillVariants = {
@@ -60,12 +60,12 @@ const SkillsSection = ({ title, subtitle, skills, startIndex = 0 }) => (
 
 function Skills() {
   return (
-    <div className="">
+    <div className=" cursor-normal">
       <Navbar />
       <TargetCursor/>
 
       
-      {/* <ClickSpark/> */}
+      <ClickSpark/>
 
       <div className="relative overflow-hidden text-white">
         {/* Fixed animated gradient background */}

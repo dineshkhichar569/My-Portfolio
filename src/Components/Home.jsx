@@ -15,7 +15,7 @@ function Home() {
 
       <ClickSpark />
 
-      <div className="relative z-0 w-full">
+      <div className="relative z-0 w-full cursor-normal">
         <div className="h-screen flex flex-col gap-10 sticky -top-36">
           {/* for Home Background */}
           <img
@@ -27,7 +27,7 @@ function Home() {
 
           <Navbar />
 
-          <main className="flex justify-start h-full cursor-normal">
+          <main className="flex justify-start h-full">
             <div className="left p-3 flex flex-col gap-10 items-start relative">
               <div className="flex flex-col gap-10 px-4 sm:px-10 md:pl-20 text-white">
                 <h1 className="my-name text-4xl sm:text-5xl md:text-xl lg:text-7xl cursor-normal">

@@ -5,7 +5,7 @@ import matrixSchool from "../assets/Matrix.webp";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-// import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const fadeInUp = {
@@ -38,10 +38,10 @@ const GlassCard = ({ img, title, subtitle, extra, score }) => (
 
 function About() {
   return (
-    <div className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik">
+    <div className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik cursor-normal">
       <TargetCursor/>
       <Navbar />
-      {/* <ClickSpark/> */}
+      <ClickSpark/>
 
       {/* Background blobs */}
       <div className="abstract-blobs z-0">

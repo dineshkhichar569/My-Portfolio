@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-// import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const projects = [
@@ -178,7 +178,7 @@ const ProjectCard = ({ project, index }) => (
 
 const Projects = () => {
   return (
-    <div className="relative z-0 min-h-screen text-white bg-black">
+    <div className="relative z-0 min-h-screen text-white bg-black cursor-normal">
       {/* Blobs background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-pink-500 opacity-20 rounded-full blur-3xl animate-pulse" />
@@ -188,7 +188,7 @@ const Projects = () => {
 
       <Navbar />
 
-      {/* <ClickSpark/> */}
+      <ClickSpark/>
       
       <TargetCursor/>
 

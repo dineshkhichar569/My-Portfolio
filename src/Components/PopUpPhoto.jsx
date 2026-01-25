@@ -37,7 +37,7 @@ function PopUpPhoto() {
   const opacity = progress;
 
   return (
-    <div className="relative bg-black text-white rounded-t-[50px]">
+    <div className="relative bg-black text-white rounded-t-[50px] cursor-normal">
       <TargetCursor />
       <section ref={sectionRef} className="relative h-[150vh]">
         {/* Sticky Container */}
