@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -11,111 +11,121 @@ const navItems = [
   { label: "Contact", path: "/contact" },
 ];
 
-const linkVariants = {
-  hidden: { opacity: 0, x: 20 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: i * 0.05, duration: 0.3 },
-  }),
-};
-
-const drawerVariants = {
-  hidden: { x: "100%" },
-  visible: { x: 0, transition: { duration: 0.4, ease: "easeInOut" } },
-  exit: { x: "100%", transition: { duration: 0.3, ease: "easeInOut" } },
-};
-
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="w-full px-4 sm:px-6 py-4 relative z-50">
-      <nav className="text-white flex justify-between items-center">
-        <Link to="/" className="text-3xl sm:text-4xl font-semibold font-rubrik">
-          Dinesh K.
-        </Link>
+    <main
+      className={`fixed z-40 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
+      ${scrolled ? "top-3 left-3 right-3" : "top-0 left-0 right-0"}`}
+    >
+      <div
+        className={`w-full px-4 sm:px-6 py-4 ${
+          scrolled
+            ? "rounded-3xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-3xl border border-white/10  shadow-[0_20px_80px_rgba(0,0,0,0.6)]"
+            : "rounded-none bg-transparent"
+        } `}
+      >
+        <nav className="text-white flex justify-between items-center">
+          <Link
+            to="/"
+            className="text-3xl sm:text-4xl font-semibold font-rubrik"
+          >
+            Dinesh K.
+          </Link>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex list-none gap-10 md:gap-1 items-center">
-          {navItems.map((item, i) => (
-            <motion.li
-              key={item.label}
-              custom={i}
-              initial="hidden"
-              animate="visible"
-              variants={linkVariants}
-              className="relative group"
-            >
-              <Link
-                to={item.path}
-                className="text-lg font-medium inline-block px-2 py-1 relative overflow-hidden"
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex list-none gap-10 md:gap-1 items-center">
+            {navItems.map((item, i) => (
+              <motion.li
+                key={item.label}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05, duration: 0.3 }}
+                className="relative group"
               >
-                <motion.span
-                  whileHover={{
-                    color: "#00faff",
-                    textShadow: "0px 0px 12px #00faff",
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                  }}
-                  className="relative z-20"
+                <Link
+                  to={item.path}
+                  className="text-lg font-medium inline-block px-2 py-1 relative overflow-hidden"
                 >
-                  {item.label}
-                </motion.span>
+                  <motion.span
+                    whileHover={{
+                      color: "#00faff",
+                      textShadow: "0px 0px 12px #00faff",
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="relative z-20"
+                  >
+                    {item.label}
+                  </motion.span>
 
-                {/* Liquid underline effect */}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300 ease-in-out blur-sm rounded-full" />
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-200 group-hover:w-full transition-all duration-300 ease-in-out delay-100" />
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
+                  {/* Liquid underline */}
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300 ease-in-out blur-sm rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-200 group-hover:w-full transition-all duration-300 ease-in-out delay-100" />
+                </Link>
+              </motion.li>
+            ))}
+          </ul>
 
-        {/* Hamburger Icon */}
-        <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <div className="space-y-1">
-            <span className="block w-6 h-0.5 bg-white"></span>
-            <span className="block w-6 h-0.5 bg-white"></span>
-            <span className="block w-6 h-0.5 bg-white"></span>
-          </div>
-        </button>
-      </nav>
-
-      {/* Right-side popup menu */}
+          {/* Hamburger */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            <div className="relative w-6 h-5">
+              <motion.span
+                animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute left-0 w-6 h-0.5 origin-center bg-white"
+              />
+              <motion.span
+                animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-2 left-0 w-6 h-0.5 bg-white"
+              />
+              <motion.span
+                animate={
+                  menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
+                }
+                transition={{ duration: 0.3 }}
+                className="absolute bottom-0 left-0 w-6 h-0.5 bg-white"
+              />
+            </div>
+          </button>
+        </nav>
+      </div>
+      {/* Mobile Drawer (Slides from Top) */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             key="drawer"
-            variants={drawerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="fixed top-0 right-0 w-[270px] h-screen bg-white/5 backdrop-blur-xl border-l border-white/10 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] flex flex-col px-6 py-8 gap-6 z-40 overflow-hidden"
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+            className="fixed top-[90px] right-4 left-4 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-3xl border border-white/10 shadow-[0_25px_100px_rgba(0,0,0,0.8)] p-6 flex flex-wrap items-center justify-center gap-6 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-r before:from-cyan-500/10 before:via-purple-500/10 before:to-pink-500/10 before:opacity-40 before:blur-2xl before:-z-10"
           >
-            {/* Close Button */}
-            <button
-              className="text-white text-2xl self-end mb-4"
-              onClick={() => setMenuOpen(false)}
-            >
-              &times;
-            </button>
-
             {navItems.map((item, i) => (
               <motion.div
                 key={item.label}
-                custom={i}
-                initial="hidden"
-                animate="visible"
-                variants={linkVariants}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.07 }}
+                className="relative group"
               >
                 <Link
                   to={item.path}
-                  className="text-xl font-semibold text-white hover:text-cyan-400"
+                  className="relative px-6 py-2 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 text-white text-lg font-semibold shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:scale-110 hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-purple-500/20 hover:border-cyan-400/40 hover:shadow-[0_15px_50px_rgba(0,255,255,0.3)] active:scale-95"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
@@ -125,7 +135,7 @@ function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }
 

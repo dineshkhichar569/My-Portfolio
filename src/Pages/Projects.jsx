@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
@@ -193,7 +193,7 @@ const Projects = () => {
       <TargetCursor/>
 
       <motion.div
-        className="relative flex justify-center items-center mt-[100px] mb-[80px]"
+        className="relative flex justify-center items-center pt-32 mb-[80px]"
         initial={{ opacity: 0, scale: 0.8, y: -30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}

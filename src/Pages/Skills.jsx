@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 
 import { motion } from "framer-motion";
-import Footer from "./Footer";
+import Footer from "../Components/Footer";
 import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
@@ -67,7 +67,7 @@ function Skills() {
       
       <ClickSpark/>
 
-      <div className="relative overflow-hidden text-white">
+      <div className="relative overflow-hidden text-white pt-20">
         {/* Fixed animated gradient background */}
         <div className="fixed inset-0 -z-20 bg-[length:400%_400%] bg-gradient-to-br from-[#0f0c29] via-[#0c0c0c] to-[#24243e] animate-[gradientShift_20s_ease_infinite]" />
 

@@ -1,19 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Components/Home";
-import Navbar from "./Components/Navbar";
-import PopUpPhoto from "./Components/PopUpPhoto";
-import About from "./Components/About";
-import Gallary from "./Components/Gallary";
-import Contact from "./Components/Contact";
-import Skills from "./Components/Skills";
-import Projects from "./Components/Projects";
-import HireMeForm from "./Components/HireMe";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Gallary from "./Pages/Gallary";
+import Contact from "./Pages/Contact";
+import Skills from "./Pages/Skills";
+import Projects from "./Pages/Projects";
+import HireMeForm from "./Pages/HireMe";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

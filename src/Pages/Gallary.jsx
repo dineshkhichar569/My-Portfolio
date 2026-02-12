@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 
-import image from "../assets/profile2.jpg"
+import image from "../assets/profile2.jpg";
 
 const images = [
   "/gallary/11.webp",
@@ -90,7 +90,6 @@ const GallaryItem = ({
   isDesktop,
   fetchpriority,
 }) => {
-
   return (
     <motion.div
       onClick={onClick}
@@ -159,9 +158,18 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className="bg-black">
+    <section
+      className="bg-black pt-36"
+      onClick={() => {
+        if (selectedImage) {
+          setSelectedImage(false);
+        }
+      }}
+    >
+      <Navbar />
+
       {/* For Background */}
-      <div className="abstract-blobs z-0">
+      {/* <div className="abstract-blobs z-0">
         <span className="blob blob1"></span>
         <span className="blob blob2"></span>
         <span className="blob blob3"></span>
@@ -169,12 +177,10 @@ const Gallery = () => {
           id="blobCanvas"
           className="absolute top-0 left-0 w-full h-full z-[-1]"
         ></canvas>
-      </div>
-
-      <Navbar />
+      </div> */}
 
       {/* Profile display */}
-      <div className="mx-4 md:mx-[50px] mt-[40px] mb-[40px] flex flex-col md:flex-row gap-6 md:gap-[50px] items-center rounded-3xl p-4 md:p-6 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden group transition-all duration-1000">
+      <div className="mx-4 md:mx-[50px] mb-[40px] flex flex-col md:flex-row gap-6 md:gap-[50px] items-center rounded-3xl p-4 md:p-6 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden group transition-all duration-1000">
         <img
           className="w-32 h-32 md:w-[200px] md:h-[200px] rounded-full object-cover border-4 border-black"
           loading="lazy"

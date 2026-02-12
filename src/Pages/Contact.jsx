@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 
 import { motion } from "framer-motion";
 import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
@@ -23,7 +23,7 @@ function Contact() {
       <TargetCursor/>
       <ClickSpark/>
 
-      <section className="md:mx-[50px] mt-[60px]">
+      <section className="md:mx-[50px] pt-36">
 
         
         <div className="text-center">

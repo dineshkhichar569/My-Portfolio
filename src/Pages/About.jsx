@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import Dit from "../assets/dit.webp";
 import matrixSchool from "../assets/Matrix.webp";
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
@@ -55,7 +55,7 @@ function About() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-10 flex flex-col items-center text-center px-1 md:px-28 py-24 space-y-6">
+      <div className="relative z-10 flex flex-col items-center text-center px-1 md:px-28 py-24 space-y-6 mt-28">
         <motion.h1
           initial="hidden"
           whileInView="visible"
