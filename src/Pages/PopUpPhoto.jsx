@@ -112,7 +112,7 @@ function PopUpPhoto() {
 
               <div className="pt-6 flex flex-wrap items-center justify-center gap-6">
                 <a
-                  href="/DOCs/Dinesh_Khichar_Resume.pdf"
+                  href="/DOCs/DineshResume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-[0_0_20px_rgba(34,211,238,0.4)] text-slate-900 font-extrabold hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
