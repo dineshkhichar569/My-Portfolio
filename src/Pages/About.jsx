@@ -401,7 +401,10 @@ function About() {
               className="group relative flex flex-col justify-normal w-full max-w-[360px] h-full bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-500 overflow-hidden group backdrop-blur-xl cursor-pointer pb-6"
             >
               {/* on hover */}
-              <p className="flex gap-1 items-center justify-center absolute top-2 bottom-full mt-2 left-4 z-10 bg-gradient-to-r from-[#00ff88]/20 to-[#00cfff]/20 backdrop-blur-md border border-[#00ffcc]/40 text-center text-xs font-medium text-[#00ffcc] px-2 py-[14px] rounded-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300" onClick={() => setSelectedCertificate(certificate.popupImage)}>
+              <p
+                className="flex gap-1 items-center justify-center absolute top-2 bottom-full mt-2 left-4 z-10 bg-gradient-to-r from-[#00ff88]/20 to-[#00cfff]/20 backdrop-blur-md border border-[#00ffcc]/40 text-center text-xs font-medium text-[#00ffcc] px-2 py-[14px] rounded-full opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
+                onClick={() => setSelectedCertificate(certificate.popupImage)}
+              >
                 <EyeIcon className="w-3.5 h-3.5" /> view
               </p>
 
