@@ -7,7 +7,7 @@ import TargetCursor from "../React-Bits/TargetCursor";
 
 function Contact() {
   return (
-    <div className="bg-black cursor-normal">
+    <div className="bg-black">
       {/* For Background */}
       <div className="abstract-blobs z-0">
         <span className="blob blob1"></span>
@@ -21,7 +21,7 @@ function Contact() {
 
       <Navbar />
       <TargetCursor/>
-      <ClickSpark/>
+      {/* <ClickSpark/> */}
 
       <section className="md:mx-[50px] pt-36">
 

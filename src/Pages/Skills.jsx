@@ -60,12 +60,12 @@ const SkillsSection = ({ title, subtitle, skills, startIndex = 0 }) => (
 
 function Skills() {
   return (
-    <div className=" cursor-normal">
+    <div className="">
       <Navbar />
       <TargetCursor/>
 
       
-      <ClickSpark/>
+      {/* <ClickSpark/> */}
 
       <div className="relative overflow-hidden text-white pt-20">
         {/* Fixed animated gradient background */}
