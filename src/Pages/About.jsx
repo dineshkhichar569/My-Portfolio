@@ -1,12 +1,12 @@
-import React from "react";
 import { motion } from "framer-motion";
 import Dit from "../assets/dit.webp";
 import matrixSchool from "../assets/Matrix.webp";
 
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
+import { useRef } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -37,11 +37,21 @@ const GlassCard = ({ img, title, subtitle, extra, score }) => (
 );
 
 function About() {
+  const experienceRef = useRef(null);
+  const educationRef = useRef(null);
+  const certificateRef = useRef(null);
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <div className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik cursor-normal">
-      <TargetCursor/>
+      <TargetCursor />
       <Navbar />
-      <ClickSpark/>
+      <ClickSpark />
 
       {/* Background blobs */}
       <div className="abstract-blobs z-0">
@@ -54,8 +64,32 @@ function About() {
         ></canvas>
       </div>
 
+      {/* 3 navigation buttons */}
+      <div className="mt-28 flex items-center md:gap-3 gap-2 md:ml-16 ml-6 cursor-pointer w-fit h-10">
+        {["Experience", "Education", "Certificates"].map((item, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              if (i == 0) {
+                scrollToSection(experienceRef);
+              }
+
+              if (i == 1) {
+                scrollToSection(educationRef);
+              }
+              if (i == 2) {
+                scrollToSection(certificateRef);
+              }
+            }}
+            className="text-xs px-3 py-[2px] rounded-xl text-white/80 border border-white/15 bg-white/5 backdrop-blur-sm transition-all duration-200 hover:text-white hover:border-white/40 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(255,255,255,0.1)] active:scale-95"
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+
       {/* Hero Section */}
-      <div className="relative z-10 flex flex-col items-center text-center px-1 md:px-28 py-24 space-y-6 mt-28">
+      <div className="relative z-10 flex flex-col items-center text-center px-1 md:px-28 py-20 space-y-6">
         <motion.h1
           initial="hidden"
           whileInView="visible"
@@ -141,6 +175,7 @@ function About() {
 
       {/* Experience Section */}
       <motion.h2
+        ref={experienceRef}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -154,47 +189,52 @@ function About() {
       </motion.h2>
 
       {/* Education Section */}
-      <motion.h2
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-        className="text-6xl mb-[60px] mt-[150px] font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center"
-      >
-        Education
-      </motion.h2>
-      <div className="relative z-10 px-10 md:px-28 pb-24">
-        {/* School Card */}
-        <GlassCard
-          img={matrixSchool}
-          title="Matrix High School, Sikar"
-          subtitle="Class 12th – Maths (2021 - 2022)"
-          extra="Grade: 85.80%"
-        />
+      <div ref={educationRef}>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-6xl mb-[60px] mt-[150px] font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center"
+        >
+          Education
+        </motion.h2>
+        <div className="relative z-10 px-10 md:px-28 pb-24">
+          {/* School Card */}
+          <GlassCard
+            img={matrixSchool}
+            title="Matrix High School, Sikar"
+            subtitle="Class 12th – Maths (2021 - 2022)"
+            extra="Grade: 85.80%"
+          />
 
-        {/* Vertical Bridge */}
-        <div className="relative flex justify-center items-center w-full h-[150px] overflow-hidden">
-          <div className="absolute w-52 h-52 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/10 blur-[80px] ripple-scale"></div>
+          {/* Vertical Bridge */}
+          <div className="relative flex justify-center items-center w-full h-[150px] overflow-hidden">
+            <div className="absolute w-52 h-52 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/10 blur-[80px] ripple-scale"></div>
 
-          <div className="absolute w-6 h-6 rounded-full bg-cyan-400/60 shadow-[0_0_60px_20px_rgba(0,255,255,0.2)] core-pulse z-10"></div>
+            <div className="absolute w-6 h-6 rounded-full bg-cyan-400/60 shadow-[0_0_60px_20px_rgba(0,255,255,0.2)] core-pulse z-10"></div>
 
-          <h2 className="relative z-20 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-white text-fade">
-            Next Chapter
-          </h2>
+            <h2 className="relative z-20 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-white text-fade">
+              Next Chapter
+            </h2>
+          </div>
+
+          {/* College Card */}
+          <GlassCard
+            img={Dit}
+            title="DIT University, Dehradun"
+            subtitle="Bachelor of Technology - B.Tech CSE (2023 - 2027)"
+            extra="Specialization: FullStack & DevOps"
+            score="CGPA: 8.05"
+          />
         </div>
-
-        {/* College Card */}
-        <GlassCard
-          img={Dit}
-          title="DIT University, Dehradun"
-          subtitle="Bachelor of Technology - B.Tech CSE (2023 - 2027)"
-          extra="Specialization: FullStack & DevOps"
-          score="CGPA: 8.05"
-        />
       </div>
 
       {/* Certifications Section */}
-      <div className="relative z-10 mt-48 px-10 md:px-28 pb-32">
+      <div
+        ref={certificateRef}
+        className="relative z-10 mt-48 px-10 md:px-28 pb-32"
+      >
         <motion.h2
           initial="hidden"
           whileInView="visible"
@@ -229,7 +269,10 @@ function About() {
                 Credential ID: 8R35GNGVE447
               </p>
             </div>
-            <a className="cursor-target absolute bottom-5 right-5" href="/DOCs/DBMS.pdf">
+            <a
+              className="cursor-target absolute bottom-5 right-5"
+              href="/DOCs/DBMS.pdf"
+            >
               <img
                 className="w-8"
                 src="/icons/Download.svg"
@@ -263,7 +306,10 @@ function About() {
                 Credential ID: 05EDPXOXDGH5
               </p>
             </div>
-            <a className="cursor-target absolute bottom-5 right-5" href="/DOCs/LINUX.pdf">
+            <a
+              className="cursor-target absolute bottom-5 right-5"
+              href="/DOCs/LINUX.pdf"
+            >
               <img
                 className="w-8"
                 src="/icons/Download.svg"
