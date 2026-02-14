@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative w-full min-h-[40vh] px-6 md:px-10 py-12 bg-gradient-to-tr from-[#0f0c29] via-[#000000] to-[#24243e] backdrop-blur-xl text-white border-t border-white/10 overflow-hidden z-50 mt-[100px]">
+    <footer className="relative w-full min-h-[40vh] px-6 md:px-10 py-12 bg-gradient-to-tr from-[#0f0c29] via-[#000000] to-[#24243e] backdrop-blur-xl text-white border-t border-white/10 overflow-hidden z-50 pt-[100px]">
       {/* 🫧 Floating Glow Blobs */}
       <div className="absolute w-[300px] h-[300px] bg-[#00ffff] opacity-10 blur-[120px] rounded-full left-[-100px] top-[20%] animate-pulse-slow" />
       <div className="absolute w-[300px] h-[300px] bg-[#ff00cc] opacity-10 blur-[160px] rounded-full right-[-120px] bottom-[10%] animate-pulse-slow" />

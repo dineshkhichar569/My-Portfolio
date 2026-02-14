@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-import ClickSpark from "../React-Bits/ClickSpark";  //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 const projects = [
@@ -42,6 +42,28 @@ const projects = [
     githubLink: "https://github.com/dineshkhichar569/Laundry",
     cssPerBox: "top-[180px]",
   },
+  {
+    title: "Knowledge-Based Course Advisor",
+    description:
+      "AI-powered academic advisor that uses Propositional Logic (Horn Clauses) to infer which courses a student can take based on academic backlogs. Dynamically reasons through course dependencies to allow or block enrollment.",
+    image: "/projects/projects_image/Backlog-Based.webp",
+    video: "",
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "Horn Clauses",
+      "REST API",
+      "Vercel",
+      "Render",
+    ],
+    liveLink: "https://knowledge-based-course-advisor.vercel.app/",
+    githubLink:
+      "https://github.com/dineshkhichar569/knowledge-based-course-advisor.git",
+    cssPerBox: "top-[230px]",
+  },
+
   {
     title: "MentorShip Website",
     description:
@@ -175,7 +197,6 @@ const ProjectCard = ({ project, index }) => (
   </motion.div>
 );
 
-
 const Projects = () => {
   return (
     <div className="relative z-0 min-h-screen text-white bg-black">
@@ -189,8 +210,8 @@ const Projects = () => {
       <Navbar />
 
       {/* <ClickSpark/> */}
-      
-      <TargetCursor/>
+
+      <TargetCursor />
 
       <motion.div
         className="relative flex justify-center items-center pt-32 mb-[80px]"

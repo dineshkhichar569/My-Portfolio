@@ -157,13 +157,8 @@ function Home() {
 
         <PopUpPhoto />
 
-        <div className="text-white relative h-screen">
-          <DesktopSetup />
-
-          <div className="w-full absolute -bottom-[300px]">
-            <Footer />
-          </div>
-        </div>
+        <DesktopSetup />
+        <Footer />
       </div>
     </>
   );
