@@ -7,7 +7,7 @@ import Footer from "../Components/Footer";
 import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 import { useRef, useState } from "react";
-import { Download, EyeIcon, X } from "lucide-react";
+import { Download, EyeIcon, FileText, X } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -21,25 +21,80 @@ const fadeInUp = {
     },
   }),
 };
-const EducationCard = ({ img, title, subtitle, extra, score }) => (
+
+const EducationCard = ({
+  img,
+  title,
+  degree,
+  duration,
+  grade,
+  tags = [],
+  highlight,
+  ongoing,
+}) => (
   <motion.div
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
     variants={fadeInUp}
-    className="flex items-start gap-6 p-6 bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_0_60px_0_rgba(255,255,255,0.05)] hover:shadow-cyan-500/20 transition-shadow duration-500"
+    className="relative flex md:flex-row flex-col md:justify-normal md:items-start items-center gap-6 p-8 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] transition-all duration-500 before:absolute before:left-0 before:top-0 before:h-full before:w-[3px] before:bg-gradient-to-b before:rounded-l-2xl"
   >
+    {/* school logo */}
     <img
       src={img}
       alt={title}
       loading="lazy"
-      className="md:w-[100px] w-[60px] md:h-[100px] h-[60px] object-cover rounded-xl"
+      className="md:w-[100px] w-[70px] md:h-[100px] h-[70px] 
+      object-cover rounded-xl border border-white/10"
     />
-    <div className="space-y-2">
-      <p className="md:text-3xl text-lg font-semibold">{title}</p>
-      <p className="md:text-lg text-sm text-gray-300">{subtitle}</p>
-      {extra && <p className="md:text-lg text-sm text-gray-400">{extra}</p>}
-      <p className="text-gray-400 md:text-lg text-sm">{score}</p>
+
+    {/* education details */}
+    <div className="flex-1 space-y-3">
+      <h3 className="md:text-3xl text-xl font-bold tracking-wide text-white">
+        {title}
+      </h3>
+
+      {/* Degree */}
+      <p className="md:text-lg text-sm text-gray-300">{degree}</p>
+
+      {/* Date */}
+      <div className="flex items-center gap-3 flex-wrap">
+        <span
+          className="px-3 py-1 text-xs rounded-md 
+        bg-white/5 border border-white/10 text-white/70"
+        >
+          {duration}
+        </span>
+
+        {ongoing && (
+          <span className="text-xs text-emerald-400 font-semibold">
+            ● Currently Pursuing
+          </span>
+        )}
+      </div>
+
+      {grade && <p className="text-gray-400 md:text-base text-sm">{grade}</p>}
+
+      {/* Tags */}
+      {tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-2">
+          {tags.map((tag, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 text-xs rounded-full 
+              bg-white/5 text-white/80 
+              border border-white/10"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Highlight text */}
+      {highlight && (
+        <p className="text-sm text-gray-400 mt-3 italic">{highlight}</p>
+      )}
     </div>
   </motion.div>
 );
@@ -169,6 +224,61 @@ const certificates = [
     skills: ["Hackathon", "Team Collaboration", "HTML", "CSS", "JavaScript"],
     content: "/DOCs/Hackathon.pdf",
     popupImage: "/DOCs/images/Hackathon.webp",
+  },
+];
+
+const experiences = [
+  {
+    company: "Bluestock Fintech",
+    role: "Software Development Engineer (SDE) Intern",
+    duration: "Dec 1, 2025 – Jan 30, 2026",
+    type: "Internship",
+    description:
+      "Worked on fintech-grade backend systems focusing on performance, scalability, and clean architecture. Contributed to real-world problem-solving tasks, API development, and system optimization in a production-oriented environment.",
+    skills: [
+      "Backend Development",
+      "Node.js",
+      "REST APIs",
+      "Problem Solving",
+      "System Design Basics",
+      "Fintech Systems",
+    ],
+    offerLetter: "/DOCs/BlueStock_offerLetter.pdf",
+    certificate: "/DOCs/BlueStocks.pdf",
+  },
+  {
+    company: "The Developers Arena",
+    role: "Full Stack Web Development Intern",
+    duration: "Nov 2025 – Feb 2026",
+    type: "Internship",
+    description:
+      "Completed a 3-month intensive full-stack internship building scalable MERN applications. Designed RESTful APIs, optimized frontend performance, and delivered production-ready projects with focus on clean UI/UX and maintainable architecture.",
+    skills: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Full Stack Development",
+      "API Integration",
+    ],
+    offerLetter: "/DOCs/DevelopersArena_offerLetter.pdf",
+    certificate: "/DOCs/Developers_Arena.pdf",
+  },
+  {
+    company: "Self / Academic Project",
+    role: "Full Stack Developer – AI Powered ATS System",
+    duration: "2026 – Present",
+    type: "Ongoing Project",
+    description:
+      "Developing an internal hiring Applicant Tracking System using MERN stack integrated with AI APIs for resume parsing and candidate screening. Implemented secure authentication, role-based access control, and scalable REST architecture focused on automation and efficiency.",
+    skills: [
+      "MERN Stack",
+      "AI APIs",
+      "Authentication",
+      "RBAC",
+      "REST Architecture",
+      "MongoDB",
+    ],
   },
 ];
 
@@ -319,19 +429,89 @@ function About() {
       </div>
 
       {/* Experience Section */}
-      <motion.h2
-        ref={experienceRef}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-        className="text-6xl mb-[60px] mt-[50px] font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center"
-      >
-        Experience
-        <p className="text-xl text-gray-500 font-extralight mt-1">
-          Comming Soon.....
-        </p>
-      </motion.h2>
+      <div ref={experienceRef} className="relative z-10 px-3 md:px-28 mt-32">
+        {/* Top horizontal line */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-6xl font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center mb-20"
+        >
+          Experience
+        </motion.h2>
+
+        <div className="relative border-l border-white/10 ml-2 md:ml-4 space-y-16">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="relative md:pl-10 pl-5"
+            >
+              {/* Timeline Dot */}
+              <div className="absolute -left-[9px] top-2 w-4 h-4 bg-cyan-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.8)]" />
+
+              <div className="bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-2xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-500">
+                <h3 className="text-2xl font-semibold bg-gradient-to-r from-[#00ff88] via-white to-[#00cfff] bg-clip-text text-transparent">
+                  {exp.role}
+                </h3>
+
+                <p className="text-gray-300 mt-1">🏢 {exp.company}</p>
+
+                <p className="text-gray-500 text-sm">
+                  📅 {exp.duration} • {exp.type}
+                </p>
+
+                <p className="text-gray-400 mt-4 leading-relaxed">
+                  {exp.description}
+                </p>
+
+                {/* Skills */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {exp.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-[2px] text-xs rounded-full bg-white/5 text-[#00ffcc] border border-white/10"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4 mt-6">
+                  {exp.offerLetter && (
+                    <a
+                      href={exp.offerLetter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-sm hover:bg-white/20 transition"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Offer Letter
+                    </a>
+                  )}
+
+                  {exp.certificate && (
+                    <a
+                      href={exp.certificate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-sm hover:bg-white/20 transition"
+                    >
+                      <Download className="w-4 h-4" />
+                      Certificate
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
       {/* Education Section */}
       <div ref={educationRef}>
@@ -342,6 +522,8 @@ function About() {
           variants={fadeInUp}
           className="text-6xl mb-[60px] mt-[150px] font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center"
         >
+          {/* Top horizontal line */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
           Education
         </motion.h2>
         <div className="relative z-10 px-10 md:px-28 pb-24">
@@ -349,8 +531,10 @@ function About() {
           <EducationCard
             img={matrixSchool}
             title="Matrix High School, Sikar"
-            subtitle="Class 12th – Maths (2021 - 2022)"
-            extra="Grade: 85.80%"
+            degree="Class 12th – Mathematics"
+            duration="2021 – 2022"
+            grade="Grade: 85.80%"
+            highlight="Built strong analytical foundation in Mathematics & Logical Reasoning"
           />
 
           {/* Vertical Bridge */}
@@ -368,9 +552,22 @@ function About() {
           <EducationCard
             img={Dit}
             title="DIT University, Dehradun"
-            subtitle="Bachelor of Technology - B.Tech CSE (2023 - 2027)"
-            extra="Specialization: FullStack & DevOps"
-            score="CGPA: 8.05"
+            degree="Bachelor of Technology – Computer Science Engineering"
+            duration="2023 – 2027"
+            grade="CGPA: 8.05"
+            tags={[
+              "Full Stack",
+              "DevOps",
+              "MERN Stack",
+              "Cloud Computing",
+              "JAVA",
+              "Data Structure & Algorithm",
+              "Design and Analysis of Algorithms",
+              "DBMS",
+              "Operating System",
+            ]}
+            highlight="Actively building production-level MERN applications & AI-integrated systems"
+            ongoing={true}
           />
         </div>
       </div>
@@ -380,6 +577,8 @@ function About() {
         ref={certificateRef}
         className="relative z-10 mt-48 px-10 md:px-28 pb-32"
       >
+        {/* Top horizontal line */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
         <motion.h2
           initial="hidden"
           whileInView="visible"
