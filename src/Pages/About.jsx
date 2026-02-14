@@ -265,7 +265,7 @@ const experiences = [
     certificate: "/DOCs/Developers_Arena.pdf",
   },
   {
-    company: "Self / Academic Project",
+    company: "Self Project",
     role: "Full Stack Developer – AI Powered ATS System",
     duration: "2026 – Present",
     type: "Ongoing Project",
@@ -384,44 +384,86 @@ function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="flex flex-col md:flex-row gap-6 justify-center items-center mt-12"
+          className="flex flex-wrap gap-6 justify-center items-center mt-12"
         >
+          {/* Leetcode */}
           <a
             href="https://leetcode.com/u/DineshSunny/"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-target flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
               alt="LeetCode"
               loading="lazy"
-              className="w-8 h-8"
+              className="md:w-8 w-5 md:h-8 h-5"
             />
-            <span className="text-white text-lg font-medium group-hover:text-yellow-600 transition duration-500">
+            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-yellow-600 transition duration-500">
               LeetCode Profile
             </span>
-            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-500">
+            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-yellow-600 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
               Visit Profile
             </p>
           </a>
 
+          {/* Geeks for Geeks */}
           <a
-            href="https://www.geeksforgeeks.org/user/wollver962d/?_gl=1*aslot6*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw4efDBhATEiwAaDBpblgSo40PW4ABXWC1GQenuqBjEfzZul5heedj-p0xZt_e6v2_9rfgwBoClJsQAvD_BwE&gbraid=0AAAAAC9yBkDcSo3LmM-RejRscFLXbafzf"
+            href="https://www.geeksforgeeks.org/profile/wollver962d"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-target flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
               alt="GFG"
               loading="lazy"
-              className="w-8 h-8 bg-white rounded-full p-1"
+              className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1"
             />
-            <span className="text-white text-lg font-medium group-hover:text-green-600 transition duration-500">
+            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-green-600 transition duration-500">
               GeeksforGeeks Profile
             </span>
-            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-500">
+            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-green-600 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
+              Visit Profile
+            </p>
+          </a>
+          {/* GitHub */}
+          <a
+            href="https://github.com/dineshkhichar569"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+          >
+            <img
+              src="https://img.icons8.com/?size=512&id=12599&format=png"
+              alt="github"
+              loading="lazy"
+              className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1"
+            />
+            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-gray-500 transition duration-500">
+              GitHub Profile
+            </span>
+            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
+              Visit Profile
+            </p>
+          </a>
+          {/* Upwork */}
+          <a
+            href="https://www.upwork.com/freelancers/~0168bdfd724188829d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+          >
+            <img
+              src="https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png"
+              alt="GFG"
+              loading="lazy"
+              className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1"
+            />
+            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-gray-500 transition duration-500">
+              Upwork freelancer Profile
+            </span>
+            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
               Visit Profile
             </p>
           </a>
