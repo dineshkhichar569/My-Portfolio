@@ -53,7 +53,7 @@ function Home() {
                 {/* Buttons */}
                 <div className="flex flex-row gap-4 sm:gap-6">
                   {/* Hire Me Button */}
-                  <div className="cursor-target rounded-xl">
+                  <div className="md:cursor-target rounded-xl">
                     <Link
                       to="/hire"
                       className="group relative inline-flex items-center justify-center w-auto px-3 sm:px-6 md:px-5 py-2 sm:py-3 font-semibold text-lime-300 text-base sm:text-base md:text-lg lg:text-xl uppercase tracking-[0.1em] sm:tracking-[0.2em] rounded-xl bg-black border border-lime-500/30 overflow-hidden shadow-[0_0_20px_rgba(132,204,22,0.15)] transition-all duration-700 hover:scale-[1.03] hover:text-black hover:bg-lime-300/10 backdrop-blur-md"
@@ -81,7 +81,7 @@ function Home() {
                   <div>
                     <Link
                       to="/project"
-                      className="cursor-target font-rubrik inline-flex items-center justify-center gap-1 sm:gap-2 rounded-xl border-[2px] border-white/15 bg-black/40 px-3 sm:px-6 md:px-5 py-2 sm:py-3 font-semibold text-white backdrop-blur transition hover:border-white/40 text-base sm:text-base md:text-lg"
+                      className="md:cursor-target font-rubrik inline-flex items-center justify-center gap-1 sm:gap-2 rounded-xl border-[2px] border-white/15 bg-black/40 px-3 sm:px-6 md:px-5 py-2 sm:py-3 font-semibold text-white backdrop-blur transition hover:border-white/40 text-base sm:text-base md:text-lg"
                     >
                       View Projects
                       <svg
