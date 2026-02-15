@@ -112,7 +112,6 @@ const certificates = [
     content: "/DOCs/Developers_Arena.pdf",
     popupImage: "/DOCs/images/developersArenaCertificate.webp",
   },
-
   {
     image: "/icons/bluestock.webp",
     title: "Software Development Engineer (SDE) Internship",
@@ -181,6 +180,23 @@ const certificates = [
     credentialId: "LF-lupd8bsm5y",
     content: "/DOCs/Linux_foundation_NodeJs.pdf",
     popupImage: "/DOCs/images/Linux_foundation_NodeJs.webp",
+  },
+  {
+    image: "/icons/kagale_Logo.webp",
+    title: "5-Day AI Agents Intensive Program",
+    organization: "Google × Kaggle",
+    date: "February 2026",
+    description:
+      "Completed a 5-day intensive program focused on foundational concepts of AI agents, prompt engineering, and practical exposure to building simple agent-based workflows.",
+    skills: [
+      "AI Fundamentals",
+      "Prompt Engineering (Basic)",
+      "Agent Concepts",
+      "Applied AI Learning",
+    ],
+    credentialId: "GOOGLE-AI-AGENTS-2026",
+    content: "/DOCs/images/kaggle.webp",
+    popupImage: "/DOCs/images/kaggle.webp",
   },
   {
     image: "/icons/deloitte.png",
