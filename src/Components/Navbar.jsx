@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+import logo from "../assets/logo1.webp";
+
 const navItems = [
   { label: "Home", path: "/" },
   { label: "About Me.", path: "/about" },
@@ -30,7 +32,7 @@ function Navbar() {
       ${scrolled ? "top-3 left-3 right-3" : "top-0 left-0 right-0"}`}
     >
       <div
-        className={`w-full px-4 sm:px-6 py-4 ${
+        className={`w-full px-4 sm:px-6 py-3 ${
           scrolled
             ? "rounded-3xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-3xl border border-white/10  shadow-[0_20px_80px_rgba(0,0,0,0.6)]"
             : "rounded-none bg-transparent"
@@ -39,9 +41,10 @@ function Navbar() {
         <nav className="text-white flex justify-between items-center">
           <Link
             to="/"
-            className="text-3xl sm:text-4xl font-semibold font-rubrik"
+            className="text-3xl sm:text-4xl font-semibold font-rubrik flex md:gap-4 gap-3 items-center"
           >
-            Dinesh K.
+            <img src={logo} alt="D" className="md:w-12 w-9 md:h-12 h-9" />
+            <span>Dinesh K.</span>
           </Link>
 
           {/* Desktop Nav */}
