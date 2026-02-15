@@ -115,20 +115,20 @@ function PopUpPhoto() {
                   href="/DOCs/DineshResume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="md:cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-[0_0_20px_rgba(34,211,238,0.4)] text-slate-900 font-extrabold hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                  className="cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-[0_0_20px_rgba(34,211,238,0.4)] text-slate-900 font-extrabold hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
                 >
                   📑 View Resume
                 </a>
 
                 <Link
                   to="/about"
-                  className="md:cursor-target inline-block px-6 py-3 rounded-full bg-white/5 border border-cyan-400/40 text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                  className="cursor-target inline-block px-6 py-3 rounded-full bg-white/5 border border-cyan-400/40 text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
                 >
                   🏅 Certifications
                 </Link>
                 <Link
                   to="/project"
-                  className="md:cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-violet-400 to-indigo-600 text-white font-bold shadow-[0_0_18px_rgba(168,85,247,0.35)] hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
+                  className="cursor-target inline-block px-6 py-3 rounded-full bg-gradient-to-r from-violet-400 to-indigo-600 text-white font-bold shadow-[0_0_18px_rgba(168,85,247,0.35)] hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] transition-all duration-500 backdrop-blur-md group relative"
                 >
                   💡 Projects
                 </Link>

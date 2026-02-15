@@ -111,7 +111,7 @@ function Contact() {
               {/* Contact Button */}
               <a
                 href="mailto:dinesh.khichar.work@gmail.com?subject=Let's Connect&body=Hi Dinesh,"
-                className="md:cursor-target inline-block mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 text-white font-semibold tracking-wider border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-white/20 relative overflow-hidden"
+                className="cursor-target inline-block mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 text-white font-semibold tracking-wider border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-white/20 relative overflow-hidden"
               >
                 <span className="relative z-10">📨 Reach Out</span>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition duration-700 bg-white blur-xl" />

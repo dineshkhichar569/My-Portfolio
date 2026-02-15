@@ -17,7 +17,7 @@ const skillVariants = {
 
 const SkillCard = ({ skill, index }) => (
   <motion.div
-    className="md:cursor-target relative group p-6 rounded-xl text-white text-center font-semibold text-lg bg-white/5 border border-white/10 backdrop-blur-lg hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden"
+    className="cursor-target relative group p-6 rounded-xl text-white text-center font-semibold text-lg bg-white/5 border border-white/10 backdrop-blur-lg hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden"
     custom={index}
     variants={skillVariants}
     initial="hidden"

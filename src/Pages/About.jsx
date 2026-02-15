@@ -407,7 +407,7 @@ function About() {
             href="https://leetcode.com/u/DineshSunny/"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
@@ -428,7 +428,7 @@ function About() {
             href="https://www.geeksforgeeks.org/profile/wollver962d"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
@@ -448,7 +448,7 @@ function About() {
             href="https://github.com/dineshkhichar569"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://img.icons8.com/?size=512&id=12599&format=png"
@@ -468,7 +468,7 @@ function About() {
             href="https://www.upwork.com/freelancers/~0168bdfd724188829d"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
           >
             <img
               src="https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png"
