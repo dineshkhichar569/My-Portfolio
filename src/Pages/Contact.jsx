@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 
 import { motion } from "framer-motion";
-import ClickSpark from "../React-Bits/ClickSpark";   //////  Temporary off
+import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 function Contact() {
@@ -20,12 +20,10 @@ function Contact() {
       </div>
 
       <Navbar />
-      <TargetCursor/>
+      <TargetCursor />
       {/* <ClickSpark/> */}
 
       <section className="md:mx-[50px] pt-36">
-
-        
         <div className="text-center">
           <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-semibold overflow-hidden inline-block animate-fade-in-smooth">
             <span className="shine-subtle relative inline-block animate-text-reveal font-rubrik">
@@ -41,18 +39,13 @@ function Contact() {
         <div className="w-full py-32 px-6 sm:px-12 relative overflow-hidden">
           {/* Main Glass Panel */}
           <div className="relative z-10 w-full max-w-7xl mx-auto rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden transition-all duration-1000">
-
-
             {/* Inner Aura */}
             <div className="absolute -inset-1.5 rounded-[2rem] border border-white/10 group-hover:border-white/25 transition-all duration-700 pointer-events-none" />
             {/* Shine Overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent blur-2xl opacity-25 animate-pulse pointer-events-none z-0" />
 
-
             {/* Content */}
             <div className="relative z-10 text-center px-2 md:px-6 sm:px-20 py-10 md:py-20 md:space-y-14 space-y-6">
-
-              
               {/* Title */}
               <h2 className="text-3xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-white tracking-wider uppercase">
                 ✨ Let's Create Magic
@@ -61,7 +54,7 @@ function Contact() {
               {/* Subtext */}
               <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
                 Whether you have a project, collaboration, or simply want to
-                vibe — I’m just one click away.
+                vibe - I’m just one click away.
               </p>
 
               {/* Emails */}
@@ -107,7 +100,6 @@ function Contact() {
                 </div>
               </div>
 
-
               {/* Contact Button */}
               <a
                 href="mailto:dinesh.khichar.work@gmail.com?subject=Let's Connect&body=Hi Dinesh,"
@@ -116,7 +108,6 @@ function Contact() {
                 <span className="relative z-10">📨 Reach Out</span>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition duration-700 bg-white blur-xl" />
               </a>
-
 
               {/* Social Icons */}
               <div className="flex justify-center gap-8 flex-wrap pt-20">
@@ -186,18 +177,9 @@ function Contact() {
                   </a>
                 ))}
               </div>
-
-
-
             </div>
-
-
           </div>
-
-
         </div>
-
-        
       </section>
     </div>
   );

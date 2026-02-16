@@ -7,7 +7,7 @@ import Footer from "../Components/Footer";
 import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 import { useRef, useState } from "react";
-import { Download, EyeIcon, FileText, X } from "lucide-react";
+import { Download, ExternalLink, EyeIcon, FileText, X } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -245,6 +245,26 @@ const certificates = [
 
 const experiences = [
   {
+    company: "Self-Employed (Upwork & Direct Clients)",
+    role: "Freelance Full Stack & Shopify Developer",
+    duration: "Dec 2025 – Present",
+    type: "Freelance",
+    description:
+      "Working as a Freelance Full Stack and Shopify Developer delivering scalable web applications and high-performance eCommerce solutions. Specialized in MERN stack development, custom Shopify theme customization, API integrations, backend architecture, and performance optimization for global clients.",
+    skills: [
+      "MERN Stack",
+      "React.js",
+      "Node.js, Express.js",
+      "MongoDB",
+      "Shopify",
+      "Liquid",
+      "HTML, CSS, JavaScript",
+      "Theme Development",
+      "Client Communication",
+    ],
+    profileLink: "https://www.upwork.com/freelancers/~0168bdfd724188829d",
+  },
+  {
     company: "Bluestock Fintech",
     role: "Software Development Engineer (SDE) Intern",
     duration: "Dec 1, 2025 – Jan 30, 2026",
@@ -295,6 +315,37 @@ const experiences = [
       "REST Architecture",
       "MongoDB",
     ],
+  },
+];
+
+const profiles = [
+  {
+    name: "LeetCode Profile",
+    link: "https://leetcode.com/u/DineshSunny/",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
+    textColor: "group-hover:text-yellow-600",
+    bgColor: "bg-yellow-600",
+  },
+  {
+    name: "GeeksforGeeks Profile",
+    link: "https://www.geeksforgeeks.org/profile/wollver962d",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg",
+    textColor: "group-hover:text-green-600",
+    bgColor: "bg-green-600",
+  },
+  {
+    name: "GitHub Profile",
+    link: "https://github.com/dineshkhichar569",
+    icon: "https://img.icons8.com/?size=512&id=12599&format=png",
+    textColor: "group-hover:text-gray-400",
+    bgColor: "bg-gray-600",
+  },
+  {
+    name: "Upwork Freelancer Profile",
+    link: "https://www.upwork.com/freelancers/~0168bdfd724188829d",
+    icon: "https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png",
+    textColor: "group-hover:text-gray-400",
+    bgColor: "bg-gray-600",
   },
 ];
 
@@ -370,7 +421,6 @@ function About() {
         >
           I’m <span className="text-cyan-400">Dinesh Khichar</span>
         </motion.h1>
-
         <motion.p
           initial="hidden"
           whileInView="visible"
@@ -381,7 +431,6 @@ function About() {
           MERN Stack & DevOps Engineer crafting immersive, emotional code
           experiences.
         </motion.p>
-
         <motion.p
           initial="hidden"
           whileInView="visible"
@@ -402,87 +451,32 @@ function About() {
           variants={fadeInUp}
           className="flex flex-wrap gap-6 justify-center items-center mt-12"
         >
-          {/* Leetcode */}
-          <a
-            href="https://leetcode.com/u/DineshSunny/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-              alt="LeetCode"
-              loading="lazy"
-              className="md:w-8 w-5 md:h-8 h-5"
-            />
-            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-yellow-600 transition duration-500">
-              LeetCode Profile
-            </span>
-            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-yellow-600 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
-              Visit Profile
-            </p>
-          </a>
-
-          {/* Geeks for Geeks */}
-          <a
-            href="https://www.geeksforgeeks.org/profile/wollver962d"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
-              alt="GFG"
-              loading="lazy"
-              className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1"
-            />
-            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-green-600 transition duration-500">
-              GeeksforGeeks Profile
-            </span>
-            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-green-600 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
-              Visit Profile
-            </p>
-          </a>
-          {/* GitHub */}
-          <a
-            href="https://github.com/dineshkhichar569"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
-          >
-            <img
-              src="https://img.icons8.com/?size=512&id=12599&format=png"
-              alt="github"
-              loading="lazy"
-              className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1"
-            />
-            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-gray-500 transition duration-500">
-              GitHub Profile
-            </span>
-            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
-              Visit Profile
-            </p>
-          </a>
-          {/* Upwork */}
-          <a
-            href="https://www.upwork.com/freelancers/~0168bdfd724188829d"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
-          >
-            <img
-              src="https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png"
-              alt="GFG"
-              loading="lazy"
-              className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1"
-            />
-            <span className="text-white md:text-lg text-sm md:font-medium group-hover:text-gray-500 transition duration-500">
-              Upwork freelancer Profile
-            </span>
-            <p className="absolute left-1/2 bottom-full mt-2 -translate-x-1/2 bg-gray-800 text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500">
-              Visit Profile
-            </p>
-          </a>
+          {profiles.map((prof, index) => (
+            <a
+              key={index}
+              href={prof.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+            >
+              <img
+                src={prof.icon}
+                alt="LeetCode"
+                loading="lazy"
+                className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1 md:group-hover:animate-spin"
+              />
+              <span
+                className={`text-white md:text-lg text-sm md:font-medium ${prof.textColor} transition duration-500`}
+              >
+                {prof.name}
+              </span>
+              <p
+                className={`absolute left-1/2 bottom-full mt-2 -translate-x-1/2 ${prof.bgColor} text-sm text-white px-2 py-1 rounded md:opacity-0 md:group-hover:opacity-100 hidden md:flex transition duration-500`}
+              >
+                Visit Profile
+              </p>
+            </a>
+          ))}
         </motion.div>
       </div>
 
@@ -541,6 +535,35 @@ function About() {
                   ))}
                 </div>
                 <div className="flex gap-4 mt-6">
+                  {exp.profileLink && (
+                    <a
+                      href={exp.profileLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative flex items-center justify-between px-4 py-3 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] border border-white/10 hover:border-[#14a800]/50 transition-all duration-300 overflow-hidden"
+                    >
+
+                      <div className="flex items-center gap-4 relative z-10">
+                        <img
+                          src="https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png"
+                          alt="GFG"
+                          loading="lazy"
+                          className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1 md:group-hover:animate-spin"
+                        />
+
+                        <div>
+                          <p className="text-sm text-white font-medium">
+                            Verified Freelancer
+                          </p>
+                          <p className="text-xs text-white/60">
+                            View Upwork Public Profile
+                          </p>
+                        </div>
+                        <ExternalLink className="w-5 h-5 text-white/60 group-hover:text-[#14a800] group-hover:scale-125 rotate-12 group-hover:-rotate-12 relative z-10 transition-all duration-300" />
+                      </div>
+                    </a>
+                  )}
+
                   {exp.offerLetter && (
                     <a
                       href={exp.offerLetter}
@@ -655,7 +678,7 @@ function About() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="group relative flex flex-col justify-normal w-full max-w-[360px] h-full bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-500 overflow-hidden group backdrop-blur-xl cursor-pointer pb-6"
+              className="group relative flex flex-col justify-normal w-full max-w-[360px] h-full bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-300 overflow-hidden group backdrop-blur-xl cursor-pointer pb-6"
             >
               {/* on hover */}
               <p
@@ -671,7 +694,7 @@ function About() {
                 <div className="absolute top-4 right-4 bg-gradient-to-br from-[#00ff88] to-[#00cfff] rounded-full w-8 h-8 flex items-center justify-center shadow-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 text-black"
+                    className="w-5 h-5 text-black group-hover:animate-spin"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
