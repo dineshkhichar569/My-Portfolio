@@ -73,7 +73,7 @@ const projects = [
     techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
     liveLink: "https://lively-mooncake-cd83f4.netlify.app/",
     githubLink: "https://github.com/dineshkhichar569/MentorShip",
-    cssPerBox: "top-[230px]",
+    cssPerBox: "top-[280px]",
   },
   {
     title: "NFT Selling Website",

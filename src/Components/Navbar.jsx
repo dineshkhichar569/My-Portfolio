@@ -116,7 +116,7 @@ function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed top-[90px] right-4 left-4 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-3xl border border-white/10 shadow-[0_25px_100px_rgba(0,0,0,0.8)] p-6 flex flex-wrap items-center justify-center gap-6 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-r before:from-cyan-500/10 before:via-purple-500/10 before:to-pink-500/10 before:opacity-40 before:blur-2xl before:-z-10"
+            className="fixed z-50 top-[90px] right-4 left-4 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-3xl border border-white/10 shadow-[0_25px_100px_rgba(0,0,0,0.8)] p-6 flex flex-wrap items-center justify-center gap-6 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-r before:from-cyan-500/10 before:via-purple-500/10 before:to-pink-500/10 before:opacity-40 before:blur-2xl before:-z-10"
           >
             {navItems.map((item, i) => (
               <motion.div

@@ -10,7 +10,7 @@ import { ExternalLink } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="cursor-default relative w-full min-h-[40vh] px-6 md:px-10 py-12 bg-gradient-to-tr from-[#0f0c29] via-[#000000] to-[#24243e] backdrop-blur-xl text-white border-t border-white/10 overflow-hidden z-50 md:pt-24 pt-16">
+    <footer className="cursor-default relative z-0 w-full min-h-[40vh] px-6 md:px-10 py-12 bg-gradient-to-tr from-[#0f0c29] via-[#000000] to-[#24243e] backdrop-blur-xl text-white border-t border-white/10 overflow-hidden md:pt-24 pt-16">
 
       {/*  for glowing background */}
       <div className="absolute w-[300px] h-[300px] bg-[#00ffff] opacity-10 blur-[120px] rounded-full left-[-100px] top-[20%] animate-pulse-slow" />
