@@ -10,6 +10,7 @@ import {
   Search,
   ShieldCheck,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function getExt(name = "") {
   const clean = name.split("?")[0].split("#")[0];
@@ -91,6 +92,43 @@ export default function Documents() {
         }
       }}
     >
+      {/* Back Button */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-8 left-8 z-50"
+      >
+        <Link to={-1}>
+          <motion.div
+            className="w-9 h-9 rounded-full flex items-center justify-center text-white text-base font-medium cursor-pointer backdrop-blur-md bg-white/10 border border-white/20 shadow-[0_0_8px_rgba(0,255,255,0.2)]"
+            whileHover={{
+              scale: 1.15,
+              rotate: -8,
+              boxShadow: "0 0 12px rgba(0,255,255,0.4)",
+              backgroundColor: "rgba(0, 255, 255, 0.1)",
+            }}
+            whileTap={{
+              scale: 0.95,
+              rotate: 0,
+              boxShadow: "0 0 16px rgba(0,255,255,0.5)",
+            }}
+            animate={{
+              y: [0, -2, 0],
+            }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          >
+            ⟵
+          </motion.div>
+        </Link>
+      </motion.div>
+
+
+      {/* Main Content */}
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
