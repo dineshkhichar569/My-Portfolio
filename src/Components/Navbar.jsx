@@ -92,7 +92,7 @@ function Navbar() {
 
               {/* text */}
               <span className="relative text-sm">
-                Data Folder
+                Resource Hub
                 <span className="ml-2 text-emerald-300/80 transition group-hover:text-emerald-300">
                   →
                 </span>
@@ -169,7 +169,7 @@ function Navbar() {
 
               {/* text */}
               <span className="relative text-base">
-                Data Folder
+                Resource Hub
                 <span className="ml-2 text-emerald-300/80 transition group-hover:text-emerald-300">
                   →
                 </span>

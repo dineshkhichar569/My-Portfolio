@@ -11,6 +11,7 @@ import HireMeForm from "./Pages/HireMe";
 import ScrollToTop from "./Components/ScrollToTop";
 import Documents from "./Pages/private/Documents";
 import DataFolder from "./Pages/DataFolder";
+import PublicDocument from "./Pages/public/PublicDocument";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
 
         <Route path="/data-folder" element={<DataFolder />} />
         <Route path="/private" element={<Documents />} />
+        <Route path="/public" element={<PublicDocument />} />
       </Routes>
     </>
   );

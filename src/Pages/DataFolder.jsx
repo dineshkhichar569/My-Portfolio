@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ShieldBanIcon } from "lucide-react";
+import { File, ShieldBan, ShieldBanIcon } from "lucide-react";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function DataFolder() {
   const navigate = useNavigate();
   return (
-    <div className="bg-black min-h-screen overflow-hidden">
+    <div className="bg-black min-h-screen overflow-hidden p-3">
       {/* Background blobs */}
       <div className="abstract-blobs z-0">
         <span className="blob blob1"></span>
@@ -55,7 +55,7 @@ function DataFolder() {
 
       {/* Main Contents */}
       <motion.section
-        className="flex md:justify-normal items-center md:gap-20 gap-10 md:p-24 pt-32 justify-center"
+        className="flex md:justify-normal items-center md:gap-20 gap-8 md:p-24 pt-32 justify-center"
         initial="hidden"
         animate="show"
         variants={{
@@ -66,6 +66,7 @@ function DataFolder() {
           },
         }}
       >
+        {/* Private */}
         <motion.div
           className="flex flex-col justify-center items-center"
           variants={{
@@ -80,49 +81,51 @@ function DataFolder() {
           whileHover={{ y: -6 }}
           transition={{ type: "spring", stiffness: 160, damping: 14 }}
         >
-          <a href="/private">
-            <motion.img
-              className="md:h-48 md:w-48 h-28 w-28 cursor-pointer drop-shadow-[0_0_18px_rgba(0,255,255,0.18)]"
-              src="/privateFolder.webp"
-              alt="image"
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ type: "spring", stiffness: 140, damping: 14 }}
+          <a
+            href="/private"
+            className="group relative flex flex-col items-center justify-center"
+          >
+            {/* for background glow */}
+            <div className="absolute inset-0 blur-3xl opacity-0 group-hover:opacity-60 transition duration-500 bg-red-500/10 rounded-full" />
+
+            {/* ICON CARD */}
+            <motion.div
+              className="relative p-6 rounded-2xl border border-red-500/20 bg-gradient-to-b from-red-500/5 to-transparent backdrop-blur-md"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 12 }}
               whileHover={{
-                scale: 1.08,
+                scale: 1.1,
                 rotate: -2,
-                filter: "drop-shadow(0 0 22px rgba(0,255,255,0.38))",
+                boxShadow: "0 0 40px rgba(255,0,0,0.18)",
               }}
-              whileTap={{ scale: 0.98 }}
-            />
-            <motion.span
-              className="flex gap-2 text-red-400 md:text-xl text-base font-bold text-center mt-3 tracking-wide"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.18 }}
-              whileHover={{
-                textShadow: "0 0 18px rgba(255,255,255,0.25)",
-              }}
+              whileTap={{ scale: 0.96 }}
             >
-              <ShieldBanIcon />
-              Private Files
+              <ShieldBan className="md:h-48 md:w-48 h-28 w-28 text-red-400 transition duration-300 group-hover:text-red-300 drop-shadow-[0_0_18px_rgba(255,0,0,0.25)]" />
+            </motion.div>
+
+            {/* TITLE */}
+            <motion.span
+              className="mt-4 flex gap-2 md:text-xl text-base font-bold text-center tracking-wide text-red-400 transition duration-300 group-hover:text-white"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+            >
+              🔒 Private Files
             </motion.span>
 
             <motion.p
-              className="text-red-300 md:text-xs text-[9px] text-center mt-1 tracking-widest uppercase"
-              initial={{ opacity: 0, letterSpacing: "0.2em" }}
-              animate={{ opacity: 1, letterSpacing: "0.08em" }}
-              transition={{ duration: 0.6, delay: 0.28 }}
-              whileHover={{
-                color: "#ffffff",
-                textShadow: "0 0 12px rgba(255,255,255,0.35)",
-              }}
+              className="text-red-300 md:text-xs text-[10px] text-center mt-1 tracking-[0.2em] uppercase transition duration-300 group-hover:text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              secure • locked • access
+              admin only • secure
             </motion.p>
           </a>
         </motion.div>
 
+        {/* Public */}
         <motion.div
           className="flex flex-col justify-center items-center"
           variants={{
@@ -137,49 +140,47 @@ function DataFolder() {
           whileHover={{ y: -6 }}
           transition={{ type: "spring", stiffness: 160, damping: 14 }}
         >
-          <motion.img
-            className="md:h-48 md:w-48 h-28 w-28 cursor-pointer drop-shadow-[0_0_18px_rgba(255,255,255,0.10)]"
-            src="/publicFolder.webp"
-            alt=""
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 140,
-              damping: 14,
-              delay: 0.05,
-            }}
-            whileHover={{
-              scale: 1.08,
-              rotate: 2,
-              filter: "drop-shadow(0 0 22px rgba(255,255,255,0.22))",
-            }}
-            whileTap={{ scale: 0.98 }}
-          />
-          <motion.span
-            className="text-white md:text-xl text-base font-bold text-center mt-3 tracking-wide"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.18 }}
-            whileHover={{
-              textShadow: "0 0 18px rgba(255,255,255,0.25)",
-            }}
+          <a
+            href="/public"
+            className="group relative flex flex-col items-center justify-center"
           >
-            Public Files
-          </motion.span>
+            {/* form background glow */}
+            <div className="absolute inset-0 rounded-full blur-3xl opacity-0 group-hover:opacity-70 transition duration-500 bg-cyan-400/10" />
 
-          <motion.p
-            className="text-white/50 md:text-xs text-[9px] text-center mt-1 tracking-widest uppercase"
-            initial={{ opacity: 0, letterSpacing: "0.2em" }}
-            animate={{ opacity: 1, letterSpacing: "0.08em" }}
-            transition={{ duration: 0.6, delay: 0.28 }}
-            whileHover={{
-              color: "#ffffff",
-              textShadow: "0 0 12px rgba(255,255,255,0.35)",
-            }}
-          >
-            open • explore • view
-          </motion.p>
+            {/* ICON CARD */}
+            <motion.div
+              className="relative p-6 rounded-2xl border border-cyan-400/20 bg-gradient-to-b from-cyan-400/5 to-transparent backdrop-blur-md"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 12 }}
+              whileHover={{
+                scale: 1.1,
+                rotate: 2,
+                boxShadow: "0 0 40px rgba(0,255,255,0.18)",
+              }}
+              whileTap={{ scale: 0.96 }}
+            >
+              <File className="md:h-48 md:w-48 h-28 w-28 text-cyan-400 transition duration-300 group-hover:text-white drop-shadow-[0_0_18px_rgba(0,255,255,0.25)]" />
+            </motion.div>
+
+            {/* TITLE */}
+            <motion.span
+              className="mt-4 md:text-xl text-base font-bold text-center tracking-wide text-cyan-400 transition duration-300 group-hover:text-white"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+            >
+              📂 Public Files
+            </motion.span>
+            <motion.p
+              className="text-cyan-300 md:text-xs text-[10px] text-center mt-1 tracking-[0.2em] uppercase transition duration-300 group-hover:text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              open • accessible • shared
+            </motion.p>
+          </a>
         </motion.div>
       </motion.section>
     </div>

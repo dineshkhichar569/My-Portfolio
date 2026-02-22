@@ -85,7 +85,7 @@ export default function Documents() {
 
   return (
     <div
-      className="relative min-h-screen px-4 py-10 text-white bg-gradient-to-b from-black via-black to-zinc-950"
+      className="relative min-h-screen px-4 py-10 text-white bg-gradient-to-b from-black via-black to-zinc-950 pt-28"
       onClick={() => {
         if (active != null) {
           setActive(null);
@@ -97,7 +97,7 @@ export default function Documents() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-8 left-8 z-50"
+        className="fixed top-8 left-8 z-0"
       >
         <Link to={-1}>
           <motion.div
