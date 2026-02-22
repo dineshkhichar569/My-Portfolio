@@ -11,4 +11,10 @@ export const privateDocs = [
     type: "image",
     description: "Personal photo (private)",
   },
+  {
+    title: "Private Photo",
+    file: "kaggle.webp",
+    type: "image",
+    description: "Personal photo (private)",
+  },
 ];
