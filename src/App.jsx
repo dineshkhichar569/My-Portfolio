@@ -9,6 +9,7 @@ import Skills from "./Pages/Skills";
 import Projects from "./Pages/Projects";
 import HireMeForm from "./Pages/HireMe";
 import ScrollToTop from "./Components/ScrollToTop";
+import Documents from "./Pages/private/Documents";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/project" element={<Projects />} />
         <Route path="/hire" element={<HireMeForm />} />
+
+
+        <Route path="/private" element={<Documents />} />
       </Routes>
     </>
   );
