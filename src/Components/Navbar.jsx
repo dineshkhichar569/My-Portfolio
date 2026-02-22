@@ -55,7 +55,7 @@ function Navbar() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05, duration: 0.3 }}
-                className="relative group"
+                className="relative group flex items-center"
               >
                 <Link
                   to={item.path}
@@ -78,6 +78,26 @@ function Navbar() {
                 </Link>
               </motion.li>
             ))}
+            <Link
+              to="/data-folder"
+              className="ml-10 group relative inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-2 font-semibold tracking-wide text-white bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:ring-offset-0"
+            >
+              {/* subtle neon glow on hover */}
+              <span className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 bg-[radial-gradient(80%_120%_at_50%_0%,rgba(16,185,129,0.35)_0%,rgba(16,185,129,0)_55%)] transition-opacity duration-300 group-hover:opacity-100" />
+
+              {/* icon */}
+              <span className="relative grid place-items-center h-6 w-6 text-xs rounded-lg bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 transition-colors duration-300 group-hover:bg-emerald-500/15 group-hover:border-emerald-400/35">
+                📁
+              </span>
+
+              {/* text */}
+              <span className="relative text-sm">
+                Data Folder
+                <span className="ml-2 text-emerald-300/80 transition group-hover:text-emerald-300">
+                  →
+                </span>
+              </span>
+            </Link>
           </ul>
 
           {/* Hamburger */}
@@ -135,6 +155,26 @@ function Navbar() {
                 </Link>
               </motion.div>
             ))}
+            <Link
+              to="/data-folder"
+              className="group relative inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2 font-semibold tracking-wide text-white bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:ring-offset-0"
+            >
+              {/* subtle neon glow on hover */}
+              <span className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 bg-[radial-gradient(80%_120%_at_50%_0%,rgba(16,185,129,0.35)_0%,rgba(16,185,129,0)_55%)] transition-opacity duration-300 group-hover:opacity-100" />
+
+              {/* icon */}
+              <span className="relative grid place-items-center h-8 w-8 text-xs rounded-lg bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 transition-colors duration-300 group-hover:bg-emerald-500/15 group-hover:border-emerald-400/35">
+                📁
+              </span>
+
+              {/* text */}
+              <span className="relative text-base">
+                Data Folder
+                <span className="ml-2 text-emerald-300/80 transition group-hover:text-emerald-300">
+                  →
+                </span>
+              </span>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
