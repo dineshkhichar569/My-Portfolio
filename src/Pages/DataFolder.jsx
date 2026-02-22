@@ -53,7 +53,6 @@ function DataFolder() {
         </Link>
       </motion.div>
 
-      
       {/* Main Contents */}
       <motion.section
         className="flex md:justify-normal items-center md:gap-20 gap-10 md:p-24 pt-32 justify-center"
@@ -81,46 +80,47 @@ function DataFolder() {
           whileHover={{ y: -6 }}
           transition={{ type: "spring", stiffness: 160, damping: 14 }}
         >
-          <motion.img
-            className="md:h-48 md:w-48 h-28 w-28 cursor-pointer drop-shadow-[0_0_18px_rgba(0,255,255,0.18)]"
-            onClick={() => navigate("/private")}
-            src="/privateFolder.webp"
-            alt=""
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 140, damping: 14 }}
-            whileHover={{
-              scale: 1.08,
-              rotate: -2,
-              filter: "drop-shadow(0 0 22px rgba(0,255,255,0.38))",
-            }}
-            whileTap={{ scale: 0.98 }}
-          />
-          <motion.span
-            className="flex gap-2 text-red-400 md:text-xl text-base font-bold text-center mt-3 tracking-wide"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.18 }}
-            whileHover={{
-              textShadow: "0 0 18px rgba(255,255,255,0.25)",
-            }}
-          >
-            <ShieldBanIcon/>
-            Private Files
-          </motion.span>
+          <a href="/private">
+            <motion.img
+              className="md:h-48 md:w-48 h-28 w-28 cursor-pointer drop-shadow-[0_0_18px_rgba(0,255,255,0.18)]"
+              src="/privateFolder.webp"
+              alt="image"
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", stiffness: 140, damping: 14 }}
+              whileHover={{
+                scale: 1.08,
+                rotate: -2,
+                filter: "drop-shadow(0 0 22px rgba(0,255,255,0.38))",
+              }}
+              whileTap={{ scale: 0.98 }}
+            />
+            <motion.span
+              className="flex gap-2 text-red-400 md:text-xl text-base font-bold text-center mt-3 tracking-wide"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.18 }}
+              whileHover={{
+                textShadow: "0 0 18px rgba(255,255,255,0.25)",
+              }}
+            >
+              <ShieldBanIcon />
+              Private Files
+            </motion.span>
 
-          <motion.p
-            className="text-red-300 md:text-xs text-[9px] text-center mt-1 tracking-widest uppercase"
-            initial={{ opacity: 0, letterSpacing: "0.2em" }}
-            animate={{ opacity: 1, letterSpacing: "0.08em" }}
-            transition={{ duration: 0.6, delay: 0.28 }}
-            whileHover={{
-              color: "#ffffff",
-              textShadow: "0 0 12px rgba(255,255,255,0.35)",
-            }}
-          >
-            secure • locked • access
-          </motion.p>
+            <motion.p
+              className="text-red-300 md:text-xs text-[9px] text-center mt-1 tracking-widest uppercase"
+              initial={{ opacity: 0, letterSpacing: "0.2em" }}
+              animate={{ opacity: 1, letterSpacing: "0.08em" }}
+              transition={{ duration: 0.6, delay: 0.28 }}
+              whileHover={{
+                color: "#ffffff",
+                textShadow: "0 0 12px rgba(255,255,255,0.35)",
+              }}
+            >
+              secure • locked • access
+            </motion.p>
+          </a>
         </motion.div>
 
         <motion.div
