@@ -373,8 +373,6 @@ function About() {
     >
       <TargetCursor />
       <Navbar />
-      {/* <ClickSpark /> */}
-
       {/* Background blobs */}
       <div className="abstract-blobs z-0">
         <span className="blob blob1"></span>
