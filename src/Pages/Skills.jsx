@@ -47,11 +47,6 @@ const allSkills = [
   // Backend
   { name: "Node.js", icon: "/icons/NODE.svg", category: "backend" },
   {
-    name: "Fast API",
-    icon: "https://cdn.worldvectorlogo.com/logos/fastapi.svg",
-    category: "backend",
-  },
-  {
     name: "Socket.io",
     icon: "https://i1.wp.com/www.ux-republic.com/wp-content/uploads/2018/03/socket.png?fit=375%2C375&ssl=1",
     category: "backend",
