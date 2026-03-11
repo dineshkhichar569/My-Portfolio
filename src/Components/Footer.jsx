@@ -1,17 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import { ExternalLink } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="cursor-default relative z-0 w-full min-h-[40vh] px-6 md:px-10 py-12 bg-gradient-to-tr from-[#0f0c29] via-[#000000] to-[#24243e] backdrop-blur-xl text-white border-t border-white/10 overflow-hidden md:pt-24 pt-16">
-
       {/*  for glowing background */}
       <div className="absolute w-[300px] h-[300px] bg-[#00ffff] opacity-10 blur-[120px] rounded-full left-[-100px] top-[20%] animate-pulse-slow" />
       <div className="absolute w-[300px] h-[300px] bg-[#ff00cc] opacity-10 blur-[160px] rounded-full right-[-120px] bottom-[10%] animate-pulse-slow" />
@@ -122,7 +116,7 @@ const Footer = () => {
                     className="group relative w-fit hover:text-white transition flex gap-1 items-center"
                   >
                     {item}
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-200"/>
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-200" />
                     <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gradient-to-r from-cyan-400 to-pink-500 transition-all duration-200 group-hover:w-full" />
                   </a>
                 ),
@@ -140,12 +134,12 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white/90">Contact</h3>
 
             <div className="space-y-3 text-gray-400 text-sm">
-              <p>📍 India</p>
+              <span className="flex gap-1">
+                <p className="animate-bounce">📍</p> India
+              </span>
               <p className="group relative flex gap-2 items-center transition-all duration-200 hover:text-white">
                 ✉
-                <a
-                  href="mailto:dinesh.khichar.work@gmail.com"
-                >
+                <a href="mailto:dinesh.khichar.work@gmail.com">
                   dinesh.khichar.work@gmail.com
                 </a>
                 <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gradient-to-r from-cyan-400 to-pink-500 transition-all duration-200 group-hover:w-full" />

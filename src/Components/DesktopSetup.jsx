@@ -10,7 +10,7 @@ const feedback = [
     name: "Abhishek Ghelani, BETA Lab",
     platform: "upwork",
     source: "Freelance",
-    rating: "★★★★★",
+    rating: 5,
     feedback:
       "I had a great experience working with this Shopify developer. He has strong technical knowledge, is always available when needed, explains things clearly, and has a very cooperative and positive nature. Highly recommended!",
   },
@@ -18,14 +18,14 @@ const feedback = [
     name: "Fashion Model",
     platform: "upwork",
     source: "Freelance",
-    rating: "★★★★★",
+    rating: 5,
     feedback:
       "Working with Dinesh through Upwork was an excellent experience. He built a modern, high-end portfolio website that highlights my modeling projects in a clean and professional way. His attention to detail and responsiveness made the entire process seamless.",
   },
   {
     name: "Local Business Client",
     source: "Offline Contract",
-    rating: "★★★★★",
+    rating: 5,
     feedback:
       "Reliable, technically strong, and delivered before deadline. Very smooth experience.",
   },
@@ -72,9 +72,9 @@ export default function DesktopSetup() {
                     </div>
 
                     <div className="flex items-center gap-1">
-                      <span className="text-yellow-400 text-lg">
-                        {item.rating}
-                      </span>
+                        {[...Array(item.rating)].map((_, index) => (
+                          <span key={index} className="inline-block text-lg animate-spin-slow" style={{ animationDuration: "3s" }}>⭐</span>
+                        ))}
                     </div>
                   </div>
 

@@ -154,7 +154,15 @@ const SkillCard = ({ skill, index }) => (
     whileInView="show"
     viewport={{ once: true }}
   >
-    <img className="w-[50px] mx-auto group-hover:animate-spin" loading="lazy" src={skill.icon} alt="" />
+    <img
+      className="w-[50px] mx-auto animate-bounce"
+      style={{
+        animationDelay: `${index * 0.5}s`,
+      }}
+      loading="lazy"
+      src={skill.icon}
+      alt=""
+    />
     <p className="text-center mt-3">{skill.name}</p>
     <div className="absolute inset-0 z-[-1] bg-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
   </motion.div>
