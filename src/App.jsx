@@ -12,6 +12,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import Documents from "./Pages/private/Documents";
 import DataFolder from "./Pages/DataFolder";
 import PublicDocument from "./Pages/public/PublicDocument";
+import GitHubStats from "./Components/GitHubStats";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
         <Route path="/data-folder" element={<DataFolder />} />
         <Route path="/private" element={<Documents />} />
         <Route path="/public" element={<PublicDocument />} />
+
+        <Route path="/git" element={<GitHubStats />} />
       </Routes>
     </>
   );

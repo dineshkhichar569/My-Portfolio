@@ -8,6 +8,7 @@ import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 import { useRef, useState } from "react";
 import { Download, ExternalLink, EyeIcon, FileText, X } from "lucide-react";
+import GitHubStats from "../Components/GitHubStats";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -477,6 +478,13 @@ function About() {
           ))}
         </motion.div>
       </div>
+
+      <div className="px-3 md:px-28">
+        <GitHubStats/>
+
+      </div>
+
+
 
       {/* Experience Section */}
       <div ref={experienceRef} className="relative z-10 px-3 md:px-28 mt-32">
