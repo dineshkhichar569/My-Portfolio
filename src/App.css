@@ -134,3 +134,9 @@
   rx: 2px;
   ry: 2px;
 }
+
+.react-calendar-heatmap {
+  display: block;
+  width: 100%;
+  min-width: 1000px;
+}

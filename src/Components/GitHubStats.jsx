@@ -42,19 +42,10 @@ export default function GitHubStats() {
   startDate.setFullYear(endDate.getFullYear() - 1);
   return (
     <div className="bg-[#0d1117] p-4 rounded-xl w-full overflow-x-auto text-white">
-      <div className="flex flex-wrap justify-between items-center mb-4 gap-4 text-[10px] md:text-base">
-        <select
-          value={selectedYear}
-          onChange={(e) => setSelectedYear(Number(e.target.value))}
-          className="bg-[#161b22] border border-gray-700 px-1 py-1 md:px-2 md:py-3 rounded"
-        >
-          {[2026, 2025].map((year) => (
-            <option key={year}>{year}</option>
-          ))}
-        </select>
+      <div className="flex justify-between items-center mb-4 gap-4 text-[10px] md:text-sm">
 
-        <div className="text-xs md:text-base text-gray-400 flex gap-6">
-          <span>
+        <div className="text-xs md:text-base text-gray-400 flex flex-wrap gap-0">
+          <span className="pr-6">
             <strong className="text-white">{totalYear}</strong> contributions in{" "}
             {selectedYear}
           </span>
@@ -63,23 +54,42 @@ export default function GitHubStats() {
             contributions
           </span>
         </div>
+
+        <select
+          value={selectedYear}
+          onChange={(e) => setSelectedYear(Number(e.target.value))}
+          className="bg-[#161b22] border border-gray-700 px-1 py-1 md:px-1 md:py-1 rounded"
+        >
+          {[2026, 2025].map((year) => (
+            <option key={year}>{year}</option>
+          ))}
+        </select>
+
       </div>
 
-      {/* Calender to show contributions */}
-      <CalendarHeatmap
-        startDate={startDate}
-        endDate={endDate}
-        values={data}
-        gutterSize={3}
-        showWeekdayLabels={false}
-        classForValue={(value) => {
-          if (!value || value.count === 0) return "color-empty";
-          if (value.count >= 4) return "color-scale-4";
-          if (value.count >= 3) return "color-scale-3";
-          if (value.count >= 2) return "color-scale-2";
-          return "color-scale-1";
-        }}
-      />
+      <div className="w-full overflow-x-auto overflow-y-hidden">
+        <div className="w-max min-w-full">
+          <CalendarHeatmap
+            className="w-full min-w-[1000px]"
+            startDate={startDate}
+            endDate={endDate}
+            values={data}
+            gutterSize={3}
+            showWeekdayLabels={false}
+            classForValue={(value) => {
+              if (!value || value.count === 0) return "color-empty";
+              if (value.count >= 4) return "color-scale-4";
+              if (value.count >= 3) return "color-scale-3";
+              if (value.count >= 2) return "color-scale-2";
+              return "color-scale-1";
+            }}
+            titleForValue={(value) => {
+              if (!value) return `0 Contribution`;
+              return `${value.count} Contribution on ${value.date}`;
+            }}
+          />
+        </div>
+      </div>
 
       <div className="flex items-center justify-end gap-1 mt-4 text-[10px] md:text-sm text-gray-400">
         <span>Less</span>
