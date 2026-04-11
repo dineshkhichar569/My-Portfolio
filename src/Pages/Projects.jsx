@@ -27,9 +27,31 @@ const projects = [
     video: "/projects/projects_videos/Tarecom.mp4",
     techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
     liveLink: "https://tarecom.com/",
-    cssPerBox: "top-[130px]",
+    cssPerBox: "top-[125px]",
     // githubLink: "https://github.com/dineshkhichar569/Tarecom",
   },
+{
+  title: "Antriya Talking Book Website",
+  description:
+    "A playful and responsive product landing page designed for a kids’ interactive talking book, featuring a colorful UI, engaging visuals, and a smooth user experience focused on showcasing the product in a fun and attractive way.",
+  image: "/projects/projects_image/Antriya.webp",
+  video: "/projects/projects_videos/Antriya.mp4",
+  techStack: ["Password : antriya","Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
+  liveLink: "https://antriya-toy.myshopify.com/",
+  cssPerBox: "top-[170px]",
+  // githubLink: "https://github.com/dineshkhichar569/Antriya",
+},
+{
+  title: "Colors Diamond Website",
+  description:
+    "A premium jewelry e-commerce website built with Shopify, featuring a luxurious full-width hero section, elegant product presentation, smooth navigation, and a fully responsive shopping experience tailored for diamond and fine jewelry collections.",
+  image: "/projects/projects_image/ColorsDiamond.webp",
+  video: "/projects/projects_videos/ColorsDiamond.mp4",
+  techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
+  liveLink: "https://colors-diamond.myshopify.com/",
+  cssPerBox: "top-[220px]",
+  // githubLink: "https://github.com/dineshkhichar569/ColorsDiamond",
+},
   {
     title: "Laundry App",
     description:
@@ -40,7 +62,7 @@ const projects = [
     liveLink:
       "https://66880eda7957cd82484141cd--dainty-alpaca-6096e9.netlify.app/",
     githubLink: "https://github.com/dineshkhichar569/Laundry",
-    cssPerBox: "top-[180px]",
+    cssPerBox: "top-[270px]",
   },
   {
     title: "Knowledge-Based Course Advisor",
@@ -61,7 +83,7 @@ const projects = [
     liveLink: "https://knowledge-based-course-advisor.vercel.app/",
     githubLink:
       "https://github.com/dineshkhichar569/knowledge-based-course-advisor.git",
-    cssPerBox: "top-[230px]",
+    cssPerBox: "top-[310px]",
   },
 
   {
@@ -73,7 +95,7 @@ const projects = [
     techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
     liveLink: "https://lively-mooncake-cd83f4.netlify.app/",
     githubLink: "https://github.com/dineshkhichar569/MentorShip",
-    cssPerBox: "top-[280px]",
+    cssPerBox: "top-[360px]",
   },
   {
     title: "NFT Selling Website",
