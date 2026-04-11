@@ -6,20 +6,24 @@ import Navbar from "../Components/Navbar";
 import image from "../assets/profile2.jpg";
 import { Download } from "lucide-react";
 
-const GallaryItem = ({ src, alt, index, onClick }) => {
+const GallaryItem = ({ src, alt, index, onClick, hoverScale }) => {
   return (
     <motion.div
       onClick={onClick}
-      className="overflow-hidden rounded-xl shadow-lg cursor-pointer"
-      whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.97 }}
-      initial={{ opacity: 0, y: 30 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{
-        duration: 0.15,
-        ease: "easeOut",
-      }}
+      className={`overflow-hidden rounded-xl shadow-lg ${hoverScale ? "cursor-pointer" : "" }`}
+      {...(hoverScale
+        ? {
+            whileInView: { opacity: 1, y: 0 },
+            whileHover: { scale: 1.05 },
+            whileTap: { scale: 0.97 },
+            initial: { opacity: 0, y: 30 },
+            viewport: { once: true, margin: "-100px" },
+            transition: {
+              duration: 0.15,
+              ease: "easeOut",
+            },
+          }
+        : {})}
     >
       <img
         src={src}
@@ -125,11 +129,6 @@ const Gallery = () => {
   return (
     <section
       className="bg-black pt-36"
-      onClick={() => {
-        if (selectedImage) {
-          setSelectedImage(false);
-        }
-      }}
     >
       <Navbar />
 
@@ -165,20 +164,21 @@ const Gallery = () => {
             src={src}
             index={index}
             onClick={() => setSelectedImage(src)}
+            hoverScale={true}
           />
         ))}
       </div>
 
       {/* Image popup when it will clicked */}
       {selectedImage && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center pointer-events-none">
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
           <div className="relative p-4">
             <GallaryItem
               src={selectedImage}
               alt="Enlarged"
               index={-1}
-              onClick={() => {}}
               className="max-w-[90vw] rounded-xl shadow-2xl"
+              hoverScale={false}
             />
 
             <button

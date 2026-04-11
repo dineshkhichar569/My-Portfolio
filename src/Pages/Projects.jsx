@@ -30,28 +30,35 @@ const projects = [
     cssPerBox: "top-[125px]",
     // githubLink: "https://github.com/dineshkhichar569/Tarecom",
   },
-{
-  title: "Antriya Talking Book Website",
-  description:
-    "A playful and responsive product landing page designed for a kids’ interactive talking book, featuring a colorful UI, engaging visuals, and a smooth user experience focused on showcasing the product in a fun and attractive way.",
-  image: "/projects/projects_image/Antriya.webp",
-  video: "/projects/projects_videos/Antriya.mp4",
-  techStack: ["Password : antriya","Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-  liveLink: "https://antriya-toy.myshopify.com/",
-  cssPerBox: "top-[170px]",
-  // githubLink: "https://github.com/dineshkhichar569/Antriya",
-},
-{
-  title: "Colors Diamond Website",
-  description:
-    "A premium jewelry e-commerce website built with Shopify, featuring a luxurious full-width hero section, elegant product presentation, smooth navigation, and a fully responsive shopping experience tailored for diamond and fine jewelry collections.",
-  image: "/projects/projects_image/ColorsDiamond.webp",
-  video: "/projects/projects_videos/ColorsDiamond.mp4",
-  techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-  liveLink: "https://colors-diamond.myshopify.com/",
-  cssPerBox: "top-[220px]",
-  // githubLink: "https://github.com/dineshkhichar569/ColorsDiamond",
-},
+  {
+    title: "Antriya Talking Book Website",
+    description:
+      "A playful and responsive product landing page designed for a kids’ interactive talking book, featuring a colorful UI, engaging visuals, and a smooth user experience focused on showcasing the product in a fun and attractive way.",
+    image: "/projects/projects_image/Antriya.webp",
+    video: "/projects/projects_videos/Antriya.mp4",
+    techStack: [
+      "Password : antriya",
+      "Shopify",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design",
+    ],
+    liveLink: "https://antriya-toy.myshopify.com/",
+    cssPerBox: "top-[170px]",
+    // githubLink: "https://github.com/dineshkhichar569/Antriya",
+  },
+  {
+    title: "Colors Diamond Website",
+    description:
+      "A premium jewelry e-commerce website built with Shopify, featuring a luxurious full-width hero section, elegant product presentation, smooth navigation, and a fully responsive shopping experience tailored for diamond and fine jewelry collections.",
+    image: "/projects/projects_image/ColorsDiamond.webp",
+    video: "/projects/projects_videos/ColorsDiamond.mp4",
+    techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
+    liveLink: "https://colors-diamond.myshopify.com/",
+    cssPerBox: "top-[220px]",
+    // githubLink: "https://github.com/dineshkhichar569/ColorsDiamond",
+  },
   {
     title: "Laundry App",
     description:
@@ -241,7 +248,7 @@ const Projects = () => {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        {/* Glowing Pulse Behind */}
+        {/* Glowing Pulse Behind the heading */}
         <motion.div
           className="absolute w-48 h-16 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 blur-2xl opacity-30 animate-pulse"
           initial={{ scale: 0.8, opacity: 0 }}
