@@ -155,10 +155,7 @@ const SkillCard = ({ skill, index }) => (
     viewport={{ once: true }}
   >
     <img
-      className="w-[50px] mx-auto animate-bounce"
-      style={{
-        animationDelay: `${index * 0.5}s`,
-      }}
+      className="w-[50px] mx-auto group-hover:animate-spin"
       loading="lazy"
       src={skill.icon}
       alt=""

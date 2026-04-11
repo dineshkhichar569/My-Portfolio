@@ -366,11 +366,6 @@ function About() {
   return (
     <div
       className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik"
-      onClick={() => {
-        if (selectedCertificate != "") {
-          setSelectedCertificate("");
-        }
-      }}
     >
       <TargetCursor />
       <Navbar />
@@ -785,7 +780,7 @@ function About() {
       <AnimatePresence>
         {selectedCertificate && (
           <motion.div
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 backdrop-blur-sm cursor-pointer"
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
