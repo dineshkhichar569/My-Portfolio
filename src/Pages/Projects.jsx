@@ -123,13 +123,13 @@ const ProjectCard = ({ project, index }) => (
     ${project.cssPerBox}
     sticky
     h-auto md:h-[400px]
-    w-[80%]
+    md:w-[80%] w-[94%]
     bg-white/5
     backdrop-blur-[200px]
     border border-white/20
     rounded-3xl
     shadow-xl
-    p-5 md:pl-10 md:pr-10 md:pb-10 md:pt-1
+    md:p-5 p-3 md:pl-10 md:pr-10 md:pb-10 md:pt-1
     flex flex-col md:flex-row gap-3 md:gap-6
     transition-all
     duration-[400ms]
@@ -140,8 +140,8 @@ const ProjectCard = ({ project, index }) => (
     group
   `}
   >
-    <div className="flex flex-col gap-6 md:gap-10 w-full">
-      <div className="text-xl md:text-2xl font-bold text-white mt-2 text-center md:text-left">
+    <div className="flex flex-col gap-2 md:gap-10 w-full">
+      <div className="text-xl md:text-2xl font-bold text-white md:mt-2 mt-0 text-center md:text-left">
         {project.title}
       </div>
 
@@ -168,13 +168,13 @@ const ProjectCard = ({ project, index }) => (
     </div>
 
     <div className="pt-0 md:pt-20 flex flex-col justify-between w-full">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-1 md:gap-3">
         {/* Title and Description */}
         <div className="text-center md:text-left">
           <h3 className="hidden md:block text-2xl md:text-3xl font-bold text-white mt-2">
             {project.title}
           </h3>
-          <p className="text-gray-300 mt-2 text-sm md:text-lg">
+          <p className="text-gray-300 mt-1 md:mt-2 text-sm md:text-lg">
             {project.description}
           </p>
         </div>
@@ -193,7 +193,7 @@ const ProjectCard = ({ project, index }) => (
       </div>
 
       {/* Code and Live Buttons */}
-      <div className="flex flex-row justify-between items-center mt-6 gap-4">
+      <div className="flex flex-row justify-between items-center mt-4 d:mt-6 gap-4">
         {project.githubLink && (
           <a
             href={project.githubLink}
@@ -263,7 +263,7 @@ const Projects = () => {
         </h2>
       </motion.div>
 
-      <div className="relative flex flex-col gap-[100px] md:px-[100px] px-0 md:py-[100px] pb-0 [perspective:1000px] items-center">
+      <div className="relative flex flex-col gap-[100px] md:px-[100px] px-00 md:py-[100px] pb-0 [perspective:1000px] items-center">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}

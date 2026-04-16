@@ -36,7 +36,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="w-full py-32 px-6 sm:px-12 relative overflow-hidden">
+        <div className="w-full py-32 px-3 sm:px-12 relative overflow-hidden">
           {/* Main Glass Panel */}
           <div className="relative z-10 w-full max-w-7xl mx-auto rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden transition-all duration-1000">
             {/* Inner Aura */}

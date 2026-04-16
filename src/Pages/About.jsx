@@ -38,7 +38,7 @@ const EducationCard = ({
     whileInView="visible"
     viewport={{ once: true }}
     variants={fadeInUp}
-    className="relative flex md:flex-row flex-col md:justify-normal md:items-start items-center gap-6 p-8 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] transition-all duration-500 before:absolute before:left-0 before:top-0 before:h-full before:w-[3px] before:bg-gradient-to-b before:rounded-l-2xl"
+    className="relative flex md:flex-row flex-col md:justify-normal md:items-start items-center gap-6 md:p-8 p-5 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] transition-all duration-500 before:absolute before:left-0 before:top-0 before:h-full before:w-[3px] before:bg-gradient-to-b before:rounded-l-2xl"
   >
     {/* school logo */}
     <img
@@ -608,7 +608,7 @@ function About() {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
           Education
         </motion.h2>
-        <div className="relative z-10 px-10 md:px-28 pb-24">
+        <div className="relative z-10 px-3 md:p-10 md:px-28 pb-24">
           {/* School Card */}
           <EducationCard
             img={matrixSchool}
@@ -639,14 +639,14 @@ function About() {
             grade="CGPA: 8.05"
             tags={[
               "Full Stack",
+              "JAVA",
               "DevOps",
               "MERN Stack",
-              "Cloud Computing",
-              "JAVA",
-              "Data Structure & Algorithm",
-              "Design and Analysis of Algorithms",
               "DBMS",
+              "Data Structure & Algorithm",
+              "Cloud Computing",
               "Operating System",
+              "Design and Analysis of Algorithms",
             ]}
             highlight="Actively building production-level MERN applications & AI-integrated systems"
             ongoing={true}
@@ -657,7 +657,7 @@ function About() {
       {/* Certifications Section */}
       <div
         ref={certificateRef}
-        className="relative z-10 mt-48 px-10 md:px-28 pb-32"
+        className="relative z-10 md:mt-48 px-1 md:px-28 pb-32"
       >
         {/* Top horizontal line */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
@@ -666,9 +666,9 @@ function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-6xl font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center mb-12"
+          className="text-6xl font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center mb-10"
         >
-          Licenses & Certifications
+          Certifications
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl place-items-center py-10">
           {certificates.map((certificate, index) => (
@@ -717,7 +717,7 @@ function About() {
               </div>
 
               {/* Text Section */}
-              <div className="p-6 flex flex-col justify-between gap-3 text-left">
+              <div className="p-3 md:p-6 flex flex-col justify-between gap-3 text-left">
                 {/* Title */}
                 <h3 className="text-xl font-semibold bg-gradient-to-r from-[#00ff88] via-white to-[#00cfff] bg-clip-text text-transparent group-hover:brightness-110 transition-all">
                   {certificate.title}

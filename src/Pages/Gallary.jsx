@@ -152,7 +152,7 @@ const Gallery = () => {
 
       {/* All Images */}
       <div
-        className={`p-6 gap-5 md:mx-[50px] mx-0 ${
+        className={`p-3 gap-3 md:mx-[50px] mx-0 ${
           isDesktop
             ? "columns-2 sm:columns-3 md:columns-4 space-y-5"
             : "grid grid-cols-2 gap-4"
