@@ -23,7 +23,7 @@ const projects = [
     title: "Laundry Wallah",
     description:
       "A full-stack laundry service web application built to simplify booking, service management, and customer experience with a clean, responsive interface.",
-    image: "/projects/projects_image/Laundry.webp",
+    image: "/projects/projects_image/Laundry_wallah.webp",
     video: "",
     techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     liveLink: "https://laundry-two-omega.vercel.app/",
