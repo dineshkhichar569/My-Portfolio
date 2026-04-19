@@ -20,6 +20,28 @@ const projects = [
     cssPerBox: "top-[80px]",
   },
   {
+    title: "Laundry Wallah",
+    description:
+      "A full-stack laundry service web application built to simplify booking, service management, and customer experience with a clean, responsive interface.",
+    image: "/projects/projects_image/Laundry.webp",
+    video: "",
+    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    liveLink: "https://laundry-two-omega.vercel.app/",
+    githubLink: "https://github.com/dineshkhichar569/Laundry.git",
+    cssPerBox: "top-[125px]",
+  },
+  {
+    title: "Colors Diamond Website",
+    description:
+      "A premium jewelry e-commerce website built with Shopify, featuring a luxurious full-width hero section, elegant product presentation, smooth navigation, and a fully responsive shopping experience tailored for diamond and fine jewelry collections.",
+    image: "/projects/projects_image/ColorsDiamond.webp",
+    video: "/projects/projects_videos/ColorsDiamond.mp4",
+    techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
+    liveLink: "https://colors-diamond.myshopify.com/",
+    cssPerBox: "top-[170px]",
+    // githubLink: "https://github.com/dineshkhichar569/ColorsDiamond",
+  },
+  {
     title: "Tarecom Website",
     description:
       "A modern e-commerce platform built using Shopify with custom HTML, CSS, and JavaScript enhancements to provide a smooth, responsive, and user-friendly shopping experience.",
@@ -27,7 +49,7 @@ const projects = [
     video: "/projects/projects_videos/Tarecom.mp4",
     techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
     liveLink: "https://tarecom.com/",
-    cssPerBox: "top-[125px]",
+    cssPerBox: "top-[220px]",
     // githubLink: "https://github.com/dineshkhichar569/Tarecom",
   },
   {
@@ -45,32 +67,10 @@ const projects = [
       "Responsive Design",
     ],
     liveLink: "https://antriya-toy.myshopify.com/",
-    cssPerBox: "top-[170px]",
+    cssPerBox: "top-[270px]",
     // githubLink: "https://github.com/dineshkhichar569/Antriya",
   },
-  {
-    title: "Colors Diamond Website",
-    description:
-      "A premium jewelry e-commerce website built with Shopify, featuring a luxurious full-width hero section, elegant product presentation, smooth navigation, and a fully responsive shopping experience tailored for diamond and fine jewelry collections.",
-    image: "/projects/projects_image/ColorsDiamond.webp",
-    video: "/projects/projects_videos/ColorsDiamond.mp4",
-    techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-    liveLink: "https://colors-diamond.myshopify.com/",
-    cssPerBox: "top-[220px]",
-    // githubLink: "https://github.com/dineshkhichar569/ColorsDiamond",
-  },
-  {
-    title: "Laundry App",
-    description:
-      "Designed for efficiency, reliability, and user convenience in every step of the laundry process.",
-    image: "/projects/projects_image/Laundry.webp",
-    video: "/projects/projects_videos/Laundry.mp4",
-    techStack: ["HTML", "CSS", "JavaScript", "Responsive"],
-    liveLink:
-      "https://66880eda7957cd82484141cd--dainty-alpaca-6096e9.netlify.app/",
-    githubLink: "https://github.com/dineshkhichar569/Laundry",
-    cssPerBox: "top-[270px]",
-  },
+
   {
     title: "Knowledge-Based Course Advisor",
     description:
