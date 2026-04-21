@@ -46,11 +46,11 @@ const allSkills = [
 
   // Backend
   { name: "Node.js", icon: "/icons/NODE.svg", category: "backend" },
-  {
-    name: "Socket.io",
-    icon: "https://i1.wp.com/www.ux-republic.com/wp-content/uploads/2018/03/socket.png?fit=375%2C375&ssl=1",
-    category: "backend",
-  },
+  // {
+  //   name: "Socket.io",
+  //   icon: "https://i1.wp.com/www.ux-republic.com/wp-content/uploads/2018/03/socket.png?fit=375%2C375&ssl=1",
+  //   category: "backend",
+  // },
   {
     name: "Express.js",
     icon: "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/359/thumb/expressjslogo.png",
@@ -71,14 +71,14 @@ const allSkills = [
     icon: "https://img.icons8.com/?size=96&id=gKfcEStXI1Hm&format=png",
     category: "libraries",
   },
-  { name: "Bootstrap", icon: "/icons/Bootstrap.svg", category: "libraries" },
+  // { name: "Bootstrap", icon: "/icons/Bootstrap.svg", category: "libraries" },
 
   // DevOps
-  {
-    name: "Docker",
-    icon: "https://www.svgrepo.com/show/331370/docker.svg",
-    category: "devops",
-  },
+  // {
+  //   name: "Docker",
+  //   icon: "https://www.svgrepo.com/show/331370/docker.svg",
+  //   category: "devops",
+  // },
   { name: "Git", icon: "/icons/Git.svg", category: "devops" },
   { name: "GitHub", icon: "/icons/Github.svg", category: "devops" },
   {
@@ -120,16 +120,16 @@ const allSkills = [
     icon: "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2429%2FPNG%2F512%2Fshopify_logo_icon_147240.png&id=147240&pack_or_individual=pack",
     category: "tools",
   },
-  {
-    name: "WordPress",
-    icon: "https://cdn.pixabay.com/photo/2016/11/09/08/58/wordpress-1810632_1280.jpg",
-    category: "tools",
-  },
-  {
-    name: "Kaggle",
-    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6ZlP1cnY3b5jm7un8--sKL9lxMP6a0Ox0g&s",
-    category: "tools",
-  },
+  // {
+  //   name: "WordPress",
+  //   icon: "https://cdn.pixabay.com/photo/2016/11/09/08/58/wordpress-1810632_1280.jpg",
+  //   category: "tools",
+  // },
+  // {
+  //   name: "Kaggle",
+  //   icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6ZlP1cnY3b5jm7un8--sKL9lxMP6a0Ox0g&s",
+  //   category: "tools",
+  // },
   { name: "Postman", icon: "/icons/Postman.svg", category: "tools" },
   {
     name: "MongoDB Compass",

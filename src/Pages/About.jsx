@@ -101,18 +101,18 @@ const EducationCard = ({
 );
 
 const certificates = [
-  {
-    image: "/icons/developersArena.webp",
-    title: "Web Development Internship",
-    organization: "🏢 The Developers Arena",
-    date: "📅 February 2026",
-    description:
-      "Successfully completed a 3-month Web Development Internship focusing on full-stack development, real-world project implementation, and performance-driven solutions.",
-    skills: ["React", "Node.js", "Full Stack", "Project Development"],
-    credentialId: "CERT-202602-EMP20251110-211",
-    content: "/DOCs/Developers_Arena.pdf",
-    popupImage: "/DOCs/images/developersArenaCertificate.webp",
-  },
+  // {
+  //   image: "/icons/developersArena.webp",
+  //   title: "Web Development Internship",
+  //   organization: "🏢 The Developers Arena",
+  //   date: "📅 February 2026",
+  //   description:
+  //     "Successfully completed a 3-month Web Development Internship focusing on full-stack development, real-world project implementation, and performance-driven solutions.",
+  //   skills: ["React", "Node.js", "Full Stack", "Project Development"],
+  //   credentialId: "CERT-202602-EMP20251110-211",
+  //   content: "/DOCs/Developers_Arena.pdf",
+  //   popupImage: "/DOCs/images/developersArenaCertificate.webp",
+  // },
   {
     image: "/icons/bluestock.webp",
     title: "Software Development Engineer (SDE) Internship",
@@ -124,35 +124,35 @@ const certificates = [
     content: "/DOCs/BlueStocks.pdf",
     popupImage: "/DOCs/images/BlueStoksCertificate.webp",
   },
-  {
-    image: "/icons/coursera.png",
-    title: "Database Management Essentials",
-    organization: "🏢 University of Colorado (Coursera)",
-    date: "📅 March 2025",
-    description:
-      "Mastered core database concepts, SQL, and relational design through the University of Colorado’s professional program on Coursera.",
-    skills: ["Database", "SQL", "Data Modeling", "Relational Design"],
-    credentialId: "8R35GNGvE447",
-    content: "/DOCs/DBMS.pdf",
-    popupImage: "/DOCs/images/DBMS.webp",
-  },
-  {
-    image: "/icons/coursera.png",
-    title: "Linux Fundamentals",
-    organization: "🏢 LearnQuest (Coursera)",
-    date: "📅 March 2025",
-    description:
-      "Gained hands-on experience with Linux command-line, file systems, and system administration through LearnQuest on Coursera.",
-    skills: [
-      "Linux",
-      "Command Line",
-      "System Administration",
-      "File Management",
-    ],
-    credentialId: "05EDPXOXDGH5",
-    content: "/DOCs/LINUX.pdf",
-    popupImage: "/DOCs/images/LINUX.webp",
-  },
+  // {
+  //   image: "/icons/coursera.png",
+  //   title: "Database Management Essentials",
+  //   organization: "🏢 University of Colorado (Coursera)",
+  //   date: "📅 March 2025",
+  //   description:
+  //     "Mastered core database concepts, SQL, and relational design through the University of Colorado’s professional program on Coursera.",
+  //   skills: ["Database", "SQL", "Data Modeling", "Relational Design"],
+  //   credentialId: "8R35GNGvE447",
+  //   content: "/DOCs/DBMS.pdf",
+  //   popupImage: "/DOCs/images/DBMS.webp",
+  // },
+  // {
+  //   image: "/icons/coursera.png",
+  //   title: "Linux Fundamentals",
+  //   organization: "🏢 LearnQuest (Coursera)",
+  //   date: "📅 March 2025",
+  //   description:
+  //     "Gained hands-on experience with Linux command-line, file systems, and system administration through LearnQuest on Coursera.",
+  //   skills: [
+  //     "Linux",
+  //     "Command Line",
+  //     "System Administration",
+  //     "File Management",
+  //   ],
+  //   credentialId: "05EDPXOXDGH5",
+  //   content: "/DOCs/LINUX.pdf",
+  //   popupImage: "/DOCs/images/LINUX.webp",
+  // },
   {
     image: "/icons/linux.png",
     title: "OpenAPI Fundamentals (LFEL1011)",
@@ -283,24 +283,24 @@ const experiences = [
     offerLetter: "/DOCs/BlueStock_offerLetter.pdf",
     certificate: "/DOCs/BlueStocks.pdf",
   },
-  {
-    company: "The Developers Arena",
-    role: "Full Stack Web Development Intern",
-    duration: "Nov 2025 – Feb 2026",
-    type: "Internship",
-    description:
-      "Completed a 3-month intensive full-stack internship building scalable MERN applications. Designed RESTful APIs, optimized frontend performance, and delivered production-ready projects with focus on clean UI/UX and maintainable architecture.",
-    skills: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Full Stack Development",
-      "API Integration",
-    ],
-    offerLetter: "/DOCs/DevelopersArena_offerLetter.pdf",
-    certificate: "/DOCs/Developers_Arena.pdf",
-  },
+  // {
+  //   company: "The Developers Arena",
+  //   role: "Full Stack Web Development Intern",
+  //   duration: "Nov 2025 – Feb 2026",
+  //   type: "Internship",
+  //   description:
+  //     "Completed a 3-month intensive full-stack internship building scalable MERN applications. Designed RESTful APIs, optimized frontend performance, and delivered production-ready projects with focus on clean UI/UX and maintainable architecture.",
+  //   skills: [
+  //     "React",
+  //     "Node.js",
+  //     "Express",
+  //     "MongoDB",
+  //     "Full Stack Development",
+  //     "API Integration",
+  //   ],
+  //   offerLetter: "/DOCs/DevelopersArena_offerLetter.pdf",
+  //   certificate: "/DOCs/Developers_Arena.pdf",
+  // },
   {
     company: "Self Project",
     role: "Full Stack Developer – AI Powered ATS System",
