@@ -9,6 +9,99 @@ import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 function Home() {
+  const trueBadges = [
+    {
+      label: "React",
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-4 w-4 text-cyan-400" fill="none">
+          <circle cx="12" cy="12" r="1.8" fill="currentColor" />
+          <g stroke="currentColor" strokeWidth="1" fill="none">
+            <ellipse cx="12" cy="12" rx="9.5" ry="3.8" />
+            <ellipse
+              cx="12"
+              cy="12"
+              rx="9.5"
+              ry="3.8"
+              transform="rotate(60 12 12)"
+            />
+            <ellipse
+              cx="12"
+              cy="12"
+              rx="9.5"
+              ry="3.8"
+              transform="rotate(120 12 12)"
+            />
+          </g>
+        </svg>
+      ),
+    },
+    {
+      label: "Node.js",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-green-500"
+          fill="currentColor"
+        >
+          <path d="M12 1.85l9 5.2v9.9l-9 5.2-9-5.2V7.05l9-5.2zm0 2.3L5 8.2v7.6l7 4.05 7-4.05V8.2L12 4.15z" />
+        </svg>
+      ),
+    },
+    {
+      label: "Express",
+      icon: (
+        <span className="text-[13px] font-semibold italic text-gray-300 leading-none">
+          ex
+        </span>
+      ),
+    },
+    {
+      label: "MongoDB",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-green-500"
+          fill="currentColor"
+        >
+          <path d="M12 2c2.5 4 5 6.5 5 11 0 4-2.2 6.5-4.3 7.2l-.4 1.6h-.6l-.4-1.6C9.2 19.5 7 17 7 13c0-4.5 2.5-7 5-11z" />
+        </svg>
+      ),
+    },
+    {
+      label: "REST APIs",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-sky-400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M17.5 19a4.5 4.5 0 00.5-8.97A6 6 0 006 9.5 4 4 0 006.5 19h11z" />
+        </svg>
+      ),
+    },
+    {
+      label: "Auth & Security",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-green-400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
@@ -101,29 +194,24 @@ function Home() {
                   </div>
                 </div>
 
-                {/* Trust badges */}
+                {/* //! Trust badges */}
                 <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-gray-200">
-                  <span className="rounded-full border border-white/30 bg-black/50 px-3 py-1">
-                    React
-                  </span>
-                  <span className="rounded-full border border-white/30 bg-black/50 px-3 py-1">
-                    Node.js
-                  </span>
-                  <span className="rounded-full border border-white/30 bg-black/50 px-3 py-1">
-                    Express
-                  </span>
-                  <span className="rounded-full border border-white/30 bg-black/50 px-3 py-1">
-                    MongoDB
-                  </span>
-                  <span className="rounded-full border border-white/30 bg-black/50 px-3 py-1">
-                    REST APIs
-                  </span>
-                  <span className="rounded-full border border-white/30 bg-black/50 px-3 py-1">
-                    Auth &amp; Security
-                  </span>
+                  {trueBadges.map((badge, i) => (
+                    <span
+                      key={badge.label}
+                      style={{
+                        animation: `floatY 3s ease-in-out infinite`,
+                        animationDelay: `${i * -1}s`,
+                      }}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/50 px-3 py-1 will-change-transform"
+                    >
+                      {badge.icon}
+                      {badge.label}
+                    </span>
+                  ))}
                 </div>
 
-                {/* Quick stats (stay in columns on all devices) */}
+                {/* //! Quick stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2 sm:pt-4">
                   <div className="rounded-xl border border-white/20 bg-black/0 px-3 sm:px-4 py-3 text-center backdrop-blur">
                     <div className="text-sm sm:text-base md:text-lg font-extrabold text-white">
