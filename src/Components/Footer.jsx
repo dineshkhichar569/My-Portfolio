@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import { ExternalLink } from "lucide-react";
+import VisitorCounter from "./VisitorCounter";
 
 const Footer = () => {
   return (
@@ -93,6 +94,15 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-lg md:text-xl"
+            >
+              <VisitorCounter />
             </motion.div>
           </motion.div>
 
