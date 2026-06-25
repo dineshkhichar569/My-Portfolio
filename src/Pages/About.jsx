@@ -9,6 +9,9 @@ import TargetCursor from "../React-Bits/TargetCursor";
 import { useRef, useState } from "react";
 import { Download, ExternalLink, EyeIcon, FileText, X } from "lucide-react";
 import GitHubStats from "../Components/GitHubStats";
+import certificatesData from "../data/certificatesData.js";
+import experiencesData from "../data/experiencesData.js";
+import profilesData from "../data/profilesData.js";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -40,7 +43,6 @@ const EducationCard = ({
     variants={fadeInUp}
     className="relative flex md:flex-row flex-col md:justify-normal md:items-start items-center gap-6 md:p-8 p-5 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] transition-all duration-500 before:absolute before:left-0 before:top-0 before:h-full before:w-[3px] before:bg-gradient-to-b before:rounded-l-2xl"
   >
-    {/* school logo */}
     <img
       src={img}
       alt={title}
@@ -49,16 +51,13 @@ const EducationCard = ({
       object-cover rounded-xl border border-white/10"
     />
 
-    {/* education details */}
     <div className="flex-1 space-y-3">
       <h3 className="md:text-3xl text-xl font-bold tracking-wide text-white">
         {title}
       </h3>
 
-      {/* Degree */}
       <p className="md:text-lg text-sm text-gray-300">{degree}</p>
 
-      {/* Date */}
       <div className="flex items-center gap-3 flex-wrap">
         <span
           className="px-3 py-1 text-xs rounded-md 
@@ -76,7 +75,6 @@ const EducationCard = ({
 
       {grade && <p className="text-gray-400 md:text-base text-sm">{grade}</p>}
 
-      {/* Tags */}
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-2">
           {tags.map((tag, i) => (
@@ -92,263 +90,12 @@ const EducationCard = ({
         </div>
       )}
 
-      {/* Highlight text */}
       {highlight && (
         <p className="text-sm text-gray-400 mt-3 italic">{highlight}</p>
       )}
     </div>
   </motion.div>
 );
-
-const certificates = [
-  {
-    image: "/icons/developersArena.webp",
-    title: "Web Development Internship",
-    organization: "🏢 The Developers Arena",
-    date: "📅 February 2026",
-    description:
-      "Successfully completed a 3-month Web Development Internship focusing on full-stack development, real-world project implementation, and performance-driven solutions.",
-    skills: ["React", "Node.js", "Full Stack", "Project Development"],
-    credentialId: "CERT-202602-EMP20251110-211",
-    content: "/DOCs/Developers_Arena.pdf",
-    popupImage: "/DOCs/images/developersArenaCertificate.webp",
-  },
-  {
-    image: "/icons/bluestock.webp",
-    title: "Software Development Engineer (SDE) Internship",
-    organization: "🏢 Bluestock Fintech",
-    date: "📅 January 2026",
-    description:
-      "Completed Software Development Engineer internship working on real-world fintech systems, problem-solving tasks, and backend-focused development.",
-    skills: ["SDE", "Backend", "Fintech", "Problem Solving"],
-    content: "/DOCs/BlueStocks.pdf",
-    popupImage: "/DOCs/images/BlueStoksCertificate.webp",
-  },
-  {
-    image: "/icons/coursera.png",
-    title: "Database Management Essentials",
-    organization: "🏢 University of Colorado (Coursera)",
-    date: "📅 March 2025",
-    description:
-      "Mastered core database concepts, SQL, and relational design through the University of Colorado’s professional program on Coursera.",
-    skills: ["Database", "SQL", "Data Modeling", "Relational Design"],
-    credentialId: "8R35GNGvE447",
-    content: "/DOCs/DBMS.pdf",
-    popupImage: "/DOCs/images/DBMS.webp",
-  },
-  {
-    image: "/icons/coursera.png",
-    title: "Linux Fundamentals",
-    organization: "🏢 LearnQuest (Coursera)",
-    date: "📅 March 2025",
-    description:
-      "Gained hands-on experience with Linux command-line, file systems, and system administration through LearnQuest on Coursera.",
-    skills: [
-      "Linux",
-      "Command Line",
-      "System Administration",
-      "File Management",
-    ],
-    credentialId: "05EDPXOXDGH5",
-    content: "/DOCs/LINUX.pdf",
-    popupImage: "/DOCs/images/LINUX.webp",
-  },
-  {
-    image: "/icons/linux.png",
-    title: "OpenAPI Fundamentals (LFEL1011)",
-    organization: "🏢 The Linux Foundation",
-    date: "📅 October 2025",
-    description:
-      "Developed a solid understanding of OpenAPI standards, API design principles, and documentation best practices.",
-    skills: ["OpenAPI", "API Design", "API Documentation"],
-    credentialId: "LF-ostjgx3w6s",
-    content: "/DOCs/Linux_foundation_OpenAPI.pdf",
-    popupImage: "/DOCs/images/OpenAPI_Fundamentals.webp",
-  },
-  {
-    image: "/icons/linux.png",
-    title: "Introduction to Node.js (LFW111)",
-    organization: "🏢 The Linux Foundation",
-    date: "📅 October 20, 2025",
-    description:
-      "Successfully completed the Linux Foundation’s LFW111 course, gaining strong foundational knowledge of Node.js, asynchronous programming, modules, and server-side JavaScript development.",
-    skills: [
-      "Node.js",
-      "JavaScript",
-      "Backend Development",
-      "Async Programming",
-    ],
-    credentialId: "LF-lupd8bsm5y",
-    content: "/DOCs/Linux_foundation_NodeJs.pdf",
-    popupImage: "/DOCs/images/Linux_foundation_NodeJs.webp",
-  },
-  {
-    image: "/icons/kagale_Logo.webp",
-    title: "5-Day AI Agents Intensive Program",
-    organization: "Google × Kaggle",
-    date: "February 2026",
-    description:
-      "Completed a 5-day intensive program focused on foundational concepts of AI agents, prompt engineering, and practical exposure to building simple agent-based workflows.",
-    skills: [
-      "AI Fundamentals",
-      "Prompt Engineering (Basic)",
-      "Agent Concepts",
-      "Applied AI Learning",
-    ],
-    credentialId: "GOOGLE-AI-AGENTS-2026",
-    content: "/DOCs/images/kaggle.webp",
-    popupImage: "/DOCs/images/kaggle.webp",
-  },
-  {
-    image: "/icons/deloitte.png",
-    title: "Technology Job Simulation",
-    organization: "🏢 Deloitte",
-    date: "📅 October 2025",
-    description:
-      "Completed Deloitte’s technology simulation focusing on coding, problem-solving, and real-world software development tasks.",
-    skills: ["Coding", "Development", "Problem-Solving"],
-    credentialId: "2YLwMCCmXiRSbzep7",
-    content: "/DOCs/Deloitte.pdf",
-    popupImage: "/DOCs/images/Deloitte.webp",
-  },
-  {
-    image: "/icons/oracle.webp",
-    title:
-      "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
-    organization: "🏢 Oracle University",
-    date: "📅 October 22, 2025",
-    description:
-      "Recognized by Oracle as an Oracle Certified Professional in OCI 2025 Generative AI, demonstrating expertise in cloud-based AI infrastructure, model deployment, and enterprise-grade AI solutions.",
-    skills: [
-      "Oracle Cloud",
-      "Generative AI",
-      "Cloud Infrastructure",
-      "Enterprise AI",
-      "OCI",
-    ],
-    content: "/DOCs/Oracle.pdf",
-    popupImage: "/DOCs/images/Oracle.webp",
-  },
-
-  {
-    image: "/icons/pixel.png",
-    title: "Certificate of Participation - Pixel Wizard",
-    organization:
-      "🏢 Unstop | Sant Longowal Institute of Engineering and Technology, Punjab",
-    date: "📅 2025",
-    description:
-      "Participated in the Pixel Wizard hackathon as part of Team DRAMP, showcasing creativity and front-end development skills.",
-    skills: ["Hackathon", "Team Collaboration", "HTML", "CSS", "JavaScript"],
-    content: "/DOCs/Hackathon.pdf",
-    popupImage: "/DOCs/images/Hackathon.webp",
-  },
-];
-
-const experiences = [
-  {
-    company: "Self-Employed (Upwork & Direct Clients)",
-    role: "Freelance Full Stack & Shopify Developer",
-    duration: "Dec 2025 – Present",
-    type: "Freelance",
-    description:
-      "Working as a Freelance Full Stack and Shopify Developer delivering scalable web applications and high-performance eCommerce solutions. Specialized in MERN stack development, custom Shopify theme customization, API integrations, backend architecture, and performance optimization for global clients.",
-    skills: [
-      "MERN Stack",
-      "React.js",
-      "Node.js, Express.js",
-      "MongoDB",
-      "Shopify",
-      "Liquid",
-      "HTML, CSS, JavaScript",
-      "Theme Development",
-      "Client Communication",
-    ],
-    profileLink: "https://www.upwork.com/freelancers/~0168bdfd724188829d",
-  },
-  {
-    company: "Bluestock Fintech",
-    role: "Software Development Engineer (SDE) Intern",
-    duration: "Dec 1, 2025 – Jan 30, 2026",
-    type: "Internship",
-    description:
-      "Worked on fintech-grade backend systems focusing on performance, scalability, and clean architecture. Contributed to real-world problem-solving tasks, API development, and system optimization in a production-oriented environment.",
-    skills: [
-      "Backend Development",
-      "Node.js",
-      "REST APIs",
-      "Problem Solving",
-      "System Design Basics",
-      "Fintech Systems",
-    ],
-    offerLetter: "/DOCs/BlueStock_offerLetter.pdf",
-    certificate: "/DOCs/BlueStocks.pdf",
-  },
-  {
-    company: "The Developers Arena",
-    role: "Full Stack Web Development Intern",
-    duration: "Nov 2025 – Feb 2026",
-    type: "Internship",
-    description:
-      "Completed a 3-month intensive full-stack internship building scalable MERN applications. Designed RESTful APIs, optimized frontend performance, and delivered production-ready projects with focus on clean UI/UX and maintainable architecture.",
-    skills: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Full Stack Development",
-      "API Integration",
-    ],
-    offerLetter: "/DOCs/DevelopersArena_offerLetter.pdf",
-    certificate: "/DOCs/Developers_Arena.pdf",
-  },
-  {
-    company: "Self Project",
-    role: "Full Stack Developer – AI Powered ATS System",
-    duration: "2026 – Present",
-    type: "Ongoing Project",
-    description:
-      "Developing an internal hiring Applicant Tracking System using MERN stack integrated with AI APIs for resume parsing and candidate screening. Implemented secure authentication, role-based access control, and scalable REST architecture focused on automation and efficiency.",
-    skills: [
-      "MERN Stack",
-      "AI APIs",
-      "Authentication",
-      "RBAC",
-      "REST Architecture",
-      "MongoDB",
-    ],
-  },
-];
-
-const profiles = [
-  {
-    name: "LeetCode Profile",
-    link: "https://leetcode.com/u/DineshSunny/",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
-    textColor: "group-hover:text-yellow-600",
-    bgColor: "bg-yellow-600",
-  },
-  {
-    name: "GeeksforGeeks Profile",
-    link: "https://www.geeksforgeeks.org/profile/wollver962d",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg",
-    textColor: "group-hover:text-green-600",
-    bgColor: "bg-green-600",
-  },
-  {
-    name: "GitHub Profile",
-    link: "https://github.com/dineshkhichar569",
-    icon: "https://img.icons8.com/?size=512&id=12599&format=png",
-    textColor: "group-hover:text-gray-400",
-    bgColor: "bg-gray-600",
-  },
-  {
-    name: "Upwork Freelancer Profile",
-    link: "https://www.upwork.com/freelancers/~0168bdfd724188829d",
-    icon: "https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png",
-    textColor: "group-hover:text-gray-400",
-    bgColor: "bg-gray-600",
-  },
-];
 
 function About() {
   const [selectedCertificate, setSelectedCertificate] = useState("");
@@ -364,12 +111,10 @@ function About() {
   };
 
   return (
-    <div
-      className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik"
-    >
+    <div className="relative w-full min-h-screen bg-black text-white overflow-hidden font-rubrik">
       <TargetCursor />
       <Navbar />
-      {/* Background blobs */}
+      {/* //! Background blobs */}
       <div className="abstract-blobs z-0">
         <span className="blob blob1"></span>
         <span className="blob blob2"></span>
@@ -380,7 +125,7 @@ function About() {
         ></canvas>
       </div>
 
-      {/* 3 navigation buttons */}
+      {/* //! navigation buttons */}
       <div className="mt-28 flex items-center md:gap-3 gap-2 md:ml-16 ml-6 cursor-pointer w-fit h-10">
         {["Experience", "Education", "Certificates"].map((item, i) => (
           <button
@@ -404,7 +149,7 @@ function About() {
         ))}
       </div>
 
-      {/* Hero Section */}
+      {/* //! Hero Section */}
       <div className="relative z-10 flex flex-col items-center text-center px-1 md:px-28 py-20 space-y-6">
         <motion.h1
           initial="hidden"
@@ -437,7 +182,7 @@ function About() {
           code matters.
         </motion.p>
 
-        {/* Coding Profiles */}
+        {/* //! Coding Profiles */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -445,7 +190,7 @@ function About() {
           variants={fadeInUp}
           className="flex flex-wrap gap-6 justify-center items-center mt-12"
         >
-          {profiles.map((prof, index) => (
+          {profilesData.map((prof, index) => (
             <a
               key={index}
               href={prof.link}
@@ -475,15 +220,12 @@ function About() {
       </div>
 
       <div className="px-3 md:px-28">
-        <GitHubStats/>
-
+        <GitHubStats />
       </div>
 
-
-
-      {/* Experience Section */}
+      {/* //! Experience Section */}
       <div ref={experienceRef} className="relative z-10 px-3 md:px-28 mt-32">
-        {/* Top horizontal line */}
+        {/* //! Top horizontal line */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
         <motion.h2
           initial="hidden"
@@ -496,7 +238,7 @@ function About() {
         </motion.h2>
 
         <div className="relative border-l border-white/10 ml-2 md:ml-4 space-y-16">
-          {experiences.map((exp, index) => (
+          {experiencesData.map((exp, index) => (
             <motion.div
               key={index}
               custom={index}
@@ -506,7 +248,7 @@ function About() {
               variants={fadeInUp}
               className="relative md:pl-10 pl-5"
             >
-              {/* Timeline Dot */}
+              {/* //! Timeline Dot */}
               <div className="absolute -left-[9px] top-2 w-4 h-4 bg-cyan-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.8)]" />
 
               <div className="bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-2xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-500">
@@ -524,7 +266,7 @@ function About() {
                   {exp.description}
                 </p>
 
-                {/* Skills */}
+                {/* //! Skills */}
                 <div className="flex flex-wrap gap-2 mt-4">
                   {exp.skills.map((skill, i) => (
                     <span
@@ -543,7 +285,6 @@ function About() {
                       rel="noopener noreferrer"
                       className="group relative flex items-center justify-between px-4 py-3 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] border border-white/10 hover:border-[#14a800]/50 transition-all duration-300 overflow-hidden"
                     >
-
                       <div className="flex items-center gap-4 relative z-10">
                         <img
                           src="https://img.icons8.com/?size=100&id=2y_wcSzVjqiQ&format=png"
@@ -595,7 +336,7 @@ function About() {
         </div>
       </div>
 
-      {/* Education Section */}
+      {/* //! Education Section */}
       <div ref={educationRef}>
         <motion.h2
           initial="hidden"
@@ -604,12 +345,12 @@ function About() {
           variants={fadeInUp}
           className="text-6xl mb-[60px] mt-[150px] font-extrabold tracking-wide bg-gradient-to-r from-lime-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text text-center"
         >
-          {/* Top horizontal line */}
+          {/* //! Top horizontal line */}
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
           Education
         </motion.h2>
         <div className="relative z-10 px-3 md:p-10 md:px-28 pb-24">
-          {/* School Card */}
+          {/* //! School Card */}
           <EducationCard
             img={matrixSchool}
             title="Matrix High School, Sikar"
@@ -619,7 +360,7 @@ function About() {
             highlight="Built strong analytical foundation in Mathematics & Logical Reasoning"
           />
 
-          {/* Vertical Bridge */}
+          {/* //! Vertical Bridge */}
           <div className="relative flex justify-center items-center w-full h-[150px] overflow-hidden">
             <div className="absolute w-52 h-52 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/10 blur-[80px] ripple-scale"></div>
 
@@ -630,7 +371,7 @@ function About() {
             </h2>
           </div>
 
-          {/* College Card */}
+          {/* //! College Card */}
           <EducationCard
             img={Dit}
             title="DIT University, Dehradun"
@@ -654,12 +395,12 @@ function About() {
         </div>
       </div>
 
-      {/* Certifications Section */}
+      {/* //! Certifications Section */}
       <div
         ref={certificateRef}
         className="relative z-10 md:mt-48 px-1 md:px-28 pb-32"
       >
-        {/* Top horizontal line */}
+        {/* //! Top horizontal line */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
         <motion.h2
           initial="hidden"
@@ -671,7 +412,7 @@ function About() {
           Certifications
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl place-items-center py-10">
-          {certificates.map((certificate, index) => (
+          {certificatesData.map((certificate, index) => (
             <motion.div
               key={index}
               custom={index}
@@ -681,7 +422,7 @@ function About() {
               variants={fadeInUp}
               className="group relative flex flex-col justify-normal w-full max-w-[360px] h-full bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-300 overflow-hidden group backdrop-blur-xl cursor-pointer pb-6"
             >
-              {/* on hover */}
+              {/* //! on hover */}
               <p
                 className="flex gap-1 items-center justify-center absolute top-2 bottom-full mt-2 left-4 z-10 bg-gradient-to-r from-[#00ff88]/20 to-[#00cfff]/20 backdrop-blur-md border border-[#00ffcc]/40 text-center text-xs font-medium text-[#00ffcc] px-2 py-[14px] rounded-full opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                 onClick={() => setSelectedCertificate(certificate.popupImage)}
@@ -689,7 +430,7 @@ function About() {
                 <EyeIcon className="w-3.5 h-3.5" /> view
               </p>
 
-              {/* Header Section */}
+              {/* //! Header Section */}
               <div className="relative h-[120px] bg-gradient-to-br from-[#00ff88]/10 via-[#00cfff]/5 to-transparent flex items-center justify-center rounded-t-3xl">
                 {/* Star Badge */}
                 <div className="absolute top-4 right-4 bg-gradient-to-br from-[#00ff88] to-[#00cfff] rounded-full w-8 h-8 flex items-center justify-center shadow-lg">
@@ -705,7 +446,7 @@ function About() {
                   </svg>
                 </div>
 
-                {/* IMAGE section*/}
+                {/* //! IMAGE section*/}
                 <div className="w-full h-32 flex items-center justify-center rounded-xl">
                   <img
                     src={certificate.image}
@@ -716,14 +457,14 @@ function About() {
                 </div>
               </div>
 
-              {/* Text Section */}
+              {/* //! Text Section */}
               <div className="p-3 md:p-6 flex flex-col justify-between gap-3 text-left">
-                {/* Title */}
+                {/* //! Title */}
                 <h3 className="text-xl font-semibold bg-gradient-to-r from-[#00ff88] via-white to-[#00cfff] bg-clip-text text-transparent group-hover:brightness-110 transition-all">
                   {certificate.title}
                 </h3>
 
-                {/* Organization + Date */}
+                {/* //! Organization + Date */}
                 <div className="flex flex-col gap-1 text-sm text-gray-400">
                   <p className="font-medium text-gray-300">
                     {certificate.organization}
@@ -731,12 +472,12 @@ function About() {
                   <p className="text-gray-500">{certificate.date}</p>
                 </div>
 
-                {/* Description */}
+                {/* //! Description */}
                 <p className="text-gray-400 text-sm leading-relaxed mt-2">
                   {certificate.description}
                 </p>
 
-                {/* Skills */}
+                {/* //! Skills */}
                 <div className="flex flex-wrap gap-2 mt-3">
                   {certificate.skills.map((skill, key) => (
                     <span
@@ -748,7 +489,7 @@ function About() {
                   ))}
                 </div>
 
-                {/* Credential */}
+                {/* //! Credential */}
                 {certificate.credentialId && (
                   <p className="text-xs text-gray-500 mt-4">
                     Credential ID:
@@ -759,7 +500,7 @@ function About() {
                 )}
               </div>
 
-              {/* Download Icon */}
+              {/* //! Download Icon */}
               <div className="absolute bottom-4 right-4">
                 <a
                   href={certificate.content}
@@ -776,7 +517,7 @@ function About() {
         </div>
       </div>
 
-      {/* Certificate Popup */}
+      {/* //! Certificate Popup */}
       <AnimatePresence>
         {selectedCertificate && (
           <motion.div
