@@ -28,7 +28,7 @@ const HireMe = () => {
           form.current.reset();
           setTimeout(() => setSent(false), 4000);
         },
-        (error) => {
+        () => {
           alert("Failed to send message. Try again later.");
           setLoading(false);
         }
