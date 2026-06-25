@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { File, ShieldBan, ShieldBanIcon } from "lucide-react";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function DataFolder() {
-  const navigate = useNavigate();
   return (
     <div className="bg-black min-h-screen overflow-hidden p-3">
       {/* Background blobs */}
