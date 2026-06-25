@@ -1,124 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
+import projectData from "../data/projectData";
+import ProjectModal from "../Components/ProjectModal";
+import { Link } from "react-router-dom";
 
-const projects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "Personal portfolio built with React, Tailwind, and Framer Motion.",
-    image: "/projects/projects_image/Portfolio.webp",
-    video: "",
-    techStack: ["React", "Tailwind CSS", "Framer Motion", "CSS", "Responsive"],
-    liveLink: "https://dineshportfolios.site",
-    githubLink: "https://github.com/dineshkhichar569/My-Portfolio.git",
-    cssPerBox: "top-[80px]",
-  },
-  {
-    title: "Laundry Wallah",
-    description:
-      "A full-stack laundry service web application built to simplify booking, service management, and customer experience with a clean, responsive interface.",
-    image: "/projects/projects_image/Laundry_wallah.webp",
-    video: "",
-    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-    liveLink: "https://laundry-two-omega.vercel.app/",
-    githubLink: "https://github.com/dineshkhichar569/Laundry.git",
-    cssPerBox: "top-[125px]",
-  },
-  {
-    title: "Colors Diamond Website",
-    description:
-      "A premium jewelry e-commerce website built with Shopify, featuring a luxurious full-width hero section, elegant product presentation, smooth navigation, and a fully responsive shopping experience tailored for diamond and fine jewelry collections.",
-    image: "/projects/projects_image/ColorsDiamond.webp",
-    video: "/projects/projects_videos/ColorsDiamond.mp4",
-    techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-    liveLink: "https://colors-diamond.myshopify.com/",
-    cssPerBox: "top-[170px]",
-    // githubLink: "https://github.com/dineshkhichar569/ColorsDiamond",
-  },
-  {
-    title: "Tarecom Website",
-    description:
-      "A modern e-commerce platform built using Shopify with custom HTML, CSS, and JavaScript enhancements to provide a smooth, responsive, and user-friendly shopping experience.",
-    image: "/projects/projects_image/Tarecom.webp",
-    video: "/projects/projects_videos/Tarecom.mp4",
-    techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-    liveLink: "https://tarecom.com/",
-    cssPerBox: "top-[220px]",
-    // githubLink: "https://github.com/dineshkhichar569/Tarecom",
-  },
-  {
-    title: "Antriya Talking Book Website",
-    description:
-      "A playful and responsive product landing page designed for a kids’ interactive talking book, featuring a colorful UI, engaging visuals, and a smooth user experience focused on showcasing the product in a fun and attractive way.",
-    image: "/projects/projects_image/Antriya.webp",
-    video: "/projects/projects_videos/Antriya.mp4",
-    techStack: [
-      "Password : antriya",
-      "Shopify",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive Design",
-    ],
-    liveLink: "https://antriya-toy.myshopify.com/",
-    cssPerBox: "top-[270px]",
-    // githubLink: "https://github.com/dineshkhichar569/Antriya",
-  },
-
-  {
-    title: "Knowledge-Based Course Advisor",
-    description:
-      "AI-powered academic advisor that uses Propositional Logic (Horn Clauses) to infer which courses a student can take based on academic backlogs. Dynamically reasons through course dependencies to allow or block enrollment.",
-    image: "/projects/projects_image/Backlog-Based.webp",
-    video: "",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "FastAPI",
-      "Python",
-      "Horn Clauses",
-      "REST API",
-      "Vercel",
-      "Render",
-    ],
-    liveLink: "https://knowledge-based-course-advisor.vercel.app/",
-    githubLink:
-      "https://github.com/dineshkhichar569/knowledge-based-course-advisor.git",
-    cssPerBox: "top-[310px]",
-  },
-
-  {
-    title: "MentorShip Website",
-    description:
-      "Built for growth, guidance, and simplicity at every step of your learning journey.",
-    image: "/projects/projects_image/MentorShip.webp",
-    video: "/projects/projects_videos/Mentor.mp4",
-    techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
-    liveLink: "https://lively-mooncake-cd83f4.netlify.app/",
-    githubLink: "https://github.com/dineshkhichar569/MentorShip",
-    cssPerBox: "top-[360px]",
-  },
-  {
-    title: "NFT Selling Website",
-    description:
-      "Designed for creators, crypto enthusiasts to explore, trade, and showcase NFTs with ease and security.",
-    image: "/projects/projects_image/NFT.webp",
-    video: "/projects/projects_videos/NFT.mp4",
-    techStack: ["HTML", "CSS", "Vanila JavaScript", "Responsive"],
-    liveLink: "https://nft-sellingmarket.netlify.app/",
-    githubLink: "https://github.com/dineshkhichar569/NFT-SellingMarket",
-    cssPerBox: "top-[400px]",
-  },
-];
-
-const ProjectCard = ({ project, index }) => (
+const ProjectCard = ({ project, onCardClick }) => (
   <motion.div
+    onClick={() => onCardClick(project)}
     className={`
     ${project.cssPerBox}
     sticky
@@ -129,58 +23,61 @@ const ProjectCard = ({ project, index }) => (
     border border-white/20
     rounded-3xl
     shadow-xl
-    md:p-5 p-3 md:pl-10 md:pr-10 md:pb-10 md:pt-1
-    flex flex-col md:flex-row gap-3 md:gap-6
+    overflow-hidden
+    md:p-6 p-4
+    flex flex-col md:flex-row gap-4 md:gap-8
     transition-all
     duration-[400ms]
     ease-[cubic-bezier(0.25,0.1,0.25,1)]
     [transform-style:preserve-3d]
     [transform-origin:center]
-    hover:scale-[0.95] hover:[transform:rotateZ(2deg)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.4),_0_0_60px_rgba(255,255,255,0.1)]
-    group
+    hover:scale-[1] hover:shadow-[0_30px_60px_rgba(0,0,0,0.4),_0_0_60px_rgba(255,255,255,0.1)]
+    group cursor-pointer
   `}
   >
-    <div className="flex flex-col gap-2 md:gap-10 w-full">
-      <div className="text-xl md:text-2xl font-bold text-white md:mt-2 mt-0 text-center md:text-left">
-        {project.title}
-      </div>
-
-      {/* Image and Video */}
-      <div className="relative w-full md:w-[480px] h-[220px] sm:h-[260px] md:h-[300px] rounded-xl overflow-hidden border border-white/10">
-        <img
-          src={project.image}
-          alt={project.title}
+    {/* Image and Video */}
+    <div className="relative w-full md:w-[480px] md:flex-shrink-0 h-[200px] sm:h-[240px] md:h-full rounded-xl overflow-hidden border border-white/10">
+      <img
+        src={project.image}
+        alt={project.title}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+      />
+      {/* {project.video && (
+        <video
+          src={project.video}
           loading="lazy"
-          className="w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          muted
+          loop
+          autoPlay
+          playsInline
         />
-        {project.video && (
-          <video
-            src={project.video}
-            loading="lazy"
-            className="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            muted
-            loop
-            autoPlay
-            playsInline
-          />
-        )}
-      </div>
+      )} */}
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+      {/*  //! View details hint popUP */}
+      <span className="absolute bottom-3 right-3 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100">
+        View details →
+      </span>
     </div>
 
-    <div className="pt-0 md:pt-20 flex flex-col justify-between w-full">
-      <div className="flex flex-col gap-1 md:gap-3">
+    {/* Content */}
+    <div className="flex flex-col justify-between flex-1 min-w-0 gap-3 md:gap-4">
+      <div className="flex flex-col gap-2 md:gap-3">
         {/* Title and Description */}
         <div className="text-center md:text-left">
-          <h3 className="hidden md:block text-2xl md:text-3xl font-bold text-white mt-2">
+          <h3 className="text-xl md:text-3xl font-bold text-white">
             {project.title}
           </h3>
-          <p className="text-gray-300 mt-1 md:mt-2 text-sm md:text-lg">
+          <p className="text-gray-300 mt-1 md:mt-2 text-sm md:text-base line-clamp-4 md:line-clamp-none">
             {project.description}
           </p>
         </div>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-1 mt-2">
+        <div className="flex flex-wrap justify-center md:justify-start gap-1.5 mt-1">
           {project.techStack.map((tech, i) => (
             <span
               key={i}
@@ -193,7 +90,7 @@ const ProjectCard = ({ project, index }) => (
       </div>
 
       {/* Code and Live Buttons */}
-      <div className="flex flex-row justify-between items-center mt-4 d:mt-6 gap-4">
+      <div className="flex flex-row justify-between items-center mt-2 md:mt-4 gap-4">
         {project.githubLink && (
           <a
             href={project.githubLink}
@@ -227,6 +124,7 @@ const ProjectCard = ({ project, index }) => (
 );
 
 const Projects = () => {
+  const [activeProject, setActiveProject] = useState(null);
   return (
     <div className="relative z-0 min-h-screen text-white bg-black">
       {/* Blobs background */}
@@ -263,11 +161,37 @@ const Projects = () => {
         </h2>
       </motion.div>
 
-      <div className="relative flex flex-col gap-[100px] md:px-[100px] px-00 md:py-[100px] pb-0 [perspective:1000px] items-center">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
+      <div className="relative flex flex-col gap-[100px] md:px-[100px] px-0 md:pt-[100px] md:pb-[60px] pb-0 [perspective:1000px] items-center">
+        {projectData.slice(0, 4).map((project, index) => (
+          <ProjectCard
+            key={index}
+            project={project}
+            onCardClick={setActiveProject}
+          />
         ))}
       </div>
+
+{/* //! View All Projects button */}
+<div className="flex justify-center md:mt-0 mt-[60px] mb-[60px]">
+  <Link
+    to="/all-projects"
+    className="cursor-target group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.06]"
+  >
+    <span className="text-base font-medium text-white">View All Projects</span>
+    <span className="rounded-full border border-white/15 px-2 py-0.5 text-xs text-gray-400">
+      {projectData.length}
+    </span>
+    <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-transform duration-300 group-hover:translate-x-0.5">
+      <FaArrowRight className="text-xs text-white" />
+    </span>
+  </Link>
+</div>
+
+      {/* //! Project description PopUP */}
+      <ProjectModal
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+      />
 
       <Footer />
     </div>

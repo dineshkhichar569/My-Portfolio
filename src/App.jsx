@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -13,6 +12,7 @@ import Documents from "./Pages/private/Documents";
 import DataFolder from "./Pages/DataFolder";
 import PublicDocument from "./Pages/public/PublicDocument";
 import GitHubStats from "./Components/GitHubStats";
+import ViewAllProjects from "./Pages/ViewAllProjects";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         <Route path="/private" element={<Documents />} />
         <Route path="/public" element={<PublicDocument />} />
 
-        <Route path="/git" element={<GitHubStats />} />
+        <Route path="/all-projects" element={<ViewAllProjects />} />
       </Routes>
     </>
   );
