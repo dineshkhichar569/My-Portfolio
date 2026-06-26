@@ -52,12 +52,40 @@ const GridCard = ({ project, index, onCardClick }) => (
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
       {/* //! Status box on image */}
-      {project.status && (
-        <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full border border-teal-400/30 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-teal-300 backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse" />
-          {project.status}
-        </span>
-      )}
+      {project.status &&
+        (() => {
+          const map = {
+            Live: {
+              ring: "border-teal-400/40",
+              text: "text-teal-200",
+              dot: "bg-teal-400",
+              glow: "shadow-[0_0_16px_rgba(45,212,191,0.5)]",
+            },
+            "In Progress": {
+              ring: "border-amber-400/40",
+              text: "text-amber-200",
+              dot: "bg-amber-400",
+              glow: "shadow-[0_0_16px_rgba(251,191,36,0.5)]",
+            },
+            Offline: {
+              ring: "border-gray-400/30",
+              text: "text-gray-300",
+              dot: "bg-gray-400",
+              glow: "shadow-[0_0_12px_rgba(156,163,175,0.3)]",
+            },
+          };
+          const s = map[project.status] || map.Live;
+          return (
+            <span
+              className={`absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full border bg-black/60 px-2.5 py-1 text-[11px] font-semibold backdrop-blur-md ${s.ring} ${s.text} ${s.glow}`}
+            >
+              <span
+                className={`h-1.5 w-1.5 rounded-full animate-pulse ${s.dot}`}
+              />
+              {project.status}
+            </span>
+          );
+        })()}
 
       {/*  //! View details hint popUP */}
       <span className="absolute bottom-3 right-3 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100">
@@ -95,16 +123,22 @@ const GridCard = ({ project, index, onCardClick }) => (
 
       {/* //! live and code Buttons */}
       <div className="mt-auto flex items-center gap-2.5 pt-2">
-        <a
-          href={project.liveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="cursor-target group/btn inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:gap-2"
-        >
-          Live
-          <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover/btn:translate-x-0.5" />
-        </a>
+        {project.liveLink ? (
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="cursor-target group/btn inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:gap-2"
+          >
+            Live
+            <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+          </a>
+        ) : (
+          <span className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-700 px-3.5 py-2 text-xs font-semibold text-zinc-300 cursor-not-allowed">
+            Demo Offline
+          </span>
+        )}
         {project.githubLink && (
           <a
             href={project.githubLink}

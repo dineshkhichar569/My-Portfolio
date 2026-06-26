@@ -13,7 +13,8 @@ const projectData = [
     tagline:
       "A modern developer portfolio focused on performance and storytelling.",
     role: "Solo Developer",
-    timeline: "Upgrading",
+    timeline: "Ongoing · since 2025",
+    client: { type: "Personal" },
     status: "Live",
     category: "Personal Portfolio",
     year: "2026",
@@ -60,7 +61,86 @@ const projectData = [
 
     techGroups: {
       Frontend: ["React", "Tailwind CSS", "Framer Motion"],
-      Tools: ["EmailJS", "Vite", "Vercel"],
+      Styling: ["CSS", "Responsive Design"],
+      Tools: ["EmailJS", "Vite"],
+      Deployment: ["Vercel"],
+    },
+
+    gallery: [],
+  },
+  {
+    title: "Jobrix",
+    description:
+      "A full-stack internal Applicant Tracking System (ATS) for managing the entire recruitment workflow.",
+    image: "/projects/projects_image/jobrix.png",
+    video: "",
+    techStack: ["React", "Node.js", "Express.js", "MongoDB", "JWT"],
+    // liveLink: "",
+    githubLink: "https://github.com/dineshkhichar569/jobrix-company-module.git",
+    cssPerBox: "top-[190px]",
+
+    tagline:
+      "A role-based internal ATS that runs a company's entire hiring pipeline from one dashboard.",
+    role: "Full Stack Developer",
+    timeline: "In Progress",
+    client: { type: "Personal" },
+    status: "In Progress",
+    category: "Full-Stack Web App",
+    year: "2026",
+
+    metrics: [
+      { value: "3", label: "User roles" },
+      { value: "7", label: "Pipeline stages" },
+      { value: "MERN", label: "Full stack" },
+    ],
+
+    problem:
+      "Recruitment teams juggle candidates across spreadsheets, email, and job boards with no single source of truth, making it hard to track who's where in the hiring process. Jobrix centralizes the entire workflow for Admins, HR, and Recruiters in one internal system — not a public job portal.",
+    solution:
+      "Built a role-based MERN application where each role gets its own dashboard and permissions. Admins manage teams and jobs, HR runs recruitment and pipelines, and Recruiters source and track candidates — all backed by JWT auth and a structured candidate schema that moves people through a defined hiring pipeline.",
+
+    features: [
+      "Role-based access for Admin, HR, and Recruiter",
+      "JWT authentication with login and register",
+      "Team member management and role assignment",
+      "Job creation and management",
+      "Candidate tracking through a multi-stage pipeline",
+      "Interview scheduling and feedback (planned)",
+    ],
+
+    highlights: [
+      {
+        title: "Role-based dashboards & permissions",
+        detail:
+          "Admin, HR, and Recruiter each get a tailored sidebar and access level, enforced from auth down to the API.",
+      },
+      {
+        title: "JWT authentication",
+        detail:
+          "Secure login/register flow with token-based sessions protecting role-specific routes.",
+      },
+      {
+        title: "Structured candidate pipeline",
+        detail:
+          "Candidates carry status, source, and job links, moving through Applied → Screening → Shortlisted → Interview → Selected/Rejected.",
+      },
+    ],
+
+    outcomes: [
+      "Centralized hiring operations into one internal dashboard instead of scattered tools.",
+      "Clear, permissioned workflows for every role in the recruitment process.",
+    ],
+    learnings: [
+      "Designing role-based access control across frontend and backend.",
+      "Modeling a real-world recruitment workflow as a structured data pipeline.",
+    ],
+
+    techGroups: {
+      Frontend: ["React", "Tailwind CSS", "React Router", "Axios"],
+      Backend: ["Node.js", "Express.js"],
+      Database: ["MongoDB", "Mongoose"],
+      Auth: ["JWT"],
+      Planned: ["OpenAI API", "Cloudinary", "Email notifications"],
     },
 
     gallery: [],
@@ -75,11 +155,12 @@ const projectData = [
     techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     liveLink: "https://laundry-two-omega.vercel.app/",
     githubLink: "https://github.com/dineshkhichar569/Laundry.git",
-    cssPerBox: "top-[190px]",
+    cssPerBox: "top-[250px]",
 
     tagline: "A complete laundry booking platform from order to delivery.",
     role: "Full Stack Developer",
     timeline: "4 weeks",
+    client: { type: "Personal" },
     status: "Live",
     category: "Full-Stack Web App",
     year: "2025",
@@ -126,8 +207,10 @@ const projectData = [
 
     techGroups: {
       Frontend: ["React", "Tailwind CSS"],
-      Backend: ["Node.js", "Express.js", "MongoDB"],
-      Tools: ["JWT", "Vercel"],
+      Backend: ["Node.js", "Express.js"],
+      Database: ["MongoDB", "Mongoose"],
+      Auth: ["JWT"],
+      Deployment: ["Vercel"],
     },
 
     gallery: [],
@@ -140,11 +223,12 @@ const projectData = [
     video: "/projects/projects_videos/ColorsDiamond.mp4",
     techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
     liveLink: "https://colors-diamond.myshopify.com/",
-    cssPerBox: "top-[250px]",
+    cssPerBox: "top-[310px]",
 
     tagline: "Luxury Shopify storefront crafted for premium jewelry brands.",
     role: "Shopify Frontend Developer",
     timeline: "5 weeks",
+    client: { type: "Client", platform: "Upwork" },
     status: "Live",
     category: "Shopify E-Commerce",
     year: "2025",
@@ -192,6 +276,7 @@ const projectData = [
     techGroups: {
       Platform: ["Shopify", "Liquid"],
       Frontend: ["HTML", "CSS", "JavaScript"],
+      Design: ["Responsive Design", "Custom Sections"],
     },
 
     gallery: [],
@@ -203,14 +288,15 @@ const projectData = [
     image: "/projects/projects_image/Tarecom.webp",
     video: "/projects/projects_videos/Tarecom.mp4",
     techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-    liveLink: "https://tarecom.com/",
+    // liveLink: "https://tarecom.com/",
     cssPerBox: "top-[310px]",
 
     tagline:
       "Custom Shopify storefront tailored for a seamless shopping experience.",
     role: "Shopify Frontend Developer",
     timeline: "3 weeks",
-    status: "Live",
+    client: { type: "Client", platform: "Local" },
+    status: "Offline",
     category: "Shopify E-Commerce",
     year: "2025",
 
@@ -257,6 +343,7 @@ const projectData = [
     techGroups: {
       Platform: ["Shopify", "Liquid"],
       Frontend: ["HTML", "CSS", "JavaScript"],
+      Design: ["Responsive Design", "Custom Sections"],
     },
 
     gallery: [],
@@ -276,6 +363,7 @@ const projectData = [
       "An engaging Shopify landing page designed for children's educational toys.",
     role: "Shopify Frontend Developer",
     timeline: "2 weeks",
+    client: { type: "Client", platform: "Upwork" },
     status: "Live",
     category: "Shopify Landing Page",
     year: "2025",
@@ -323,6 +411,7 @@ const projectData = [
     techGroups: {
       Platform: ["Shopify", "Liquid"],
       Frontend: ["HTML", "CSS", "JavaScript"],
+      Design: ["Responsive Design", "Animations"],
     },
 
     gallery: [],
@@ -353,6 +442,7 @@ const projectData = [
       "Rule-based AI that recommends eligible courses using logical inference.",
     role: "Full Stack Developer",
     timeline: "3 weeks",
+    client: { type: "Personal" },
     status: "Live",
     category: "AI / Full-Stack",
     year: "2026",
@@ -399,7 +489,8 @@ const projectData = [
 
     techGroups: {
       Frontend: ["React", "Tailwind CSS"],
-      Backend: ["FastAPI", "Python", "Horn Clauses"],
+      Backend: ["FastAPI", "Python"],
+      Logic: ["Horn Clauses", "REST API"],
       Deployment: ["Vercel", "Render"],
     },
 
@@ -421,6 +512,7 @@ const projectData = [
       "A modern mentorship platform landing page focused on user engagement.",
     role: "Frontend Developer",
     timeline: "1 week",
+    client: { type: "Personal" },
     status: "Live",
     category: "Frontend Landing Page",
     year: "2025",
@@ -467,7 +559,8 @@ const projectData = [
 
     techGroups: {
       Frontend: ["HTML", "CSS", "Vanilla JavaScript"],
-      Tools: ["Netlify"],
+      Design: ["Responsive Design"],
+      Deployment: ["Netlify"],
     },
 
     gallery: [],
@@ -487,6 +580,7 @@ const projectData = [
     tagline: "A futuristic NFT marketplace landing page with modern UI.",
     role: "Frontend Developer",
     timeline: "1 week",
+    client: { type: "Personal" },
     status: "Live",
     category: "Frontend Landing Page",
     year: "2025",
@@ -533,7 +627,8 @@ const projectData = [
 
     techGroups: {
       Frontend: ["HTML", "CSS", "Vanilla JavaScript"],
-      Tools: ["Netlify"],
+      Design: ["Responsive Design", "Animations"],
+      Deployment: ["Netlify"],
     },
 
     gallery: [],

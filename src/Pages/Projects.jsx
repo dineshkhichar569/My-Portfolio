@@ -17,7 +17,7 @@ const ProjectCard = ({ project, onCardClick }) => (
     ${project.cssPerBox}
     sticky
     h-auto md:h-[400px]
-    md:w-[80%] w-[94%]
+    md:w-[1000px] w-[94%5]
     bg-white/5
     backdrop-blur-[200px]
     border border-white/20
@@ -56,6 +56,41 @@ const ProjectCard = ({ project, onCardClick }) => (
       )} */}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+      {/* //! Status box on image */}
+      {project.status &&
+        (() => {
+          const map = {
+            Live: {
+              ring: "border-teal-400/40",
+              text: "text-teal-200",
+              dot: "bg-teal-400",
+              glow: "shadow-[0_0_16px_rgba(45,212,191,0.5)]",
+            },
+            "In Progress": {
+              ring: "border-amber-400/40",
+              text: "text-amber-200",
+              dot: "bg-amber-400",
+              glow: "shadow-[0_0_16px_rgba(251,191,36,0.5)]",
+            },
+            Offline: {
+              ring: "border-gray-400/30",
+              text: "text-gray-300",
+              dot: "bg-gray-400",
+              glow: "shadow-[0_0_12px_rgba(156,163,175,0.3)]",
+            },
+          };
+          const s = map[project.status] || map.Live;
+          return (
+            <span
+              className={`absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full border bg-black/60 px-2.5 py-1 text-[11px] font-semibold backdrop-blur-md ${s.ring} ${s.text} ${s.glow}`}
+            >
+              <span
+                className={`h-1.5 w-1.5 rounded-full animate-pulse ${s.dot}`}
+              />
+              {project.status}
+            </span>
+          );
+        })()}
 
       {/*  //! View details hint popUP */}
       <span className="absolute bottom-3 right-3 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100">
@@ -106,18 +141,24 @@ const ProjectCard = ({ project, onCardClick }) => (
           </a>
         )}
 
-        <a
-          href={project.liveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-target group relative inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] transition-all duration-300 shadow-md hover:shadow-xl hover:from-[#2b2b2b] hover:to-[#3a3a3a] backdrop-blur-sm"
-        >
-          <span className="absolute inset-0 rounded-xl bg-teal-400/10 group-hover:bg-teal-400/20 opacity-0 group-hover:opacity-100 transition duration-300 z-0 blur-sm" />
-          <FaExternalLinkAlt className="relative z-10 text-white text-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
-          <span className="relative z-10 text-white text-sm font-medium transition-transform duration-300 group-hover:-translate-x-1">
-            Live
+        {project.liveLink ? (
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-target group relative inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] transition-all duration-300 shadow-md hover:shadow-xl hover:from-[#2b2b2b] hover:to-[#3a3a3a] backdrop-blur-sm"
+          >
+            <span className="absolute inset-0 rounded-xl bg-teal-400/10 group-hover:bg-teal-400/20 opacity-0 group-hover:opacity-100 transition duration-300 z-0 blur-sm" />
+            <FaExternalLinkAlt className="relative z-10 text-white text-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+            <span className="relative z-10 text-white text-sm font-medium transition-transform duration-300 group-hover:-translate-x-1">
+              Live
+            </span>
+          </a>
+        ) : (
+          <span className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-700 px-3.5 py-2 text-xs font-semibold text-zinc-300 cursor-not-allowed">
+            Demo Offline
           </span>
-        </a>
+        )}
       </div>
     </div>
   </motion.div>
@@ -171,21 +212,23 @@ const Projects = () => {
         ))}
       </div>
 
-{/* //! View All Projects button */}
-<div className="flex justify-center md:mt-0 mt-[60px] mb-[60px]">
-  <Link
-    to="/all-projects"
-    className="cursor-target group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.06]"
-  >
-    <span className="text-base font-medium text-white">View All Projects</span>
-    <span className="rounded-full border border-white/15 px-2 py-0.5 text-xs text-gray-400">
-      {projectData.length}
-    </span>
-    <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-transform duration-300 group-hover:translate-x-0.5">
-      <FaArrowRight className="text-xs text-white" />
-    </span>
-  </Link>
-</div>
+      {/* //! View All Projects button */}
+      <div className="flex justify-center md:mt-0 mt-[60px] mb-[60px]">
+        <Link
+          to="/all-projects"
+          className="cursor-target group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.06]"
+        >
+          <span className="text-base font-medium text-white">
+            View All Projects
+          </span>
+          <span className="rounded-full border border-white/15 px-2 py-0.5 text-xs text-gray-400">
+            {projectData.length}
+          </span>
+          <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-transform duration-300 group-hover:translate-x-0.5">
+            <FaArrowRight className="text-xs text-white" />
+          </span>
+        </Link>
+      </div>
 
       {/* //! Project description PopUP */}
       <ProjectModal

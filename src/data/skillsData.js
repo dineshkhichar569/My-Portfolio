@@ -30,6 +30,11 @@ const skillsData = [
 
   // Database
   { name: "MongoDB", icon: "/icons/Mongodb.svg", category: "database" },
+  {
+    name: "MySQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    category: "database",
+  },
 
   // Libraries
   {
@@ -88,7 +93,7 @@ const skillsData = [
   // Tools
   {
     name: "Shopify",
-    icon: "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2429%2FPNG%2F512%2Fshopify_logo_icon_147240.png&id=147240&pack_or_individual=pack",
+    icon: "https://cdn.simpleicons.org/shopify",
     category: "tools",
   },
   // {

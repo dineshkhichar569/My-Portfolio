@@ -1,6 +1,13 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaArrowRight, FaTimes, FaLink } from "react-icons/fa";
+import {
+  FaGithub,
+  FaArrowRight,
+  FaTimes,
+  FaLink,
+  FaBriefcase,
+  FaUser,
+} from "react-icons/fa";
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
@@ -101,20 +108,66 @@ const ProjectModal = ({ project, onClose }) => {
 
                   {/* //! Status and category */}
                   <div className="flex flex-wrap items-center justify-end gap-2">
-                    {project.status && (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-teal-400/30 bg-teal-400/10 px-2.5 py-0.5 text-xs font-medium text-teal-300">
-                        <span className="h-1.5 w-1.5 rounded-full bg-teal-400 animate-ping" />
-                        {project.status}
-                      </span>
-                    )}
+                    {project.status &&
+                      (() => {
+                        const map = {
+                          Live: {
+                            ring: "border-teal-400/40",
+                            text: "text-teal-200",
+                            dot: "bg-teal-400",
+                            glow: "shadow-[0_0_16px_rgba(45,212,191,0.5)]",
+                          },
+                          "In Progress": {
+                            ring: "border-amber-400/40",
+                            text: "text-amber-200",
+                            dot: "bg-amber-400",
+                            glow: "shadow-[0_0_16px_rgba(251,191,36,0.5)]",
+                          },
+                          Offline: {
+                            ring: "border-gray-400/30",
+                            text: "text-gray-300",
+                            dot: "bg-gray-400",
+                            glow: "shadow-[0_0_12px_rgba(156,163,175,0.3)]",
+                          },
+                        };
+                        const s = map[project.status] || map.Live;
+                        return (
+                          <span
+                            className={`inline-flex items-center gap-1.5 rounded-full border bg-black/60 px-2.5 py-1 text-[11px] font-semibold backdrop-blur-md ${s.ring} ${s.text} ${s.glow}`}
+                          >
+                            <span
+                              className={`h-1.5 w-1.5 rounded-full animate-pulse ${s.dot}`}
+                            />
+                            {project.status}
+                          </span>
+                        );
+                      })()}
                     {project.year && (
-                        <span className="rounded-full border border-white/15 bg-black/40 px-2.5 py-0.5 text-xs text-gray-300">
+                      <span className="rounded-full border border-white/15 bg-black/40 px-2.5 py-0.5 text-xs text-gray-300">
                         {project.year}
                       </span>
                     )}
                     {project.category && (
                       <span className="rounded-full border border-white/15 bg-black/40 px-2.5 py-0.5 text-xs text-gray-300">
                         {project.category}
+                      </span>
+                    )}
+                    {project.client && (
+                      <span
+                        className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold text-white ${
+                          project.client.type === "Client"
+                            ? "bg-gradient-to-r from-purple-500 to-indigo-500"
+                            : "bg-gradient-to-r from-sky-500 to-cyan-500"
+                        }`}
+                      >
+                        {project.client.type === "Client" ? (
+                          <FaBriefcase className="text-[10px]" />
+                        ) : (
+                          <FaUser className="text-[10px]" />
+                        )}
+                        {project.client.platform
+                          ? `${project.client.type} · ${project.client.platform}`
+                          : project.client.type}
                       </span>
                     )}
                   </div>
@@ -297,15 +350,21 @@ const ProjectModal = ({ project, onClose }) => {
 
               {/* Actions */}
               <div className="flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-target group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:gap-3"
-                >
-                  Live Demo
-                  <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
-                </a>
+                {project.liveLink ? (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-target group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:gap-3"
+                  >
+                    Live Demo
+                    <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </a>
+                ) : (
+                  <span className="cursor-not-allowed inline-flex items-center gap-1.5 rounded-lg bg-zinc-700 px-3.5 py-2 text-xs font-semibold text-zinc-300">
+                    Demo Offline
+                  </span>
+                )}
                 {project.githubLink && (
                   <a
                     href={project.githubLink}
