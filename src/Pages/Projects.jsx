@@ -63,13 +63,13 @@ const ProjectCard = ({ project, onCardClick }) => (
             Live: {
               ring: "border-teal-400/40",
               text: "text-teal-200",
-              dot: "bg-teal-400",
+              dot: "bg-teal-400 animate-ping",
               glow: "shadow-[0_0_16px_rgba(45,212,191,0.5)]",
             },
             "In Progress": {
               ring: "border-amber-400/40",
               text: "text-amber-200",
-              dot: "bg-amber-400",
+              dot: "bg-amber-400 animate-pulse",
               glow: "shadow-[0_0_16px_rgba(251,191,36,0.5)]",
             },
             Offline: {
@@ -84,9 +84,7 @@ const ProjectCard = ({ project, onCardClick }) => (
             <span
               className={`absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full border bg-black/60 px-2.5 py-1 text-[11px] font-semibold backdrop-blur-md ${s.ring} ${s.text} ${s.glow}`}
             >
-              <span
-                className={`h-1.5 w-1.5 rounded-full animate-pulse ${s.dot}`}
-              />
+              <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />
               {project.status}
             </span>
           );
