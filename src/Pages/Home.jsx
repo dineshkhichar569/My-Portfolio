@@ -195,7 +195,7 @@ function Home() {
                 </div>
 
                 {/* //! Trust badges */}
-                <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-gray-200">
+                <div className="flex flex-wrap lg:justify-start items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-gray-200">
                   {trueBadges.map((badge, i) => (
                     <span
                       key={badge.label}

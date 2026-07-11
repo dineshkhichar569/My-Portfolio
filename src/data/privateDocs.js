@@ -1,11 +1,5 @@
 export const privateDocs = [
   {
-    title: "Resume",
-    file: "Dinesh's Resume.pdf",
-    type: "pdf",
-    description: "Latest professional resume",
-  },
-  {
     title: "Profile Photo",
     file: "IMG_9921(1).jpg",
     type: "image",
