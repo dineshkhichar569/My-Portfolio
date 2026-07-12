@@ -7,7 +7,15 @@ import Footer from "../Components/Footer";
 import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 import { useRef, useState } from "react";
-import { Download, ExternalLink, EyeIcon, FileText, X } from "lucide-react";
+import {
+  Building2,
+  Calendar,
+  Download,
+  ExternalLink,
+  EyeIcon,
+  FileText,
+  X,
+} from "lucide-react";
 import GitHubStats from "../Components/GitHubStats";
 import certificatesData from "../data/certificatesData.js";
 import experiencesData from "../data/experiencesData.js";
@@ -150,7 +158,7 @@ function About() {
       </div>
 
       {/* //! Hero Section */}
-      <div className="relative z-10 flex flex-col items-center text-center px-1 md:px-28 py-20 space-y-6">
+      <div className="relative z-10 flex flex-col items-center text-center px-3 md:px-28 py-20 space-y-6">
         <motion.h1
           initial="hidden"
           whileInView="visible"
@@ -188,7 +196,7 @@ function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="flex flex-wrap gap-6 justify-center items-center mt-12"
+          className="flex flex-wrap gap-3 md:gap-6 justify-center items-center mt-12"
         >
           {profilesData.map((prof, index) => (
             <a
@@ -246,20 +254,25 @@ function About() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="relative md:pl-10 pl-5"
+              className="relative md:pl-10 pl-3"
             >
               {/* //! Timeline Dot */}
               <div className="absolute -left-[9px] top-2 w-4 h-4 bg-cyan-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.8)]" />
 
-              <div className="bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-2xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-500">
+              <div className="bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-2xl p-4 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-500">
                 <h3 className="text-2xl font-semibold bg-gradient-to-r from-[#00ff88] via-white to-[#00cfff] bg-clip-text text-transparent">
                   {exp.role}
                 </h3>
 
-                <p className="text-gray-300 mt-1">🏢 {exp.company}</p>
+                <p className="flex items-center gap-2 text-gray-300 mt-1">
+                  <Building2 size={18} />
 
-                <p className="text-gray-500 text-sm">
-                  📅 {exp.duration} • {exp.type}
+                  {exp.company}
+                </p>
+
+                <p className="flex items-center gap-2 text-gray-500 text-sm mt-2">
+                  <Calendar size={18} />
+                  {exp.duration} • {exp.type}
                 </p>
 
                 <p className="text-gray-400 mt-4 leading-relaxed">
@@ -411,7 +424,7 @@ function About() {
         >
           Certifications
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl place-items-center py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl place-items-center py-10 px-3">
           {certificatesData.map((certificate, index) => (
             <motion.div
               key={index}
@@ -420,7 +433,7 @@ function About() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="group relative flex flex-col justify-normal w-full max-w-[360px] h-full bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-300 overflow-hidden group backdrop-blur-xl cursor-pointer pb-6"
+              className="group relative flex flex-col justify-normal w-full h-full bg-gradient-to-br from-[#0a0f1f] via-[#0c1224] to-[#0a0f1f] border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(0,255,200,0.25)] transition-all duration-300 overflow-hidden group backdrop-blur-xl cursor-pointer pb-6"
             >
               {/* //! on hover */}
               <p

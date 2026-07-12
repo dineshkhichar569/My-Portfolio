@@ -120,8 +120,8 @@ function Home() {
           />
 
           <main className="flex justify-start h-full mt-32">
-            <div className="left p-3 flex flex-col gap-10 items-start relative">
-              <div className="flex flex-col gap-10 px-4 sm:px-10 md:pl-20 text-white">
+            <div className="left p-6 md:p-3 flex flex-col gap-10 items-start relative">
+              <div className="flex flex-col gap-10 px-0 sm:px-10 md:pl-20 text-white">
                 <h1 className="my-name text-4xl sm:text-5xl md:text-xl lg:text-7xl cursor-normal">
                   <span>H</span>
                   <span>E</span>
@@ -135,16 +135,16 @@ function Home() {
                   <h2 className="text-3xl font-rubrik sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight bg-gradient-to-r from-[#00ff88] via-white to-[#00cfff] text-transparent bg-clip-text drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)] animate-slide-up">
                     I'm Dinesh Khichar
                   </h2>
-                  <p className="mt-4 sm:mt-6 font-rubrik text-sm sm:text-xl md:text-xl font-semibold text-gray-200 drop-shadow-md animate-fade-delay tracking-widest">
-                    Full-Stack MERN Developer building clean and scalable web
-                    apps.
+                  <p className="mt-4 sm:mt-6 font-rubrik text-sm sm:text-xl md:text-xl font-semibold text-gray-200 drop-shadow-md animate-slide-up tracking-widest">
+                    I build thoughtful, scalable, and impactful digital
+                    experiences that solve real-world problems.
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-6 px-4 sm:px-8 md:px-10 md:pl-20 max-w-6xl w-full mx-auto">
+              <div className="flex flex-col gap-6 px-0 sm:px-8 md:px-10 md:pl-20 max-w-6xl w-full mx-auto">
                 {/* Buttons */}
-                <div className="flex flex-row gap-4 sm:gap-6">
+                <div className="flex flex-row gap-4 sm:gap-6 animate-slide-up">
                   {/* Hire Me Button */}
                   <div className="cursor-target rounded-xl">
                     <Link
@@ -195,7 +195,7 @@ function Home() {
                 </div>
 
                 {/* //! Trust badges */}
-                <div className="flex flex-wrap lg:justify-start items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-gray-200">
+                <div className="flex flex-wrap lg:justify-start items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-gray-200 animate-slide-up">
                   {trueBadges.map((badge, i) => (
                     <span
                       key={badge.label}
@@ -212,7 +212,7 @@ function Home() {
                 </div>
 
                 {/* //! Quick stats */}
-                <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2 sm:pt-4">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2 sm:pt-4 animate-slide-up">
                   <div className="rounded-xl border border-white/20 bg-black/0 px-3 sm:px-4 py-3 text-center backdrop-blur">
                     <div className="text-sm sm:text-base md:text-lg font-extrabold text-white">
                       End-to-End Delivery
