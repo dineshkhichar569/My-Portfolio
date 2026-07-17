@@ -390,7 +390,7 @@ function About() {
             title="DIT University, Dehradun"
             degree="Bachelor of Technology – Computer Science Engineering"
             duration="2023 – 2027"
-            grade="CGPA: 8.05"
+            // grade="CGPA: 8.05"
             tags={[
               "Full Stack",
               "JAVA",
