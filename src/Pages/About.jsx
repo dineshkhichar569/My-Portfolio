@@ -196,7 +196,7 @@ function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="flex flex-wrap gap-3 md:gap-6 justify-center items-center mt-12"
+          className="flex flex-wrap gap-2 md:gap-6 justify-center items-center mt-12"
         >
           {profilesData.map((prof, index) => (
             <a
@@ -204,7 +204,7 @@ function About() {
               href={prof.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-3 md:py-4 py-3 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
+              className="cursor-target flex items-center md:gap-3 gap-1 md:px-6 px-2 md:py-4 py-2 md:rounded-xl rounded-lg bg-white/5 backdrop-blur-lg border border-white/20 hover:scale-110 transition duration-500 group"
             >
               <img
                 src={prof.icon}
@@ -213,7 +213,7 @@ function About() {
                 className="md:w-8 w-5 md:h-8 h-5 bg-white rounded-full p-1 md:group-hover:animate-spin"
               />
               <span
-                className={`text-white md:text-lg text-sm md:font-medium ${prof.textColor} transition duration-500`}
+                className={`text-white md:text-lg text-xs md:font-medium ${prof.textColor} transition duration-500`}
               >
                 {prof.name}
               </span>
@@ -394,12 +394,12 @@ function About() {
             tags={[
               "Full Stack",
               "JAVA",
-              "DevOps",
-              "MERN Stack",
-              "DBMS",
-              "Data Structure & Algorithm",
               "Cloud Computing",
+              "Data Structure & Algorithm",
+              "MERN Stack",
+              "DevOps",
               "Operating System",
+              "DBMS",
               "Design and Analysis of Algorithms",
             ]}
             highlight="Actively building production-level MERN applications & AI-integrated systems"

@@ -119,9 +119,9 @@ function Home() {
             className="absolute top-0 left-0 w-full h-[130%] object-cover -z-50"
           />
 
-          <main className="flex justify-start h-full mt-32">
+          <main className="flex justify-start h-full mt-24 md:mt-32">
             <div className="left p-6 md:p-3 flex flex-col gap-10 items-start relative">
-              <div className="flex flex-col gap-10 px-0 sm:px-10 md:pl-20 text-white">
+              <div className="flex flex-col gap-2 md:gap-10 px-0 sm:px-10 md:pl-20 text-white">
                 <h1 className="my-name text-4xl sm:text-5xl md:text-xl lg:text-7xl cursor-normal">
                   <span>H</span>
                   <span>E</span>
