@@ -65,7 +65,7 @@ const Footer = () => {
                 <FaTwitter />
               </a>
               <a
-                href="https://instagram.com/dinesh_458252"
+                href="https://instagram.com/dinesh.k02"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#ff00dd] hover:scale-125 transition duration-200"
@@ -135,50 +135,50 @@ const Footer = () => {
           </motion.div>
 
           {/* //! for Contact */}
-<motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
-  className="space-y-5 md:w-fit"
->
-  <h3 className="text-lg font-semibold text-white">
-    Let's Connect
-  </h3>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-5 md:w-fit"
+          >
+            <h3 className="text-lg font-semibold text-white">Let's Connect</h3>
 
-  <div className="space-y-4 text-sm">
+            <div className="space-y-4 text-sm">
+              <div className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all">
+                <MapPin className="h-5 w-5 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <div>
+                  <p className="text-white">India 🇮🇳</p>
+                  <p className="text-xs text-gray-500">
+                    Serving clients globally
+                  </p>
+                </div>
+              </div>
 
-    <div className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all">
-      <MapPin className="h-5 w-5 text-cyan-400 group-hover:scale-110 transition-transform" />
-      <div>
-        <p className="text-white">India 🇮🇳</p>
-        <p className="text-xs text-gray-500">Serving clients globally</p>
-      </div>
-    </div>
+              <div className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all">
+                <span className="text-cyan-400 text-lg">
+                  <Mail className="h-5 w-5" />
+                </span>
 
-    <div className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all">
-      <span className="text-cyan-400 text-lg"><Mail className="h-5 w-5" /></span>
+                <div className="relative">
+                  <a href="mailto:dinesh.khichar.work@gmail.com">
+                    dinesh.khichar.work@gmail.com
+                  </a>
 
-      <div className="relative">
-        <a href="mailto:dinesh.khichar.work@gmail.com">
-          dinesh.khichar.work@gmail.com
-        </a>
+                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full" />
+                </div>
+              </div>
 
-        <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full" />
-      </div>
-    </div>
-
-    <div className="group flex items-center gap-3 text-green-400">
-      <Dot className="ml-1 h-3 w-3 rounded-full bg-green-400 animate-pulse" />
-      <div className="pl-1">
-        <p className="text-white">Available Now</p>
-        <p className="text-xs text-gray-500">
-          Freelance • Contract • Full-Time
-        </p>
-      </div>
-    </div>
-
-  </div>
-</motion.div>
+              <div className="group flex items-center gap-3 text-green-400">
+                <Dot className="ml-1 h-3 w-3 rounded-full bg-green-400 animate-pulse" />
+                <div className="pl-1">
+                  <p className="text-white">Available Now</p>
+                  <p className="text-xs text-gray-500">
+                    Freelance • Contract • Full-Time
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* //! for Hire Me button section */}
           <motion.div

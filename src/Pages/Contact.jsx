@@ -123,7 +123,7 @@ function Contact() {
                     color: "#1DA1F2",
                   },
                   {
-                    href: "https://instagram.com/dinesh_458252",
+                    href: "https://instagram.com/dinesh.k02",
                     icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
                     color: "#E1306C",
                   },
