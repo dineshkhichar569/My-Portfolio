@@ -86,7 +86,7 @@ Fullstack & DevOps Enthusiast | B.Tech CSE @ DIT University
 
 💼 [LinkedIn](https://linkedin.com/in/dineshkhichar)  
 🐙 [GitHub](https://github.com/dineshkhichar569)  
-🌐 [Portfolio](https://dineshportfolios.site/)
+🌐 [Portfolio](https://dineshk.site/)
 
 ## 💖 Acknowledgement
 
