@@ -5,7 +5,7 @@ Designed to reflect creativity, technical skill, and a futuristic aesthetic — 
 
 ![Portfolio Preview](./public/projects/projects_image/Portfolio.webp)
 
-🔗 **Live Demo** → [Click Here](https://dineshportfolios.site/)
+🔗 **Live Demo** → [Click Here](https://dineshk.site/)
 
 ---
 
