@@ -12,7 +12,7 @@ import Documents from "./Pages/private/Documents";
 // import DataFolder from "./Pages/DataFolder";
 // import PublicDocument from "./Pages/public/PublicDocument";
 // import GitHubStats from "./Components/GitHubStats";
-// import ViewAllProjects from "./Pages/ViewAllProjects";
+import ViewAllProjects from "./Pages/ViewAllProjects";
 
 function App() {
   return (
