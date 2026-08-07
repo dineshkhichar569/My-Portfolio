@@ -27,7 +27,7 @@ const experiencesData = [
     duration: "Dec 1, 2025 – Jan 30, 2026",
     type: "Internship",
     description:
-      "Worked on fintech-grade backend systems focusing on performance, scalability, and clean architecture. Contributed to real-world problem-solving tasks, API development, and system optimization in a production-oriented environment.",
+      "Completed Software Development Engineer internship working on real-world fintech systems, problem-solving tasks, and backend-focused development.",
     skills: [
       "Backend Development",
       "Node.js",
@@ -39,40 +39,40 @@ const experiencesData = [
     offerLetter: "/DOCs/BlueStock_offerLetter.pdf",
     certificate: "/DOCs/BlueStocks.pdf",
   },
-  {
-    company: "The Developers Arena",
-    role: "Full Stack Web Development Intern",
-    duration: "Nov 2025 – Feb 2026",
-    type: "Internship",
-    description:
-      "Completed a 3-month intensive full-stack internship building scalable MERN applications. Designed RESTful APIs, optimized frontend performance, and delivered production-ready projects with focus on clean UI/UX and maintainable architecture.",
-    skills: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Full Stack Development",
-      "API Integration",
-    ],
-    offerLetter: "/DOCs/DevelopersArena_offerLetter.pdf",
-    certificate: "/DOCs/Developers_Arena.pdf",
-  },
-  {
-    company: "Self Project",
-    role: "Full Stack Developer – AI Powered ATS System",
-    duration: "2026 – Present",
-    type: "Ongoing Project",
-    description:
-      "Developing an internal hiring Applicant Tracking System using MERN stack integrated with AI APIs for resume parsing and candidate screening. Implemented secure authentication, role-based access control, and scalable REST architecture focused on automation and efficiency.",
-    skills: [
-      "MERN Stack",
-      "AI APIs",
-      "Authentication",
-      "RBAC",
-      "REST Architecture",
-      "MongoDB",
-    ],
-  },
+  // {
+  //   company: "The Developers Arena",
+  //   role: "Full Stack Web Development Intern",
+  //   duration: "Nov 2025 – Feb 2026",
+  //   type: "Internship",
+  //   description:
+  //     "Completed a 3-month intensive full-stack internship building scalable MERN applications. Designed RESTful APIs, optimized frontend performance, and delivered production-ready projects with focus on clean UI/UX and maintainable architecture.",
+  //   skills: [
+  //     "React",
+  //     "Node.js",
+  //     "Express",
+  //     "MongoDB",
+  //     "Full Stack Development",
+  //     "API Integration",
+  //   ],
+  //   offerLetter: "/DOCs/DevelopersArena_offerLetter.pdf",
+  //   certificate: "/DOCs/Developers_Arena.pdf",
+  // },
+  // {
+  //   company: "Self Project",
+  //   role: "Full Stack Developer – AI Powered ATS System",
+  //   duration: "2026 – Present",
+  //   type: "Ongoing Project",
+  //   description:
+  //     "Developing an internal hiring Applicant Tracking System using MERN stack integrated with AI APIs for resume parsing and candidate screening. Implemented secure authentication, role-based access control, and scalable REST architecture focused on automation and efficiency.",
+  //   skills: [
+  //     "MERN Stack",
+  //     "AI APIs",
+  //     "Authentication",
+  //     "RBAC",
+  //     "REST Architecture",
+  //     "MongoDB",
+  //   ],
+  // },
 ];
 
 export default experiencesData;

@@ -175,7 +175,7 @@ function About() {
           variants={fadeInUp}
           className="md:text-xl text-lg text-gray-300 max-w-3xl"
         >
-          MERN Stack & DevOps Engineer crafting immersive, emotional code
+          MERN Stack Engineer crafting immersive, emotional code
           experiences.
         </motion.p>
         <motion.p
@@ -227,9 +227,9 @@ function About() {
         </motion.div>
       </div>
 
-      <div className="px-3 md:px-28">
+      {/* <div className="px-3 md:px-28">
         <GitHubStats />
-      </div>
+      </div> */}
 
       {/* //! Experience Section */}
       <div ref={experienceRef} className="relative z-10 px-3 md:px-28 mt-32">

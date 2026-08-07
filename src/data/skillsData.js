@@ -9,11 +9,11 @@ const skillsData = [
   { name: "Tailwind CSS", icon: "/icons/TAILWIND.svg", category: "frontend" },
   { name: "HTML5", icon: "/icons/HTML.SVG", category: "frontend" },
   { name: "CSS", icon: "/icons/CSS.SVG", category: "frontend" },
-  {
-    name: "shadcn/ui",
-    icon: "https://ui.shadcn.com/apple-touch-icon.png",
-    category: "frontend",
-  },
+  // {
+  //   name: "shadcn/ui",
+  //   icon: "https://ui.shadcn.com/apple-touch-icon.png",
+  //   category: "frontend",
+  // },
 
   // Backend
   { name: "Node.js", icon: "/icons/NODE.svg", category: "backend" },
@@ -30,11 +30,11 @@ const skillsData = [
 
   // Database
   { name: "MongoDB", icon: "/icons/Mongodb.svg", category: "database" },
-  {
-    name: "MySQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    category: "database",
-  },
+  // {
+  //   name: "MySQL",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  //   category: "database",
+  // },
 
   // Libraries
   {

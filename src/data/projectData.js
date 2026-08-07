@@ -146,75 +146,75 @@ const projectData = [
     gallery: [],
   },
 
-  {
-    title: "Laundry Wallah",
-    description:
-      "A full-stack laundry service web application built to simplify booking, service management, and customer experience.",
-    image: "/projects/projects_image/Laundry_wallah.webp",
-    video: "",
-    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-    liveLink: "https://laundry-two-omega.vercel.app/",
-    githubLink: "https://github.com/dineshkhichar569/Laundry.git",
-    cssPerBox: "top-[250px]",
+  // {
+  //   title: "Laundry Wallah",
+  //   description:
+  //     "A full-stack laundry service web application built to simplify booking, service management, and customer experience.",
+  //   image: "/projects/projects_image/Laundry_wallah.webp",
+  //   video: "",
+  //   techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+  //   liveLink: "https://laundry-two-omega.vercel.app/",
+  //   githubLink: "https://github.com/dineshkhichar569/Laundry.git",
+  //   cssPerBox: "top-[250px]",
 
-    tagline: "A complete laundry booking platform from order to delivery.",
-    role: "Full Stack Developer",
-    timeline: "4 weeks",
-    client: { type: "Personal" },
-    status: "Live",
-    category: "Full-Stack Web App",
-    year: "2025",
+  //   tagline: "A complete laundry booking platform from order to delivery.",
+  //   role: "Full Stack Developer",
+  //   timeline: "4 weeks",
+  //   client: { type: "Personal" },
+  //   status: "Live",
+  //   category: "Full-Stack Web App",
+  //   year: "2025",
 
-    metrics: [
-      { value: "MERN", label: "Full stack" },
-      { value: "JWT", label: "Secure auth" },
-      { value: "CRUD", label: "Admin panel" },
-    ],
+  //   metrics: [
+  //     { value: "MERN", label: "Full stack" },
+  //     { value: "JWT", label: "Secure auth" },
+  //     { value: "CRUD", label: "Admin panel" },
+  //   ],
 
-    problem:
-      "Local laundry services rely on phone calls and manual tracking, which leads to missed orders and no visibility for customers on order status.",
-    solution:
-      "Built an end-to-end MERN application where customers book and track orders in real time, and admins manage the full order lifecycle from a dedicated dashboard backed by a REST API.",
+  //   problem:
+  //     "Local laundry services rely on phone calls and manual tracking, which leads to missed orders and no visibility for customers on order status.",
+  //   solution:
+  //     "Built an end-to-end MERN application where customers book and track orders in real time, and admins manage the full order lifecycle from a dedicated dashboard backed by a REST API.",
 
-    features: [
-      "Online order booking",
-      "Admin dashboard",
-      "Real-time order status",
-      "Secure backend with MongoDB",
-    ],
+  //   features: [
+  //     "Online order booking",
+  //     "Admin dashboard",
+  //     "Real-time order status",
+  //     "Secure backend with MongoDB",
+  //   ],
 
-    highlights: [
-      {
-        title: "REST API with Express",
-        detail:
-          "Designed clean, resource-based endpoints for orders, services, and users with proper validation.",
-      },
-      {
-        title: "Full CRUD with MongoDB",
-        detail:
-          "Implemented complete create/read/update/delete flows with Mongoose schemas and an admin control panel.",
-      },
-    ],
+  //   highlights: [
+  //     {
+  //       title: "REST API with Express",
+  //       detail:
+  //         "Designed clean, resource-based endpoints for orders, services, and users with proper validation.",
+  //     },
+  //     {
+  //       title: "Full CRUD with MongoDB",
+  //       detail:
+  //         "Implemented complete create/read/update/delete flows with Mongoose schemas and an admin control panel.",
+  //     },
+  //   ],
 
-    outcomes: [
-      "Centralized booking replaced manual phone-based ordering.",
-      "Admins gained full visibility into every order's lifecycle.",
-    ],
-    learnings: [
-      "Architecting a full MERN app from schema to deployment.",
-      "Handling authentication and protected admin routes.",
-    ],
+  //   outcomes: [
+  //     "Centralized booking replaced manual phone-based ordering.",
+  //     "Admins gained full visibility into every order's lifecycle.",
+  //   ],
+  //   learnings: [
+  //     "Architecting a full MERN app from schema to deployment.",
+  //     "Handling authentication and protected admin routes.",
+  //   ],
 
-    techGroups: {
-      Frontend: ["React", "Tailwind CSS"],
-      Backend: ["Node.js", "Express.js"],
-      Database: ["MongoDB", "Mongoose"],
-      Auth: ["JWT"],
-      Deployment: ["Vercel"],
-    },
+  //   techGroups: {
+  //     Frontend: ["React", "Tailwind CSS"],
+  //     Backend: ["Node.js", "Express.js"],
+  //     Database: ["MongoDB", "Mongoose"],
+  //     Auth: ["JWT"],
+  //     Deployment: ["Vercel"],
+  //   },
 
-    gallery: [],
-  },
+  //   gallery: [],
+  // },
 
   {
     title: "Colors Diamond Website",

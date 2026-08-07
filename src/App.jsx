@@ -29,9 +29,9 @@ function App() {
         <Route path="/hire" element={<HireMeForm />} />
 
 
-        <Route path="/data-folder" element={<DataFolder />} />
-        <Route path="/private" element={<Documents />} />
-        <Route path="/public" element={<PublicDocument />} />
+        {/* <Route path="/data-folder" element={<DataFolder />} /> */}
+        {/* <Route path="/private" element={<Documents />} /> */}
+        {/* <Route path="/public" element={<PublicDocument />} /> */}
 
         <Route path="/all-projects" element={<ViewAllProjects />} />
       </Routes>
