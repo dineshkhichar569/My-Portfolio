@@ -9,10 +9,10 @@ import Projects from "./Pages/Projects";
 import HireMeForm from "./Pages/HireMe";
 import ScrollToTop from "./Components/ScrollToTop";
 import Documents from "./Pages/private/Documents";
-import DataFolder from "./Pages/DataFolder";
-import PublicDocument from "./Pages/public/PublicDocument";
-import GitHubStats from "./Components/GitHubStats";
-import ViewAllProjects from "./Pages/ViewAllProjects";
+// import DataFolder from "./Pages/DataFolder";
+// import PublicDocument from "./Pages/public/PublicDocument";
+// import GitHubStats from "./Components/GitHubStats";
+// import ViewAllProjects from "./Pages/ViewAllProjects";
 
 function App() {
   return (
