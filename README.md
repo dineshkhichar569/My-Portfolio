@@ -5,7 +5,7 @@ Designed to reflect creativity, technical skill, and a futuristic aesthetic — 
 
 ![Portfolio Preview](./public/projects/projects_image/Portfolio.webp)
 
-🔗 **Live Demo** → [Click Here](https://dineshportfolios.site/)
+🔗 **Live Demo** → [Click Here](https://dineshk.site/)
 
 ---
 
@@ -86,7 +86,7 @@ Fullstack & DevOps Enthusiast | B.Tech CSE @ DIT University
 
 💼 [LinkedIn](https://linkedin.com/in/dineshkhichar)  
 🐙 [GitHub](https://github.com/dineshkhichar569)  
-🌐 [Portfolio](https://dineshportfolios.site/)
+🌐 [Portfolio](https://dineshk.site/)
 
 ## 💖 Acknowledgement
 
