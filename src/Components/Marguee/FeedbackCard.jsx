@@ -32,7 +32,7 @@ export default function FeedbackCard({
           {[...Array(stars)].map((_, index) => (
             <span
               key={index}
-              className="inline-block text-lg animate-spin-slow"
+              className="inline-block text-xs md:text-lg animate-spin-slow"
               style={{ animationDuration: "3s" }}
             >
               ⭐
