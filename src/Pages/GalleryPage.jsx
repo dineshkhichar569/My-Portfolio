@@ -5,7 +5,7 @@ import image from "../assets/profile2.jpg";
 
 const GalleryPage = () => {
   return (
-    <section className="bg-black pt-36 h-screen">
+    <section className="bg-black pt-36">
       <Navbar />
 
       {/* Profile display */}
