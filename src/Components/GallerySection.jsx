@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-import Navbar from "../Components/Navbar";
-
-import image from "../assets/profile2.jpg";
 import { Download } from "lucide-react";
-import gallaryData from "../data/gallaryData";
+
+import { useGallery } from "../hooks/useGallery";
+import { thumb, full, download } from "../lib/ik";
 
 const GallaryItem = ({ src, alt, index, onClick, hoverScale }) => {
   return (
@@ -41,7 +39,7 @@ const GallaryItem = ({ src, alt, index, onClick, hoverScale }) => {
   );
 };
 
-const Gallery = () => {
+const GallerySection = () => {
   //////! //   so that getMotionProps() animations should not work in mobile
   const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
@@ -50,33 +48,40 @@ const Gallery = () => {
     console.log("Hover supported:", isDesktop);
   }, []);
 
-  const images = gallaryData
+  const { images, status } = useGallery();
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [visibleCount, setVisibleCount] = useState(15);
 
-  return (
-    <section className="bg-black pt-36">
-      <Navbar />
-
-      {/* Profile display */}
-      <div className="mx-4 md:mx-[50px] mb-[40px] flex flex-col md:flex-row gap-6 md:gap-[50px] items-center rounded-3xl p-4 md:p-6 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[inset_0_0_50px_rgba(255,255,255,0.05)] overflow-hidden group transition-all duration-1000">
-        <img
-          className="w-32 h-32 md:w-[200px] md:h-[200px] rounded-full object-cover border-4 border-black"
-          loading="lazy"
-          src={image}
-          alt="img"
-        />
-        <div className="text-center md:text-left">
-          <p className="text-white text-xl md:text-4xl font-rubrik font-semibold tracking-wide md:tracking-wider">
-            Every image is a moment I personally captured through my lens.
-          </p>
-          <p className="text-white text-lg md:text-xl mt-3 font-signature text-end md:text-right">
-            Dinesh Khichar...
-          </p>
-        </div>
+  if (status === "loading") {
+    return (
+      <div
+        className={`p-3 gap-3 md:mx-[50px] mx-0 ${
+          isDesktop
+            ? "columns-2 sm:columns-3 md:columns-4 space-y-5"
+            : "grid grid-cols-2 gap-4"
+        }`}
+      >
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div
+            key={i}
+            className="w-full aspect-[4/5] rounded-xl bg-white/5 animate-pulse"
+          />
+        ))}
       </div>
+    );
+  }
 
+  if (status === "error") {
+    return (
+      <p className="text-center text-white/40 py-16 font-rubrik">
+        Couldn't load the gallery right now.
+      </p>
+    );
+  }
+
+  return (
+    <>
       {/* All Images */}
       <div
         className={`p-3 gap-3 md:mx-[50px] mx-0 ${
@@ -85,12 +90,13 @@ const Gallery = () => {
             : "grid grid-cols-2 gap-4"
         }`}
       >
-        {images.slice(0, visibleCount).map((src, index) => (
+        {images.slice(0, visibleCount).map((img, index) => (
           <GallaryItem
-            key={index}
-            src={src}
+            key={img.id}
+            src={thumb(img.url)}
+            alt={img.alt}
             index={index}
-            onClick={() => setSelectedImage(src)}
+            onClick={() => setSelectedImage(img)}
             hoverScale={true}
           />
         ))}
@@ -111,8 +117,8 @@ const Gallery = () => {
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
           <div className="relative p-4">
             <GallaryItem
-              src={selectedImage}
-              alt="Enlarged"
+              src={full(selectedImage.url)}
+              alt={selectedImage.alt}
               index={-1}
               className="max-w-[90vw] rounded-xl shadow-2xl"
               hoverScale={false}
@@ -125,7 +131,7 @@ const Gallery = () => {
               &times;
             </button>
             <a
-              href={selectedImage}
+              href={download(selectedImage.url)}
               download
               className="absolute bottom-8 right-8 p-1 bg-black/30 backdrop-blur-md border border-white/20 rounded-lg shadow-md hover:bg-gray-800 cursor-pointer"
             >
@@ -134,8 +140,8 @@ const Gallery = () => {
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 };
 
-export default Gallery;
+export default GallerySection;
