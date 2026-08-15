@@ -1,72 +1,195 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Download } from "lucide-react";
 
 import { useGallery } from "../hooks/useGallery";
-import { thumb, full, download } from "../lib/ik";
+import { thumb, full, blur, download } from "../lib/ik";
 
-const GallaryItem = ({ src, alt, index, onClick, hoverScale }) => {
+const BREAKPOINTS = [
+  { min: 768, cols: 4 },
+  { min: 640, cols: 3 },
+  { min: 0, cols: 2 },
+];
+
+const useColumnCount = () => {
+  const [cols, setCols] = useState(2);
+  useEffect(() => {
+    const update = () =>
+      setCols(BREAKPOINTS.find((b) => window.innerWidth >= b.min).cols);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return cols;
+};
+
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    setIsDesktop(
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches,
+    );
+  }, []);
+  return isDesktop;
+};
+
+const ratioOf = (img) =>
+  img.width && img.height ? img.height / img.width : 1.25;
+
+const Tile = ({ img, onClick, hover }) => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <motion.div
       onClick={onClick}
-      className={`overflow-hidden rounded-xl shadow-lg ${hoverScale ? "cursor-pointer" : ""}`}
-      {...(hoverScale
-        ? {
-            whileInView: { opacity: 1, y: 0 },
-            whileHover: { scale: 1.05 },
-            whileTap: { scale: 0.97 },
-            initial: { opacity: 0, y: 30 },
-            viewport: { once: true, margin: "-100px" },
-            transition: {
-              duration: 0.15,
-              ease: "easeOut",
-            },
-          }
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      {...(hover
+        ? { whileHover: { scale: 1.03 }, whileTap: { scale: 0.98 } }
         : {})}
+      style={{ aspectRatio: `${img.width || 4} / ${img.height || 5}` }}
+      className="relative w-full cursor-pointer overflow-hidden rounded-xl bg-white/5 shadow-lg"
     >
       <img
-        src={src}
+        src={blur(img.url)}
+        alt=""
+        aria-hidden
+        className={`absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-500 ${
+          loaded ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      <img
+        src={thumb(img.url)}
+        alt={img.alt}
         loading="lazy"
         decoding="async"
-        width={index === -1 ? undefined : 400}
-        height={index === -1 ? undefined : 500}
-        className={`w-full ${
-          index === -1 ? "object-contain max-h-[80vh]" : "object-cover"
+        onLoad={() => setLoaded(true)}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+          loaded ? "opacity-100" : "opacity-0"
         }`}
-        alt={alt}
       />
     </motion.div>
   );
 };
 
-const GallerySection = () => {
-  //////! //   so that getMotionProps() animations should not work in mobile
-  const [isDesktop, setIsDesktop] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
-    setIsDesktop(mq.matches);
-    console.log("Hover supported:", isDesktop);
-  }, []);
+const Lightbox = ({ img, onClose }) => {
+  const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    setLoaded(false);
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [img, onClose]);
+
+  const w = img.width || 4;
+  const h = img.height || 5;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+    >
+      <motion.div
+        onClick={(e) => e.stopPropagation()}
+        initial={{ scale: 0.96 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0.97 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          width: `min(90vw, ${((85 * w) / h).toFixed(2)}vh)`,
+          aspectRatio: `${w} / ${h}`,
+        }}
+        className="relative overflow-hidden rounded-xl shadow-2xl"
+      >
+        <img
+          src={blur(img.url)}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl"
+        />
+
+        {!loaded && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="h-9 w-9 animate-spin rounded-full border-2 border-white/25 border-t-white/90" />
+          </div>
+        )}
+
+        <img
+          src={full(img.url)}
+          alt={img.alt}
+          onLoad={() => setLoaded(true)}
+          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-4 top-4 cursor-pointer rounded-lg border border-white/20 bg-black/40 px-2 text-2xl font-medium text-white shadow-md backdrop-blur-md transition hover:bg-black/70 font-rubrik"
+        >
+          &times;
+        </button>
+
+        <a
+          href={download(img.url)}
+          download
+          onClick={(e) => e.stopPropagation()}
+          aria-label="Download"
+          className="absolute bottom-4 right-4 cursor-pointer rounded-lg border border-white/20 bg-black/40 p-1.5 shadow-md backdrop-blur-md transition hover:bg-black/70"
+        >
+          <Download className="h-5 w-5 text-white" />
+        </a>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const GallerySection = () => {
   const { images, status } = useGallery();
+  const isDesktop = useIsDesktop();
+  const cols = useColumnCount();
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [visibleCount, setVisibleCount] = useState(15);
 
+  const columns = useMemo(() => {
+    const buckets = Array.from({ length: cols }, () => []);
+    const heights = new Array(cols).fill(0);
+
+    images.slice(0, visibleCount).forEach((img) => {
+      const shortest = heights.indexOf(Math.min(...heights));
+      buckets[shortest].push(img);
+      heights[shortest] += ratioOf(img);
+    });
+
+    return buckets;
+  }, [images, visibleCount, cols]);
+
   if (status === "loading") {
     return (
-      <div
-        className={`p-3 gap-3 md:mx-[50px] mx-0 ${
-          isDesktop
-            ? "columns-2 sm:columns-3 md:columns-4 space-y-5"
-            : "grid grid-cols-2 gap-4"
-        }`}
-      >
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div
-            key={i}
-            className="w-full aspect-[4/5] rounded-xl bg-white/5 animate-pulse"
-          />
+      <div className="mx-0 flex gap-3 p-3 md:mx-[50px]">
+        {Array.from({ length: cols }).map((_, c) => (
+          <div key={c} className="flex flex-1 flex-col gap-3">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div
+                key={i}
+                style={{ aspectRatio: (i + c) % 2 ? "4 / 5" : "4 / 3" }}
+                className="w-full animate-pulse rounded-xl bg-white/5"
+              />
+            ))}
+          </div>
         ))}
       </div>
     );
@@ -74,72 +197,56 @@ const GallerySection = () => {
 
   if (status === "error") {
     return (
-      <p className="text-center text-white/40 py-16 font-rubrik">
+      <p className="py-16 text-center font-rubrik text-white/40">
         Couldn't load the gallery right now.
+      </p>
+    );
+  }
+
+  if (status === "empty") {
+    return (
+      <p className="py-16 text-center font-rubrik text-white/40">
+        Nothing here yet.
       </p>
     );
   }
 
   return (
     <>
-      {/* All Images */}
-      <div
-        className={`p-3 gap-3 md:mx-[50px] mx-0 ${
-          isDesktop
-            ? "columns-2 sm:columns-3 md:columns-4 space-y-5"
-            : "grid grid-cols-2 gap-4"
-        }`}
-      >
-        {images.slice(0, visibleCount).map((img, index) => (
-          <GallaryItem
-            key={img.id}
-            src={thumb(img.url)}
-            alt={img.alt}
-            index={index}
-            onClick={() => setSelectedImage(img)}
-            hoverScale={true}
-          />
+      <div className="mx-0 flex items-start gap-3 p-3 md:mx-[50px]">
+        {columns.map((col, c) => (
+          <div key={c} className="flex flex-1 flex-col gap-3">
+            {col.map((img) => (
+              <Tile
+                key={img.id}
+                img={img}
+                hover={isDesktop}
+                onClick={() => setSelectedImage(img)}
+              />
+            ))}
+          </div>
         ))}
       </div>
+
       {visibleCount < images.length && (
         <div className="flex justify-center py-10">
           <button
             onClick={() => setVisibleCount((c) => c + 15)}
-            className="cursor-target px-7 py-3 rounded-xl border border-white/20 bg-white/5 text-white font-medium backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/30"
+            className="cursor-target rounded-xl border border-white/20 bg-white/5 px-7 py-3 font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/10"
           >
             Load More
           </button>
         </div>
       )}
 
-      {/* Image popup when it will clicked */}
-      {selectedImage && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
-          <div className="relative p-4">
-            <GallaryItem
-              src={full(selectedImage.url)}
-              alt={selectedImage.alt}
-              index={-1}
-              className="max-w-[90vw] rounded-xl shadow-2xl"
-              hoverScale={false}
-            />
-
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 text-white bg-black/30 backdrop-blur-md border border-white/20 px-2 rounded-lg shadow-md text-2xl font-rubrik font-medium hover:bg-gray-800 cursor-pointer"
-            >
-              &times;
-            </button>
-            <a
-              href={download(selectedImage.url)}
-              download
-              className="absolute bottom-8 right-8 p-1 bg-black/30 backdrop-blur-md border border-white/20 rounded-lg shadow-md hover:bg-gray-800 cursor-pointer"
-            >
-              <Download className="text-white w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {selectedImage && (
+          <Lightbox
+            img={selectedImage}
+            onClose={() => setSelectedImage(null)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };
