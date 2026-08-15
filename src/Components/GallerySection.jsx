@@ -36,7 +36,7 @@ const useIsDesktop = () => {
 const ratioOf = (img) =>
   img.width && img.height ? img.height / img.width : 1.25;
 
-const Tile = ({ img, onClick, hover }) => {
+const Tile = ({ img, onClick, hover, onDims }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -65,7 +65,11 @@ const Tile = ({ img, onClick, hover }) => {
         alt={img.alt}
         loading="lazy"
         decoding="async"
-        onLoad={() => setLoaded(true)}
+        onLoad={(e) => {
+          const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
+          if (w && h && h > w !== img.height > img.width) onDims(img.id, w, h);
+          setLoaded(true);
+        }}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
@@ -129,29 +133,32 @@ const Lightbox = ({ img, onClose }) => {
           src={full(img.url)}
           alt={img.alt}
           onLoad={() => setLoaded(true)}
-          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
         />
-
-        <button
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute right-4 top-4 cursor-pointer rounded-lg border border-white/20 bg-black/40 px-2 text-2xl font-medium text-white shadow-md backdrop-blur-md transition hover:bg-black/70 font-rubrik"
-        >
-          &times;
-        </button>
-
-        <a
-          href={download(img.url)}
-          download
-          onClick={(e) => e.stopPropagation()}
-          aria-label="Download"
-          className="absolute bottom-4 right-4 cursor-pointer rounded-lg border border-white/20 bg-black/40 p-1.5 shadow-md backdrop-blur-md transition hover:bg-black/70"
-        >
-          <Download className="h-5 w-5 text-white" />
-        </a>
       </motion.div>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+        aria-label="Close"
+        className="absolute right-5 top-5 z-10 cursor-pointer rounded-lg border border-white/20 bg-black/40 px-2 font-rubrik text-2xl font-medium text-white shadow-md backdrop-blur-md transition hover:bg-black/70"
+      >
+        &times;
+      </button>
+
+      <a
+        href={download(img.url)}
+        download
+        onClick={(e) => e.stopPropagation()}
+        aria-label="Download"
+        className="absolute bottom-5 right-5 z-10 cursor-pointer rounded-lg border border-white/20 bg-black/40 p-1.5 shadow-md backdrop-blur-md transition hover:bg-black/70"
+      >
+        <Download className="h-5 w-5 text-white" />
+      </a>
     </motion.div>
   );
 };
@@ -163,19 +170,27 @@ const GallerySection = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [visibleCount, setVisibleCount] = useState(15);
+  const [fixes, setFixes] = useState({});
 
+  const fixDims = (id, width, height) =>
+    setFixes((f) => (f[id] ? f : { ...f, [id]: { width, height } }));
+
+  const sized = useMemo(
+    () => images.map((img) => ({ ...img, ...(fixes[img.id] || {}) })),
+    [images, fixes],
+  );
   const columns = useMemo(() => {
     const buckets = Array.from({ length: cols }, () => []);
     const heights = new Array(cols).fill(0);
 
-    images.slice(0, visibleCount).forEach((img) => {
+    sized.slice(0, visibleCount).forEach((img) => {
       const shortest = heights.indexOf(Math.min(...heights));
       buckets[shortest].push(img);
       heights[shortest] += ratioOf(img);
     });
 
     return buckets;
-  }, [images, visibleCount, cols]);
+  }, [sized, visibleCount, cols]);
 
   if (status === "loading") {
     return (
@@ -221,6 +236,7 @@ const GallerySection = () => {
                 key={img.id}
                 img={img}
                 hover={isDesktop}
+                onDims={fixDims}
                 onClick={() => setSelectedImage(img)}
               />
             ))}
@@ -242,7 +258,7 @@ const GallerySection = () => {
       <AnimatePresence>
         {selectedImage && (
           <Lightbox
-            img={selectedImage}
+            img={{ ...selectedImage, ...(fixes[selectedImage.id] || {}) }}
             onClose={() => setSelectedImage(null)}
           />
         )}
