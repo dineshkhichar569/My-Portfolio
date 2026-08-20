@@ -146,75 +146,75 @@ const projectData = [
     gallery: [],
   },
 
-  // {
-  //   title: "Laundry Wallah",
-  //   description:
-  //     "A full-stack laundry service web application built to simplify booking, service management, and customer experience.",
-  //   image: "/projects/projects_image/Laundry_wallah.webp",
-  //   video: "",
-  //   techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-  //   liveLink: "https://laundry-two-omega.vercel.app/",
-  //   githubLink: "https://github.com/dineshkhichar569/Laundry.git",
-  //   cssPerBox: "top-[250px]",
+  {
+    title: "Laundry Wallah",
+    description:
+      "A full-stack laundry service web application built to simplify booking, service management, and customer experience.",
+    image: "/projects/projects_image/Laundry_wallah.webp",
+    video: "",
+    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    liveLink: "https://laundry-two-omega.vercel.app/",
+    githubLink: "https://github.com/dineshkhichar569/Laundry.git",
+    cssPerBox: "top-[250px]",
 
-  //   tagline: "A complete laundry booking platform from order to delivery.",
-  //   role: "Full Stack Developer",
-  //   timeline: "4 weeks",
-  //   client: { type: "Personal" },
-  //   status: "Live",
-  //   category: "Full-Stack Web App",
-  //   year: "2025",
+    tagline: "A complete laundry booking platform from order to delivery.",
+    role: "Full Stack Developer",
+    timeline: "4 weeks",
+    client: { type: "Personal" },
+    status: "Live",
+    category: "Full-Stack Web App",
+    year: "2025",
 
-  //   metrics: [
-  //     { value: "MERN", label: "Full stack" },
-  //     { value: "JWT", label: "Secure auth" },
-  //     { value: "CRUD", label: "Admin panel" },
-  //   ],
+    metrics: [
+      { value: "MERN", label: "Full stack" },
+      { value: "JWT", label: "Secure auth" },
+      { value: "CRUD", label: "Admin panel" },
+    ],
 
-  //   problem:
-  //     "Local laundry services rely on phone calls and manual tracking, which leads to missed orders and no visibility for customers on order status.",
-  //   solution:
-  //     "Built an end-to-end MERN application where customers book and track orders in real time, and admins manage the full order lifecycle from a dedicated dashboard backed by a REST API.",
+    problem:
+      "Local laundry services rely on phone calls and manual tracking, which leads to missed orders and no visibility for customers on order status.",
+    solution:
+      "Built an end-to-end MERN application where customers book and track orders in real time, and admins manage the full order lifecycle from a dedicated dashboard backed by a REST API.",
 
-  //   features: [
-  //     "Online order booking",
-  //     "Admin dashboard",
-  //     "Real-time order status",
-  //     "Secure backend with MongoDB",
-  //   ],
+    features: [
+      "Online order booking",
+      "Admin dashboard",
+      "Real-time order status",
+      "Secure backend with MongoDB",
+    ],
 
-  //   highlights: [
-  //     {
-  //       title: "REST API with Express",
-  //       detail:
-  //         "Designed clean, resource-based endpoints for orders, services, and users with proper validation.",
-  //     },
-  //     {
-  //       title: "Full CRUD with MongoDB",
-  //       detail:
-  //         "Implemented complete create/read/update/delete flows with Mongoose schemas and an admin control panel.",
-  //     },
-  //   ],
+    highlights: [
+      {
+        title: "REST API with Express",
+        detail:
+          "Designed clean, resource-based endpoints for orders, services, and users with proper validation.",
+      },
+      {
+        title: "Full CRUD with MongoDB",
+        detail:
+          "Implemented complete create/read/update/delete flows with Mongoose schemas and an admin control panel.",
+      },
+    ],
 
-  //   outcomes: [
-  //     "Centralized booking replaced manual phone-based ordering.",
-  //     "Admins gained full visibility into every order's lifecycle.",
-  //   ],
-  //   learnings: [
-  //     "Architecting a full MERN app from schema to deployment.",
-  //     "Handling authentication and protected admin routes.",
-  //   ],
+    outcomes: [
+      "Centralized booking replaced manual phone-based ordering.",
+      "Admins gained full visibility into every order's lifecycle.",
+    ],
+    learnings: [
+      "Architecting a full MERN app from schema to deployment.",
+      "Handling authentication and protected admin routes.",
+    ],
 
-  //   techGroups: {
-  //     Frontend: ["React", "Tailwind CSS"],
-  //     Backend: ["Node.js", "Express.js"],
-  //     Database: ["MongoDB", "Mongoose"],
-  //     Auth: ["JWT"],
-  //     Deployment: ["Vercel"],
-  //   },
+    techGroups: {
+      Frontend: ["React", "Tailwind CSS"],
+      Backend: ["Node.js", "Express.js"],
+      Database: ["MongoDB", "Mongoose"],
+      Auth: ["JWT"],
+      Deployment: ["Vercel"],
+    },
 
-  //   gallery: [],
-  // },
+    gallery: [],
+  },
 
   {
     title: "Colors Diamond Website",
@@ -281,14 +281,229 @@ const projectData = [
 
     gallery: [],
   },
+  {
+    title: "MoneyTracker",
+    description:
+      "A premium personal finance application for tracking income and money lent to others with a clean, modern interface.",
+    image: "https://ik.imagekit.io/sunnyWollve/other/image%20(5).webp",
+    video: "",
+    techStack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Firebase",
+      "Firestore",
+      "Authentication",
+    ],
+    liveLink: "https://moneytracker.wollverinel97.workers.dev/",
+    app: "/Apps/MoneyTracker.apk",
+    ios: "/all-projects",
+    cssPerBox: "top-[180px]",
 
+    tagline:
+      "A beautifully designed personal finance tracker focused on income management and lending records.",
+
+    role: "Full Stack Developer",
+    timeline: "2026",
+    client: { type: "Personal" },
+    status: "Live",
+    category: "Personal Finance",
+    year: "2026",
+
+    metrics: [
+      { value: "100%", label: "Responsive" },
+      { value: "Firebase", label: "Backend" },
+      { value: "Real-time", label: "Database" },
+    ],
+
+    problem:
+      "Most finance applications are overloaded with budgeting, investments, and expense management features. I wanted a simple application dedicated to tracking only income and money lent to others, making it quick and effortless to monitor personal cash flow.",
+
+    solution:
+      "Developed a modern React application powered by Firebase Authentication and Firestore. The app provides real-time data synchronization, secure authentication, intuitive dashboards, and a premium mobile-first user experience focused solely on income and lending management.",
+
+    features: [
+      "Secure Firebase Authentication",
+      "Track multiple income sources",
+      "Manage money lent to friends and clients",
+      "Real-time Firestore synchronization",
+      "Modern dashboard with financial summaries",
+      "Responsive mobile-first interface",
+      "Transaction history and search",
+      "Premium UI with smooth animations",
+    ],
+
+    highlights: [
+      {
+        title: "Real-time Cloud Database",
+        detail:
+          "Uses Firebase Firestore for instant synchronization across devices while maintaining fast query performance.",
+      },
+      {
+        title: "Premium User Experience",
+        detail:
+          "Designed with a modern, minimal interface inspired by premium fintech products, focusing on clarity and ease of use.",
+      },
+      {
+        title: "Authentication & Security",
+        detail:
+          "Integrated Firebase Authentication to securely manage user accounts and protect financial records.",
+      },
+    ],
+
+    outcomes: [
+      "Created a focused finance application without unnecessary complexity.",
+      "Simplified tracking of income and outstanding loans.",
+      "Provided a fast, responsive experience across desktop and mobile devices.",
+    ],
+
+    learnings: [
+      "Building scalable React applications with Firebase.",
+      "Designing premium fintech user interfaces.",
+      "Managing real-time NoSQL data using Firestore.",
+      "Implementing secure authentication workflows.",
+    ],
+
+    techGroups: {
+      Frontend: ["React", "Vite", "Tailwind CSS"],
+      Backend: ["Firebase", "Firestore"],
+      Authentication: ["Firebase Authentication"],
+      Deployment: ["Cloudflare Pages"],
+    },
+
+    gallery: [],
+  },
+  {
+    title: "4F – Fresh Food From Farm",
+
+    description:
+      "A premium full-stack grocery platform built for a local business in Sikar, enabling customers to order fresh fruits, vegetables, dairy products, and daily essentials directly from trusted local farms.",
+
+    image: "https://ik.imagekit.io/sunnyWollve/other/image%20(2).webp",
+
+    video: "/projects/projects_videos/4F.mp4",
+
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+    ],
+
+    liveLink: "https://4f-farms-org.vercel.app/",
+
+    githubLink: "",
+
+    cssPerBox: "top-[340px]",
+
+    tagline:
+      "A premium farm-to-home grocery platform built for a real business serving customers across Sikar.",
+
+    role: "Full Stack Developer",
+
+    timeline: "3 Weeks",
+
+    client: {
+      type: "Client",
+      platform: "Local Business (Sikar)",
+    },
+
+    status: "Live",
+
+    category: "Full-Stack E-Commerce",
+
+    year: "2026",
+
+    metrics: [
+      { value: "100+", label: "Fresh Products" },
+      { value: "100%", label: "Responsive" },
+      { value: "Live", label: "Production" },
+    ],
+
+    problem:
+      "A local grocery business in Sikar needed a modern online platform to showcase farm-fresh products, manage customer orders digitally, and provide a premium shopping experience instead of relying on traditional phone or WhatsApp orders.",
+
+    solution:
+      "Developed a full-stack grocery platform with an elegant user interface, category-based browsing, secure authentication, shopping cart, responsive layouts, and a scalable backend to simplify online ordering while strengthening the client's digital presence.",
+
+    features: [
+      "Premium landing page",
+      "Category-based product browsing",
+      "Product details page",
+      "Advanced search",
+      "Shopping cart",
+      "Wishlist",
+      "User authentication",
+      "Responsive design",
+      "Smooth animations",
+      "Order management",
+      "Customer account dashboard",
+    ],
+
+    highlights: [
+      {
+        title: "Premium User Experience",
+        detail:
+          "Designed a modern shopping experience inspired by premium food-tech brands with clean layouts, beautiful imagery, and intuitive navigation.",
+      },
+      {
+        title: "Scalable Full-Stack Architecture",
+        detail:
+          "Built reusable frontend components and a scalable backend capable of supporting future business growth.",
+      },
+      {
+        title: "Mobile-First Design",
+        detail:
+          "Optimized every page for mobile users, ensuring a seamless shopping experience across all devices.",
+      },
+      {
+        title: "Real Business Deployment",
+        detail:
+          "Successfully deployed the platform for a local client in Sikar, helping digitize their grocery business and improve customer accessibility.",
+      },
+    ],
+
+    outcomes: [
+      "Provided the client with a modern online presence.",
+      "Enabled customers to browse and order products digitally.",
+      "Improved the overall shopping experience with a premium UI.",
+      "Delivered a fully responsive platform for desktop and mobile users.",
+    ],
+
+    learnings: [
+      "Working directly with client requirements and feedback.",
+      "Building production-ready full-stack applications.",
+      "Creating scalable eCommerce architectures.",
+      "Designing premium user experiences focused on conversion.",
+    ],
+
+    techGroups: {
+      Frontend: ["React", "Tailwind CSS", "Framer Motion"],
+
+      Backend: ["Node.js", "Express.js"],
+
+      Database: ["MongoDB", "Mongoose"],
+
+      Authentication: ["JWT"],
+
+      Deployment: ["Vercel", "Render"],
+    },
+
+    gallery: [
+      "https://ik.imagekit.io/sunnyWollve/other/image%20(3).webp",
+      "https://ik.imagekit.io/sunnyWollve/other/image%20(4).webp",
+    ],
+  },
   {
     title: "Tarecom Website",
     description: "A modern e-commerce platform built using Shopify.",
     image: "/projects/projects_image/Tarecom.webp",
     video: "/projects/projects_videos/Tarecom.mp4",
     techStack: ["Shopify", "HTML", "CSS", "JavaScript", "Responsive Design"],
-    // liveLink: "https://tarecom.com/",
+    liveLink: "https://tarecom.com/",
     cssPerBox: "top-[310px]",
 
     tagline:
@@ -296,7 +511,7 @@ const projectData = [
     role: "Shopify Frontend Developer",
     timeline: "3 weeks",
     client: { type: "Client", platform: "Local" },
-    status: "Offline",
+    status: "Online",
     category: "Shopify E-Commerce",
     year: "2025",
 

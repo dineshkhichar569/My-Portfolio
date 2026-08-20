@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaArrowRight, FaAndroid, FaApple } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import TargetCursor from "../React-Bits/TargetCursor";
@@ -148,6 +148,46 @@ const GridCard = ({ project, index, onCardClick }) => (
           >
             <FaGithub className="text-sm" />
           </a>
+        )}
+        {project.app ? (
+          <a
+            href={project.app}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-target group relative inline-flex items-center gap-2 px-4 py-1.5 rounded-xl border border-white/20 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] transition-all duration-300 shadow-md hover:shadow-xl hover:from-[#2b2b2b] hover:to-[#3a3a3a] backdrop-blur-sm"
+          >
+            <span className="absolute inset-0 rounded-xl bg-emerald-400/10 group-hover:bg-emerald-400/20 opacity-0 group-hover:opacity-100 transition duration-300 z-0 blur-sm" />
+
+            <FaAndroid className="relative z-10 text-emerald-400 text-lg transition-transform duration-300 group-hover:scale-110" />
+
+            <span className="relative z-10 text-white text-sm font-medium">
+              Android App
+            </span>
+          </a>
+        ) : (
+          ""
+        )}
+        {project.ios ? (
+          // <a
+          //   href={project.ios}
+          //   target="_blank"
+          //   rel="noopener noreferrer"
+          //   className="cursor-target group relative inline-flex items-center gap-2 px-4 py-1.5 rounded-xl border border-white/20 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] transition-all duration-300 shadow-md hover:shadow-xl hover:from-[#2b2b2b] hover:to-[#3a3a3a] backdrop-blur-sm"
+          // >
+          //   <span className="absolute inset-0 rounded-xl bg-emerald-400/10 group-hover:bg-emerald-400/20 opacity-0 group-hover:opacity-100 transition duration-300 z-0 blur-sm" />
+
+          //   <FaAndroid className="relative z-10 text-emerald-400 text-lg transition-transform duration-300 group-hover:scale-110" />
+
+          //   <span className="relative z-10 text-white text-sm font-medium">
+          //     IOS App Coming Soon
+          //   </span>
+          // </a>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl border border-white/10 bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-60 select-none">
+            <FaApple className="text-lg text-white" />
+            <span className="text-sm font-medium">IOS...</span>
+          </span>
+        ) : (
+          ""
         )}
       </div>
     </div>
