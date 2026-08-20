@@ -179,7 +179,7 @@ const GridCard = ({ project, index, onCardClick }) => (
           //   <FaAndroid className="relative z-10 text-emerald-400 text-lg transition-transform duration-300 group-hover:scale-110" />
 
           //   <span className="relative z-10 text-white text-sm font-medium">
-          //     IOS App Coming Soon
+          //     IOS App
           //   </span>
           // </a>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl border border-white/10 bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-60 select-none">
