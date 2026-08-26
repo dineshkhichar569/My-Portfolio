@@ -296,8 +296,6 @@ const projectData = [
       "Authentication",
     ],
     liveLink: "https://moneytracker.wollverinel97.workers.dev/",
-    app: "https://pub-ea5d132a586048ac820c4f2574b1f0ed.r2.dev/MoneyTracker.apk",
-    ios: "/all-projects",
     cssPerBox: "top-[180px]",
 
     tagline:
