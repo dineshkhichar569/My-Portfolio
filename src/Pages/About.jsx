@@ -175,8 +175,7 @@ function About() {
           variants={fadeInUp}
           className="md:text-xl text-lg text-gray-300 max-w-3xl"
         >
-          MERN Stack Engineer crafting immersive, emotional code
-          experiences.
+          React.js Developer crafting fast, responsive, component-driven interfaces.
         </motion.p>
         <motion.p
           initial="hidden"
@@ -185,9 +184,10 @@ function About() {
           variants={fadeInUp}
           className="md:text-lg text-sm text-gray-500 md:leading-8 max-w-3xl"
         >
-          I build digital stories — not just apps — by fusing frontend soul with
-          backend precision. Minimalism, performance, emotion. Every line of
-          code matters.
+          I turn ideas and designs into polished React interfaces: reusable
+          components, smooth motion, and performance that holds up on every
+          screen. Clean code, fast load times, and backend integration when the
+          product needs it.
         </motion.p>
 
         {/* //! Coding Profiles */}

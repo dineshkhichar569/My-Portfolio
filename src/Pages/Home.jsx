@@ -9,6 +9,7 @@ import ClickSpark from "../React-Bits/ClickSpark"; //////  Temporary off
 import TargetCursor from "../React-Bits/TargetCursor";
 
 function Home() {
+  
   const trueBadges = [
     {
       label: "React",
@@ -36,6 +37,54 @@ function Home() {
       ),
     },
     {
+      label: "JavaScript",
+      icon: (
+        <span className="flex h-4 w-4 items-end justify-end rounded-[3px] bg-yellow-400 pb-[1px] pr-[1px] text-[7px] font-bold leading-none text-black">
+          JS
+        </span>
+      ),
+    },
+    {
+      label: "Tailwind CSS",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-sky-400"
+          fill="currentColor"
+        >
+          <path d="M12 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.91.23 1.57.89 2.29 1.62C13.67 10.62 15.03 12 18 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.91-.23-1.57-.89-2.29-1.62C16.34 6.18 14.98 4.8 12 4.8zM6 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.91.23 1.57.89 2.29 1.62C7.67 17.82 9.03 19.2 12 19.2c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.91-.23-1.57-.89-2.29-1.62C10.34 13.38 8.98 12 6 12z" />
+        </svg>
+      ),
+    },
+    {
+      label: "Framer Motion",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-fuchsia-400"
+          fill="currentColor"
+        >
+          <path d="M5 2h14v7h-7zM5 9h7l7 7H5zM5 16h7v6z" />
+        </svg>
+      ),
+    },
+    {
+      label: "REST APIs",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 text-sky-400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M17.5 19a4.5 4.5 0 00.5-8.97A6 6 0 006 9.5 4 4 0 006.5 19h11z" />
+        </svg>
+      ),
+    },
+    {
       label: "Node.js",
       icon: (
         <svg
@@ -47,6 +96,7 @@ function Home() {
         </svg>
       ),
     },
+    /*
     {
       label: "Express",
       icon: (
@@ -68,22 +118,6 @@ function Home() {
       ),
     },
     {
-      label: "REST APIs",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          className="h-4 w-4 text-sky-400"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M17.5 19a4.5 4.5 0 00.5-8.97A6 6 0 006 9.5 4 4 0 006.5 19h11z" />
-        </svg>
-      ),
-    },
-    {
       label: "Auth & Security",
       icon: (
         <svg
@@ -100,6 +134,7 @@ function Home() {
         </svg>
       ),
     },
+    */
   ];
 
   return (
@@ -136,8 +171,7 @@ function Home() {
                     I'm Dinesh Khichar
                   </h2>
                   <p className="mt-4 sm:mt-6 font-rubrik text-sm sm:text-xl md:text-xl font-semibold text-gray-200 drop-shadow-md animate-slide-up tracking-widest">
-                    I build thoughtful, scalable, and impactful digital
-                    experiences that solve real-world problems.
+                    React.js developer building fast, responsive, component-driven interfaces that solve real-world problems.
                   </p>
                 </div>
               </div>
