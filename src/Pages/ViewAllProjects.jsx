@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, forwardRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaArrowRight, FaAndroid, FaApple } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
@@ -7,16 +7,38 @@ import TargetCursor from "../React-Bits/TargetCursor";
 import ProjectModal from "../Components/ProjectModal";
 import projectData from "../data/projectData";
 
-const GridCard = ({ project, index, onCardClick }) => (
+const FILTERS = [
+  { key: "all", label: "All" },
+  { key: "fullstack", label: "Full-Stack" },
+  { key: "shopify", label: "Shopify" },
+  { key: "mobile", label: "Mobile App" },
+  { key: "frontend", label: "Frontend" },
+];
+
+const COUNTS = projectData.reduce(
+  (acc, p) => ({ ...acc, [p.type]: (acc[p.type] || 0) + 1 }),
+  { all: projectData.length }
+);
+
+const GridCard = forwardRef(({ project, index, onCardClick }, ref) => (
   <motion.div
+    ref={ref}
+    layout
     onClick={() => onCardClick(project)}
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+    whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+    exit={{
+      opacity: 0,
+      scale: 0.88,
+      filter: "blur(10px)",
+      transition: { duration: 0.28, ease: [0.4, 0, 1, 1] },
+    }}
     viewport={{ once: true, margin: "-60px" }}
     transition={{
-      duration: 0.5,
+      duration: 0.55,
       delay: (index % 3) * 0.08,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.22, 1, 0.36, 1],
+      layout: { type: "spring", stiffness: 300, damping: 30 },
     }}
     className="
       group relative flex flex-col cursor-pointer
@@ -25,9 +47,9 @@ const GridCard = ({ project, index, onCardClick }) => (
       backdrop-blur-xl
       overflow-hidden
       shadow-[0_8px_30px_rgba(0,0,0,0.3)]
-      transition-all duration-500
+      transition-[translate,border-color,box-shadow] duration-500
       hover:border-white/25
-      hover:-translate-y-1.5
+      hover:[translate:0_-6px]
       hover:shadow-[0_20px_50px_rgba(124,58,237,0.18)]
     "
   >
@@ -192,10 +214,18 @@ const GridCard = ({ project, index, onCardClick }) => (
       </div>
     </div>
   </motion.div>
-);
+));
+
+GridCard.displayName = "GridCard";
 
 const ViewAllProjects = () => {
   const [activeProject, setActiveProject] = useState(null);
+  const [filter, setFilter] = useState("all");
+
+  const filterProjectData =
+    filter === "all"
+      ? projectData
+      : projectData.filter((item) => item.type === filter);
 
   return (
     <div className="relative z-0 min-h-screen text-white bg-black">
@@ -231,15 +261,61 @@ const ViewAllProjects = () => {
 
       {/* //! project cards Grid */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-8 pb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projectData.map((project, index) => (
-            <GridCard
-              key={index}
-              project={project}
-              index={index}
-              onCardClick={setActiveProject}
-            />
-          ))}
+        {/* //! Filter bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12 flex justify-center"
+        >
+          <div className="relative flex max-w-full items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/[0.04] p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl [scrollbar-width:none] sm:overflow-visible [&::-webkit-scrollbar]:hidden">
+            {FILTERS.map(({ key, label }) => {
+              const active = filter === key;
+              return (
+                <motion.button
+                  key={key}
+                  onClick={() => setFilter(key)}
+                  whileTap={{ scale: 0.94 }}
+                  aria-pressed={active}
+                  className={`cursor-target relative shrink-0 rounded-full px-4 py-2 text-sm font-medium outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-purple-400/60 ${
+                    active ? "text-white" : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="filter-pill"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-[0_0_24px_rgba(168,85,247,0.5)]"
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-2">
+                    {label}
+                    <span
+                      className={`min-w-[1.25rem] rounded-full px-1.5 py-0.5 text-center text-[10px] font-semibold tabular-nums transition-colors duration-300 ${
+                        active ? "bg-black/25 text-white" : "bg-white/5 text-gray-500"
+                      }`}
+                    >
+                      {COUNTS[key] || 0}
+                    </span>
+                  </span>
+                </motion.button>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* //! Animated grid */}
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence mode="popLayout">
+            {filterProjectData.map((project, index) => (
+              <GridCard
+                key={project.title}
+                project={project}
+                index={index}
+                onCardClick={setActiveProject}
+              />
+            ))}
+          </AnimatePresence>
         </div>
       </div>
 

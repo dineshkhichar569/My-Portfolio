@@ -1,6 +1,7 @@
 const projectData = [
   {
     title: "Portfolio Website",
+    type: "frontend",
     description:
       "Personal portfolio built with React, Tailwind, and Framer Motion.",
     image: "/projects/projects_image/Portfolio.webp",
@@ -70,6 +71,7 @@ const projectData = [
   },
   {
     title: "Jobrix",
+    type: "fullstack",
     description:
       "A full-stack internal Applicant Tracking System (ATS) for managing the entire recruitment workflow.",
     image: "/projects/projects_image/jobrix.png",
@@ -148,6 +150,7 @@ const projectData = [
 
   {
     title: "Laundry Wallah",
+    type: "fullstack",
     description:
       "A full-stack laundry service web application built to simplify booking, service management, and customer experience.",
     image: "/projects/projects_image/Laundry_wallah.webp",
@@ -218,6 +221,7 @@ const projectData = [
 
   {
     title: "Colors Diamond Website",
+    type: "shopify",
     description: "A premium jewelry e-commerce website built with Shopify.",
     image: "/projects/projects_image/ColorsDiamond.webp",
     video: "/projects/projects_videos/ColorsDiamond.mp4",
@@ -282,7 +286,93 @@ const projectData = [
     gallery: [],
   },
   {
+    title: "Digital Nursery – Plant Identity & Monitoring App",
+    type: "mobile",
+    description:
+      "Android app for forest nurseries that replaces paper registers with QR-tagged batches, photo inspections and officer dashboards.",
+    image: "/projects/projects_image/DigitalNursery.webp",
+    video: "",
+    techStack: [
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Cloudinary",
+    ],
+    liveLink: "",
+    githubLink: "",
+    cssPerBox: "top-[310px]",
+
+    tagline:
+      "Every batch of saplings gets a QR identity, from seed bed to dispatch.",
+    role: "Full Stack Mobile Developer",
+    timeline: "5 weeks",
+    client: { type: "Government" },
+    status: "In Progress",
+    category: "Mobile App / Full-Stack",
+    year: "2026",
+
+    metrics: [
+      { value: "QR", label: "Batch identity" },
+      { value: "3", label: "Officer roles" },
+      { value: "IoT-ready", label: "Data model" },
+    ],
+
+    problem:
+      "Forest department nurseries in Maharashtra still run on paper registers. Batch counts, inspections and dispatches are written by hand, so officers can't tell which beds need attention, and a sapling's history is lost once it leaves the nursery.",
+    solution:
+      "Built an Expo React Native Android app on an Express and MongoDB API where every batch carries a QR tag, field staff log photo-backed inspections, a health score flags batches that need action, and senior officers get dashboards, a nursery bed map and dispatch tracking.",
+
+    features: [
+      "Generate, print and scan a QR tag for every plant batch",
+      "Inspection logging with photos stored on Cloudinary",
+      "Health score with an officer-facing Action Required list",
+      "Full lifecycle from seed to dispatch with append-only stage history",
+      "Nursery bed map with health badges and tap-to-open batches",
+      "Dispatch module and role-based user management",
+      "Public batch record viewable from a QR scan without login",
+    ],
+
+    highlights: [
+      {
+        title: "QR tags that work without the app",
+        detail:
+          "Each tag encodes a public URL with a random per-batch token, so any phone camera opens a server-rendered record. DFOs control visibility per batch through an isPublic flag, and the public route is rate-limited.",
+      },
+      {
+        title: "Health scoring as its own service",
+        detail:
+          "Scoring lives in a dedicated service with weights in a config file, and an action controller turns scores into plain-language task lists for officers, so thresholds can be tuned without touching controllers.",
+      },
+      {
+        title: "Designed for sensors before they exist",
+        detail:
+          "A unified Reading model, a deviceId field on Batch and a sensor-ingest endpoint were built in from day one, so Phase 2 IoT integration plugs in without reworking the schema.",
+      },
+    ],
+
+    outcomes: [
+      "Every batch has a searchable, photo-backed record instead of a line in a paper register.",
+      "Officers see which batches need attention from the dashboard rather than walking every bed.",
+    ],
+    learnings: [
+      "Verifying what is actually deployed before debugging logic, after several 'bugs' turned out to be the host running a stale commit.",
+      "Fixing the source of truth early, moving bed position from creation order to an explicit bed number mid-build.",
+      "Scoping a government build: what ships in v1 and what gets designed for but deferred.",
+    ],
+
+    techGroups: {
+      Mobile: ["React Native", "Expo"],
+      Backend: ["Node.js", "Express", "Mongoose", "JWT"],
+      Infrastructure: ["MongoDB Atlas", "Render", "Cloudinary"],
+    },
+
+    gallery: [],
+  },
+  {
     title: "MoneyTracker",
+    type: "fullstack",
     description:
       "A premium personal finance application for tracking income and money lent to others with a clean, modern interface.",
     image: "https://ik.imagekit.io/sunnyWollve/other/image%20(5).webp",
@@ -375,7 +465,7 @@ const projectData = [
   },
   {
     title: "4F – Fresh Food From Farm",
-
+    type: "fullstack",
     description:
       "A premium full-stack grocery platform built for a local business in Sikar, enabling customers to order fresh fruits, vegetables, dairy products, and daily essentials directly from trusted local farms.",
 
@@ -499,6 +589,7 @@ const projectData = [
   },
   {
     title: "Tarecom Website",
+    type: "shopify",
     description: "A modern e-commerce platform built using Shopify.",
     image: "/projects/projects_image/Tarecom.webp",
     video: "/projects/projects_videos/Tarecom.mp4",
@@ -566,6 +657,7 @@ const projectData = [
 
   {
     title: "Antriya Talking Book Website",
+    type: "shopify",
     description:
       "A playful and responsive product landing page for kids' interactive talking books.",
     image: "/projects/projects_image/Antriya.webp",
@@ -634,6 +726,7 @@ const projectData = [
 
   {
     title: "Knowledge-Based Course Advisor",
+    type: "fullstack",
     description:
       "AI-powered academic advisor using Horn Clauses for intelligent course recommendations.",
     image: "/projects/projects_image/Backlog-Based.webp",
@@ -711,9 +804,93 @@ const projectData = [
 
     gallery: [],
   },
+  {
+    title: "Expense Tracker – Income & Category Analytics",
+    type: "fullstack",
+    description:
+      "Full-stack MERN tracker for income and expenses with server-side filtering and category analytics.",
+    image: "/projects/projects_image/ExpenseTracker.webp",
+    video: "",
+    techStack: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Recharts",
+      "Express",
+      "MongoDB",
+    ],
+    liveLink: "https://expense-tracker.wollverinel97.workers.dev/",
+    githubLink: "https://github.com/dineshkhichar569/expense-tracker.git",
+    cssPerBox: "top-[310px]",
 
+    tagline:
+      "Log every transaction, filter it any way you like, and see where the money goes.",
+    role: "Full Stack Developer",
+    timeline: "6 days",
+    client: { type: "Personal" },
+    status: "Live",
+    category: "Web App / Full-Stack",
+    year: "2026",
+
+    metrics: [
+      { value: "Server-side", label: "Query filtering" },
+      { value: "3", label: "Analytics views" },
+      { value: "REST", label: "Express API" },
+    ],
+
+    problem:
+      "Most expense trackers either filter everything in the browser, which breaks as records pile up, or bury the one number people actually want: how much went where this month.",
+    solution:
+      "Built a MERN tracker where filtering happens in MongoDB through query parameters, with a monthly dashboard, a filterable transaction history and category analytics driven by Recharts.",
+
+    features: [
+      "Add income or expense with amount, category, date, note and payment method",
+      "Filter by type, category and date range",
+      "Monthly dashboard with net balance and recent activity",
+      "Category donut chart and ranked top-categories list",
+      "Inline edit and delete without page reload",
+      "Responsive layout with a mobile bottom sheet and tab bar",
+    ],
+
+    highlights: [
+      {
+        title: "Filtering pushed to the database",
+        detail:
+          "Filters travel to the API as query parameters and a buildExpenseQuery helper turns them into a MongoDB query, so the database does the work instead of the browser holding every record in memory.",
+      },
+      {
+        title: "State owned at the right level",
+        detail:
+          "Global transactions are fetched once at the layout since the dashboard and analytics both need them, while page-specific filter state stays on the Transactions page rather than leaking into the shared shell.",
+      },
+      {
+        title: "Layered Express backend",
+        detail:
+          "Split the server into config, models, controllers, routes, utils and middleware, with schema-level validation on the Mongoose model and a centralised error handler instead of scattered try/catch blocks.",
+      },
+    ],
+
+    outcomes: [
+      "Category totals and monthly figures surface at a glance instead of needing manual tallying.",
+      "Filtering stays fast as the record count grows, since the query runs in MongoDB.",
+    ],
+    learnings: [
+      "Deciding where state belongs when a layout and its pages have different needs.",
+      "Writing query builders that translate request params into database filters.",
+      "Documenting an API properly so someone else can run the project from the README alone.",
+    ],
+
+    techGroups: {
+      Frontend: ["React 19", "Vite", "Tailwind CSS", "Recharts"],
+      Backend: ["Node.js", "Express 5", "MongoDB", "Mongoose"],
+      Deployment: ["Cloudflare Workers"],
+    },
+
+    gallery: [],
+  },
   {
     title: "MentorShip Website",
+    type: "frontend",
     description:
       "Built for growth, guidance, and simplicity at every step of your learning journey.",
     image: "/projects/projects_image/MentorShip.webp",
@@ -783,6 +960,7 @@ const projectData = [
 
   {
     title: "NFT Selling Website",
+    type: "frontend",
     description:
       "Designed for creators and crypto enthusiasts to explore and showcase NFTs.",
     image: "/projects/projects_image/NFT.webp",
