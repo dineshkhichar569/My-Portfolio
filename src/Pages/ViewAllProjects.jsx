@@ -1,6 +1,7 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, forwardRef, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaArrowRight, FaAndroid, FaApple } from "react-icons/fa";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import TargetCursor from "../React-Bits/TargetCursor";
@@ -40,7 +41,7 @@ const GridCard = forwardRef(({ project, index, onCardClick }, ref) => (
       ease: [0.22, 1, 0.36, 1],
       layout: { type: "spring", stiffness: 300, damping: 30 },
     }}
-    className="
+    className="cursor-target 
       group relative flex flex-col cursor-pointer
       rounded-2xl border border-white/10
       bg-gradient-to-br from-white/[0.06] to-white/[0.02]
@@ -149,7 +150,7 @@ const GridCard = forwardRef(({ project, index, onCardClick }, ref) => (
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="cursor-target group/btn inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:gap-2"
+            className="group/btn inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:gap-2"
           >
             Live
             <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover/btn:translate-x-0.5" />
@@ -166,7 +167,7 @@ const GridCard = forwardRef(({ project, index, onCardClick }, ref) => (
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             aria-label="View code"
-            className="cursor-target grid h-8 w-8 place-items-center rounded-lg border border-white/15 bg-white/5 text-white transition-all duration-300 hover:bg-white/10 hover:border-white/30"
+            className="grid h-8 w-8 place-items-center rounded-lg border border-white/15 bg-white/5 text-white transition-all duration-300 hover:bg-white/10 hover:border-white/30"
           >
             <FaGithub className="text-sm" />
           </a>
@@ -221,6 +222,45 @@ GridCard.displayName = "GridCard";
 const ViewAllProjects = () => {
   const [activeProject, setActiveProject] = useState(null);
   const [filter, setFilter] = useState("all");
+  const sliderRef = useRef(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+
+  const updateArrows = () => {
+    const el = sliderRef.current;
+    if (!el) return;
+    setCanLeft(el.scrollLeft > 4);
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    const el = sliderRef.current;
+    if (!el) return;
+    updateArrows();
+    const ro = new ResizeObserver(updateArrows);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const slide = (dir) =>
+    sliderRef.current?.scrollBy({
+      left: dir * sliderRef.current.clientWidth * 0.6,
+      behavior: "smooth",
+    });
+
+  const handleSelect = (key, btn) => {
+    setFilter(key);
+    const el = sliderRef.current;
+    el?.scrollTo({
+      left: btn.offsetLeft - el.clientWidth / 2 + btn.offsetWidth / 2,
+      behavior: "smooth",
+    });
+  };
+
+  const fade = 56;
+  const sliderMask = `linear-gradient(to right, ${
+    canLeft ? `transparent 0, #000 ${fade}px` : "#000 0"
+  }, ${canRight ? `#000 calc(100% - ${fade}px), transparent 100%` : "#000 100%"})`;
 
   const filterProjectData =
     filter === "all"
@@ -261,46 +301,94 @@ const ViewAllProjects = () => {
 
       {/* //! project cards Grid */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-8 pb-24">
-        {/* //! Filter bar */}
+        {/* //! Filter slider */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="mb-12 flex justify-center"
         >
-          <div className="relative flex max-w-full items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/[0.04] p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl [scrollbar-width:none] sm:overflow-visible [&::-webkit-scrollbar]:hidden">
-            {FILTERS.map(({ key, label }) => {
-              const active = filter === key;
-              return (
-                <motion.button
-                  key={key}
-                  onClick={() => setFilter(key)}
-                  whileTap={{ scale: 0.94 }}
-                  aria-pressed={active}
-                  className={`cursor-target relative shrink-0 rounded-full px-4 py-2 text-sm font-medium outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-purple-400/60 ${
-                    active ? "text-white" : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {active && (
-                    <motion.span
-                      layoutId="filter-pill"
-                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-[0_0_24px_rgba(168,85,247,0.5)]"
-                    />
-                  )}
-                  <span className="relative z-10 flex items-center gap-2">
-                    {label}
-                    <span
-                      className={`min-w-[1.25rem] rounded-full px-1.5 py-0.5 text-center text-[10px] font-semibold tabular-nums transition-colors duration-300 ${
-                        active ? "bg-black/25 text-white" : "bg-white/5 text-gray-500"
-                      }`}
-                    >
-                      {COUNTS[key] || 0}
+          <div className="relative max-w-full overflow-hidden rounded-full border border-white/10 bg-white/[0.04] shadow-[0_8px_30px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
+            <motion.div
+              ref={sliderRef}
+              layoutScroll
+              onScroll={updateArrows}
+              style={{ maskImage: sliderMask, WebkitMaskImage: sliderMask }}
+              className="relative flex items-center gap-1 overflow-x-auto p-1.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {FILTERS.map(({ key, label }) => {
+                const active = filter === key;
+                return (
+                  <motion.button
+                    key={key}
+                    onClick={(e) => handleSelect(key, e.currentTarget)}
+                    whileTap={{ scale: 0.94 }}
+                    aria-pressed={active}
+                    className={`relative shrink-0 rounded-full px-4 py-2 text-sm font-medium outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-purple-400/60 ${
+                      active ? "text-white" : "text-gray-400 hover:text-white"
+                    }`}
+                  >
+                    {active && (
+                      <motion.span
+                        layoutId="filter-pill"
+                        transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                        className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-[0_0_24px_rgba(168,85,247,0.5)]"
+                      />
+                    )}
+                    <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                      {label}
+                      <span
+                        className={`min-w-[1.25rem] rounded-full px-1.5 py-0.5 text-center text-[10px] font-semibold tabular-nums transition-colors duration-300 ${
+                          active ? "bg-black/25 text-white" : "bg-white/5 text-gray-500"
+                        }`}
+                      >
+                        {COUNTS[key] || 0}
+                      </span>
                     </span>
-                  </span>
-                </motion.button>
-              );
-            })}
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+
+            {/* //! Arrows */}
+            <AnimatePresence>
+              {canLeft && (
+                <motion.div
+                  key="left"
+                  initial={{ opacity: 0, x: -10, scale: 0.8 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -10, scale: 0.8 }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute inset-y-0 left-1.5 z-20 flex items-center"
+                >
+                  <button
+                    onClick={() => slide(-1)}
+                    aria-label="Scroll filters left"
+                    className="grid h-8 w-8 place-items-center rounded-full border border-white/15 bg-black/40 text-white shadow-[0_0_16px_rgba(168,85,247,0.3)] backdrop-blur-md transition-all duration-300 hover:border-purple-400/50 hover:bg-purple-500/20 active:scale-90"
+                  >
+                    <FiChevronLeft className="text-base" />
+                  </button>
+                </motion.div>
+              )}
+              {canRight && (
+                <motion.div
+                  key="right"
+                  initial={{ opacity: 0, x: 10, scale: 0.8 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: 10, scale: 0.8 }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute inset-y-0 right-1.5 z-20 flex items-center"
+                >
+                  <button
+                    onClick={() => slide(1)}
+                    aria-label="Scroll filters right"
+                    className="grid h-8 w-8 place-items-center rounded-full border border-white/15 bg-black/40 text-white shadow-[0_0_16px_rgba(168,85,247,0.3)] backdrop-blur-md transition-all duration-300 hover:border-purple-400/50 hover:bg-purple-500/20 active:scale-90"
+                  >
+                    <FiChevronRight className="text-base" />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
 
