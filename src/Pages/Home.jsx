@@ -171,7 +171,7 @@ function Home() {
                     I'm Dinesh Khichar
                   </h2>
                   <p className="mt-4 sm:mt-6 font-rubrik text-sm sm:text-xl md:text-xl font-semibold text-gray-200 drop-shadow-md animate-slide-up tracking-widest">
-                    React.js developer building fast, responsive, component-driven interfaces that solve real-world problems.
+                    Full-Stack Developer building fast, scalable, and responsive web applications, eCommerce experiences, and custom solutions with modern technologies.
                   </p>
                 </div>
               </div>

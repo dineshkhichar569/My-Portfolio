@@ -175,7 +175,9 @@ function About() {
           variants={fadeInUp}
           className="md:text-xl text-lg text-gray-300 max-w-3xl"
         >
-          React.js Developer crafting fast, responsive, component-driven interfaces.
+          I enjoy turning ideas into clean, functional digital experiences. I
+          focus on writing thoughtful code, creating intuitive interfaces, and
+          building reliable systems that are made to work—not just look good.
         </motion.p>
         <motion.p
           initial="hidden"
@@ -184,10 +186,11 @@ function About() {
           variants={fadeInUp}
           className="md:text-lg text-sm text-gray-500 md:leading-8 max-w-3xl"
         >
-          I turn ideas and designs into polished React interfaces: reusable
-          components, smooth motion, and performance that holds up on every
-          screen. Clean code, fast load times, and backend integration when the
-          product needs it.
+          I turn ideas into polished digital products that feel great to use and
+          are built to last. From frontend interfaces and reusable components to
+          backend systems and Shopify stores, I focus on clean code, smooth
+          interactions, fast performance, and thoughtful solutions to real-world
+          problems.
         </motion.p>
 
         {/* //! Coding Profiles */}
